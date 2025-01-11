@@ -7,7 +7,10 @@
 </head>
 <body>
     <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #1f1f1f; color: white;">
-        <div class="logo" style="font-size: 1.5rem; font-weight: bold;">Flisk</div>
+        <div class="logo" style="font-size: 1.5rem; font-weight: bold; gap: 1.2rem;">
+            <span style="color: white;">Flisk</span>
+            <span style="color: blue;">JS</span>
+        </div>
         <div class="auth-buttons">
             <button href="/userinfo/login.php">Login</button>
             <button>Register</button>
@@ -42,29 +45,6 @@
             <a href="#" style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: none;">Learn More</a>
         </div>
     </div>
-
-    <script>
-        function toggleSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-
-            // Toggle sidebar visibility
-            if (sidebar.classList.contains('active')) {
-                closeSidebar();
-            } else {
-                sidebar.classList.add('active');
-                overlay.classList.add('active');
-            }
-        }
-
-        function closeSidebar() {
-            const sidebar = document.getElementById('sidebar');
-            const overlay = document.getElementById('overlay');
-
-            sidebar.classList.remove('active');
-            overlay.classList.remove('active');
-        }
-    </script>
 </body>
 </html>
 
@@ -82,10 +62,8 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #2c2c2c;
             color: #f4f4f4;
             padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
             position: relative;
             z-index: 2;
         }
