@@ -12,10 +12,10 @@
             <span style="color: blue;">JS</span>
         </div>
         <div class="auth-buttons">
-            <a href="/userinfo/login.php">
+            <a href="userinfo/login.php">
             <button>Login</button>
             </a>
-            <a href="/userinfo/login.php">
+            <a href="userinfo/login.php">
             <button>Register</button>
             </a>
         </div>
