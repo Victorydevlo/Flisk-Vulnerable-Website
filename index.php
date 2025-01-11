@@ -45,6 +45,15 @@
             <a href="#" style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: none;">Learn More</a>
         </div>
     </div>
+
+    <div class="ide-section" style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
+        <div class="ide-description" style="max-width: 50%; text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">SQL Injection</h2>
+            <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to prevent unauthorized access and vulnerabilities.</p>
+            <button style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start Learning</button>
+        </div>
+        <div style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: gold;">#1</div>
+    </div>
 </body>
 </html>
 
