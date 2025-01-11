@@ -54,6 +54,11 @@
         </div>
         <div style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: gold;">#1</div>
     </div>
+
+    <footer style="justify-content: center; background-color:rgb(0, 0, 0);">
+        <p>Author: Victory Ukaegbu</p>
+        <p><a href="mailto:hege@example.com">LBU leeds</a></p>
+    </footer>
 </body>
 </html>
 
