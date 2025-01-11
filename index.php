@@ -12,8 +12,12 @@
             <span style="color: blue;">JS</span>
         </div>
         <div class="auth-buttons">
-            <button href="/userinfo/login.php">Login</button>
+            <a href="/userinfo/login.php">
+            <button>Login</button>
+            </a>
+            <a href="/userinfo/login.php">
             <button>Register</button>
+            </a>
         </div>
     </div>
 
