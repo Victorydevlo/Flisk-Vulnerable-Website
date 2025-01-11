@@ -11,14 +11,6 @@
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
-        <div class="auth-buttons">
-            <a href="userinfo/login.php">
-            <button>Login</button>
-            </a>
-            <a href="userinfo/login.php">
-            <button>Register</button>
-            </a>
-        </div>
     </div>
 
     <footer style="justify-content: center; background-color:rgb(0, 0, 0);">
