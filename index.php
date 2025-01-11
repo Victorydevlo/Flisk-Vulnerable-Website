@@ -6,24 +6,13 @@
     <title>Flisk</title>
 </head>
 <body>
-    <div class="navbar">
-        <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
-        <div class="logo">Flisk</div>
-        <div class="menu"></div>
+    <div class="navbar" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #1f1f1f; color: white;">
+        <div class="logo" style="font-size: 1.5rem; font-weight: bold;">Flisk</div>
         <div class="auth-buttons">
             <button href="/userinfo/login.php">Login</button>
             <button>Register</button>
         </div>
     </div>
-
-    <div class="sidebar" id="sidebar">
-        <ul class="nav">
-            <button class="close-btn" onclick="toggleSidebar()">✖</button>
-            <li><a href="#">Dashboard</a></li>
-        </ul>
-    </div>
-
-    <div class="overlay" id="overlay" onclick="closeSidebar()"></div>
 
     <div class="header" style="text-align: center; padding: 50px 20px;">
     <h1 style="font-size: 3rem;">
@@ -107,122 +96,6 @@
             flex-grow: center;
         }
 
-        .navbar .menu {
-            display: flex;
-            align-items: center;
-        }
-
-        .navbar .menu a {
-            color: #f4f4f4;
-            text-decoration: none;
-            margin: 0 10px;
-            font-size: 16px;
-        }
-
-        .navbar .menu a:hover {
-            text-decoration: underline;
-        }
-
-        .navbar .toggle-btn {
-            position: absolute;
-            left: 10px;
-            background-color: #3a3a3a;
-            color: #f4f4f4;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 4px;
-        }
-
-        .toggle-btn {
-            background-color: #3a3a3a;
-            color: #f4f4f4;
-            border: none;
-            padding: 10px 15px;
-            cursor: pointer;
-            border-radius: 4px;
-            margin-right: 20px;
-        }
-
-        .sidebar {
-            width: 250px;
-            height: 100vh;
-            background-color: #2c2c2c;
-            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
-            position: fixed;
-            top: 0;
-            left: -250px;
-            padding: 20px;
-            transition: left 0.3s ease;
-            z-index: 3;
-            visibility: hidden;
-        }
-
-        .sidebar.active {
-            left: 0;
-            visibility: visible;
-        }
-
-        .sidebar .nav {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar .nav li {
-            margin-bottom: 10px;
-        }
-
-        .sidebar .nav a {
-            color: #f4f4f4;
-            text-decoration: none;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-            padding: 10px;
-            border-radius: 4px;
-        }
-
-        .sidebar .nav a:hover {
-            background-color: #3a3a3a;
-        }
-
-        .sidebar .close-btn {
-            background: none;
-            color: #f4f4f4;
-            border: none;
-            right: 0;
-            font-size: 18px;
-            cursor: pointer;
-            margin-bottom: 20px;
-        }
-
-        .overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100vw;
-            height: 100vh;
-            background-color: rgba(0, 0, 0, 0.5);
-            visibility: hidden;
-            opacity: 0;
-            transition: opacity 0.3s ease, visibility 0.3s ease;
-            z-index: 2;
-        }
-
-        .overlay.active {
-            visibility: visible;
-            opacity: 1;
-        }
-
-        .main {
-            margin-left: 0;
-            padding: 20px;
-            transition: margin-left 0.3s ease;
-        }
-
-        .main.active {
-            margin-left: 250px;
-        }
 
         .navbar .auth-buttons {
             position:absolute;
