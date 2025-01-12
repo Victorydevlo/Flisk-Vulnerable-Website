@@ -34,7 +34,7 @@
         <div  style="background: linear-gradient(90deg,rgb(0, 40, 54),rgb(0, 135, 198),rgb(0, 40, 54)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Simple Hacks</h3>
             <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-            <a href="#" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg,rgb(0, 40, 54),rgb(0, 135, 198),rgb(0, 40, 54)); border-radius: 20px;  border-image-slice: 1;">Learn More</a>
+            <a href="simplehack.php" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg,rgb(0, 40, 54),rgb(0, 135, 198),rgb(0, 40, 54)); border-radius: 20px;  border-image-slice: 1;">Learn More</a>
         </div>
 
         <div  style="background: linear-gradient(90deg,rgb(63, 31, 0),rgb(208, 131, 55),rgb(63, 31, 0)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
