@@ -28,33 +28,11 @@
                 <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">Flags can be hidden in many different ways today ill ve showing you
                 how to find this types of flags
                 </p>
-                <a href="simple/simpletest1.php" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn More</a>
+                <a href="components/simple/simpletest1.php" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn More</a>
             </div>
         </div>
     </div>
 
-    <div style="text-align: center; padding: 40px 5px;">
-        <div style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;"></div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Complex Hacks</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-                <a href="components/complexhack.php" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn More</a>
-            </div>
-        </div>
-    </div>
-
-    <div style="text-align: center; padding: 40px 5px;">
-        <div style="position: relative; background: url('../images/lock3.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;"></div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Complex Hacks</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-                <a href="components/complexhack.php" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn More</a>
-            </div>
-        </div>
-    </div>
-    </div>
 </body>
 </html>
 
