@@ -30,28 +30,28 @@
         <p style="font-size: 0.9rem; color: #e0e0e0;">On this website you can hone your skills and learn new ones so you can protect</p>
         <p style="font-size: 0.9rem; color: #e0e0e0;">Your creations</p>
 
-        <div class="features" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px;">
-        <div class="feature-card" style="background: linear-gradient(90deg, #4facfe, #001f3f); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; padding: 40px 20px;">
+        <div  style="background: linear-gradient(90deg,rgb(0, 40, 54),rgb(0, 135, 198),rgb(0, 40, 54)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Simple Hacks</h3>
             <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-            <a href="#" style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: none;">Learn More</a>
+            <a href="#" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg,rgb(0, 40, 54),rgb(0, 135, 198),rgb(0, 40, 54)); border-radius: 20px;  border-image-slice: 1;">Learn More</a>
         </div>
 
-        <div class="feature-card" style="background: linear-gradient(90deg,rgb(63, 31, 0),rgb(208, 131, 55),rgb(63, 31, 0)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <div  style="background: linear-gradient(90deg,rgb(63, 31, 0),rgb(208, 131, 55),rgb(63, 31, 0)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Advanced Hacks</h3>
             <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-            <a href="#" style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: none;">Learn More</a>
+            <a href="#" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg,rgb(63, 31, 0),rgb(208, 131, 55),rgb(63, 31, 0)); border-radius: 20px;  border-image-slice: 1;">Learn More</a>
         </div>
 
-        <div class="feature-card" style="background: linear-gradient(90deg,rgb(63, 0, 0),rgb(254, 79, 79),rgb(63, 0, 0)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+        <div  style="background: linear-gradient(90deg,rgb(63, 0, 0),rgb(254, 79, 79),rgb(63, 0, 0)); border-radius: 10px; padding: 20px; width: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
             <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Complex Hacks</h3>
             <p style="font-size: 0.9rem; color: #e0e0e0;">Over 60 free Cyber Security courses to get started with</p>
-            <a href="#" style="display: inline-block; margin-top: 10px; color: #fff; text-decoration: none;">Learn More</a>
+            <a href="#" style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(142, 3, 3), rgb(254, 79, 79), rgb(142, 1, 1)); border-radius: 20px;  border-image-slice: 1;">Learn More</a>
         </div>
     </div>
 
     <div class="ide-section" style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
-        <div class="ide-description" style="max-width: 50%; text-align: center;">
+        <div   style="max-width: 50%; text-align: center;">
             <h2 style="font-size: 2rem; margin-bottom: 20px;">SQL Injection</h2>
             <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to prevent unauthorized access and vulnerabilities.</p>
             <button style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start Learning</button>
@@ -59,10 +59,23 @@
         <div style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: gold;">#1</div>
     </div>
 
-    <footer style="justify-content: center; background-color:rgb(0, 0, 0);">
-        <p>Author: Victory Ukaegbu</p>
-        <p><a href="mailto:hege@example.com">LBU leeds</a></p>
-    </footer>
+    <div class="ide-section" style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
+        <div   style="max-width: 50%; text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Scanning</h2>
+            <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to prevent unauthorized access and vulnerabilities.</p>
+            <button style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start Learning</button>
+        </div>
+        <div style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: silver;">#2</div>
+    </div>
+
+    <div class="ide-section" style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
+        <div   style="max-width: 50%; text-align: center;">
+            <h2 style="font-size: 2rem; margin-bottom: 20px;">Scanning</h2>
+            <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to prevent unauthorized access and vulnerabilities.</p>
+            <button style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start Learning</button>
+        </div>
+        <div style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: brown;">#3</div>
+    </div>
 </body>
 </html>
 
