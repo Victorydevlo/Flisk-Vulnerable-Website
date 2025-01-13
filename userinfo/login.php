@@ -52,7 +52,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <div class="login-container">
+    <div style="background: linear-gradient(90deg,rgb(33, 33, 33),rgb(70, 70, 70),rgb(33, 33, 33)); border-radius: 10px; padding: 10px; width: 350px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+    
         <h1 style="font-size: 3rem;">
             <span style="background: linear-gradient(90deg, #4facfe, #001f3f); -webkit-background-clip: text; -webkit-text-fill-color: transparent;"> Login</span>
         </h1>
@@ -129,14 +130,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         .navbar .auth-buttons button:hover {
             background-color: #0056b3;
-        }
-
-        .login-container {
-            width: 300px;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
         }
 
         button {

@@ -67,7 +67,7 @@
             <p>Steganography provides a clever way to hide data in plain sight while evading detection, making it a
                 useful technique for both legitimate and malicious purposes.</p>
 
-            <img src="../../images/ctf.png">
+            <img src="../../images/cctf.png">
         </div>
     </div>
 
@@ -75,9 +75,12 @@
         <div class="task-header" onclick="toggleContent('content2')">
             <h3>Task 2: Security Operations Center (SOC)</h3>
         </div>
+
         <div class="task-content" id="content2">
             <div class="input-container">
-                <p>What does SOC stand for? Enter the full term:</p>
+                <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it you should paste it under here.</p>
+                <p><a href="../../download.php?file=mountain.jpg">Download Image</a></p>
+                <p>Whats the Flag?</p>
                 <input type="text" id="userInput" placeholder="Type your answer here...">
                 <button onclick="checkAnswer()">Submit</button>
                 <p class="result" id="result"></p>
@@ -95,9 +98,9 @@
             const input = document.getElementById('userInput').value.trim().toLowerCase();
             const result = document.getElementById('result');
 
-            if (input === 'hi') {
+            if (input === 'flag{the_answer_is_clear_now}') {
                 result.style.color = 'green';
-                result.textContent = 'Correct! flag{the_answer_is_clear_now}';
+                result.textContent = 'Correct!';
             } else {
                 result.style.color = 'red';
                 result.textContent = 'Incorrect. Try again!';
@@ -149,19 +152,42 @@
 
         .input-container {
             margin-top: 10px;
+            
         }
 
         .input-container input {
             padding: 8px;
             border: 1px solid #94a3b8;
             border-radius: 4px;
-            width: 100%;
+            width: 90%;
             color: #1e293b;
+            
+
         }
 
         .result {
             margin-top: 10px;
             font-weight: bold;
+        }
+
+        input[type="text"],
+        {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center
+        }
+
+        button {
+            background-color: #007bff;
+            border-radius: 10px;
+            cursor: pointer;
+            border: none;
+            padding: 15px 32px;
+            float: center;
+            margin-top: 10px;
         }
     </style>
     </head>
