@@ -1,7 +1,7 @@
 <?php
 if (isset($_GET['file'])) {
     $file = basename($_GET['file']);
-    $filepath = '/images/hacks' . $file;
+    $filepath =  $file;
 
     if (file_exists($filepath)) {
         header('Content-Description: File Transfer');

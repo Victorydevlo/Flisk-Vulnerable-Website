@@ -60,26 +60,27 @@
                         <li><strong>Capture the Flag (CTF) challenges:</strong> In ethical hacking or cybersecurity
                             competitions, participants often hide flags in images as part of the challenge, encouraging
                             participants to uncover hidden information using various tools and techniques.</li>
+                            <li><strong>Tools:</strong> Tools like Hex Editor can help you see and read through images hex and that is were hacker hide    
+                            flags in an undetectable way.</li>
                     </ul>
                 </li>
             </ul>
-
             <p>Steganography provides a clever way to hide data in plain sight while evading detection, making it a
                 useful technique for both legitimate and malicious purposes.</p>
 
-            <img src="../../images/cctf.png">
+            <img src="../../images/hex.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
         </div>
     </div>
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content2')">
-            <h3>Task 2: Security Operations Center (SOC)</h3>
+            <h3>Task 2: Your Turn</h3>
         </div>
 
         <div class="task-content" id="content2">
             <div class="input-container">
                 <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it you should paste it under here.</p>
-                <p><a href="../../download.php?file=mountain.jpg">Download Image</a></p>
+                <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
                 <p>Whats the Flag?</p>
                 <input type="text" id="userInput" placeholder="Type your answer here...">
                 <button onclick="checkAnswer()">Submit</button>
