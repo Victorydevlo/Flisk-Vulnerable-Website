@@ -18,7 +18,7 @@
             <a href="userinfo/login.php">
                 <button>Login</button>
             </a>
-            <a href="userinfo/login.php">
+            <a href="userinfo/register.php">
                 <button>Register</button>
             </a>
         </div>
