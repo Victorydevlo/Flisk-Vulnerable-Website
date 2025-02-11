@@ -108,11 +108,19 @@
                     it.</p>
                 <input type="text" id="userInput" placeholder="Type your answer here...">
                 <button onclick="checkAnswer1()">Submit</button>
-                <p class="result" id="result"></p>
+                <p class="result" id="results"></p>
+            </div>
+
+            
+            <div class="input-container">
+                <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
+                    this.</p>
+                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <button onclick="checkAnswer2()">Submit</button>
+                <p class="result" id="results2"></p>
             </div>
         </div>
     </div>
-
     <script>
         function toggleContent(id) {
             const content = document.getElementById(id);
@@ -141,7 +149,25 @@
             const correctFlag = 'flag{okyouareastar!}';
             const inputField = document.getElementById('userInput');
             const input = inputField.value.trim();
-            const result = document.getElementById('result');
+            const result = document.getElementById('results');
+
+            if (input === correctFlag) {
+                result.style.color = 'green';
+                result.textContent = 'Correct!';
+                inputField.style.backgroundColor = 'lightgreen';
+                inputField.style.color = 'black';
+                inputField.disabled = true;
+            } else {
+                result.style.color = 'red';
+                result.textContent = 'Incorrect. Try again!';
+            }
+        }
+
+        function checkAnswer2() {
+            const correctFlag = 'flag{youarefinallyamasteratthis}';
+            const inputField = document.getElementById('userInput');
+            const input = inputField.value.trim();
+            const result = document.getElementById('results2');
 
             if (input === correctFlag) {
                 result.style.color = 'green';
