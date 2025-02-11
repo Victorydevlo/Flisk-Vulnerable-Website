@@ -128,9 +128,9 @@
             if (input === correctFlag) {
                 result.style.color = 'green';
                 result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen'; // Change input field to green
-                inputField.style.color = 'black'; // Ensure text remains readable
-                inputField.disabled = true; // Disable input field
+                inputField.style.backgroundColor = 'lightgreen';
+                inputField.style.color = 'black';
+                inputField.disabled = true;
             } else {
                 result.style.color = 'red';
                 result.textContent = 'Incorrect. Try again!';
@@ -146,9 +146,9 @@
             if (input === correctFlag) {
                 result.style.color = 'green';
                 result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen'; // Change input field to green
-                inputField.style.color = 'black'; // Ensure text remains readable
-                inputField.disabled = true; // Disable input field
+                inputField.style.backgroundColor = 'lightgreen';
+                inputField.style.color = 'black';
+                inputField.disabled = true;
             } else {
                 result.style.color = 'red';
                 result.textContent = 'Incorrect. Try again!';
