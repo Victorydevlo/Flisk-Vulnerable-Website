@@ -65,24 +65,6 @@
         </div>
 
         <div class="task-content" id="content2">
-            <p>Encryption is the process of converting plaintext data into a coded format (ciphertext) to prevent
-                unauthorized access, ensuring data confidentiality and security.
-                Decryption is the reverse process, where the encoded data is transformed back into its original form
-                using a key or algorithm.</p>
-
-            <p>Common decryption methods include:</p>
-            <ul>
-                <li><strong>Symmetric Decryption (AES, DES, 3DES)</strong> – Uses the same key for both encryption and
-                    decryption.</li>
-                <li><strong>Asymmetric Decryption (RSA, ECC)</strong> – Uses a public key for encryption and a private
-                    key for decryption.</li>
-                <li><strong>Hash-Based Decryption (Rainbow Tables, Brute Force)</strong> – Attempts to reverse hash
-                    functions using precomputed tables or exhaustive searching.</li>
-            </ul>
-
-            <p>A cipher is a method of transforming text to secure it from unauthorized access. Ciphers use algorithms
-                to encrypt and decrypt messages, ensuring confidentiality.</p>
-
             <p>Common types of ciphers include:</p>
 
             <ul>
@@ -107,21 +89,28 @@
 
         </div>
     </div>
-    <div class="task"></div>
-    <div class="task-header" onclick="toggleContent('content3')">
-        <h3>Cipher Encryption and Decryption</h3>
-    </div>
-    <div class="task-content" id="content3">
-        <div class="input-container">
-            <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it you
-                should paste it under here.</p>
-            <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
-            <p>Whats the Flag?</p>
-            <input type="text" id="userInput" placeholder="Type your answer here...">
-            <button onclick="checkAnswer()">Submit</button>
-            <p class="result" id="result"></p>
+    <div class="task">
+        <div class="task-header" onclick="toggleContent('content3')">
+            <h3>Get Working</h3>
         </div>
-    </div>
+        <div class="task-content" id="content3">
+            <div class="input-container">
+                <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
+                <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn decode
+                    it.</p>
+                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <button onclick="checkAnswer()">Submit</button>
+                <p class="result" id="result"></p>
+            </div>
+
+            <div class="input-container">
+                <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
+                    it.</p>
+                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <button onclick="checkAnswer1()">Submit</button>
+                <p class="result" id="result"></p>
+            </div>
+        </div>
     </div>
 
     <script>
@@ -131,17 +120,41 @@
         }
 
         function checkAnswer() {
-            const input = document.getElementById('userInput').value.trim().toLowerCase();
+            const correctFlag = 'flag{younowunderstandtheconceptofcaesar}';
+            const inputField = document.getElementById('userInput');
+            const input = inputField.value.trim();
             const result = document.getElementById('result');
 
-            if (input === 'flag{the_answer_is_clear_now}') {
+            if (input === correctFlag) {
                 result.style.color = 'green';
                 result.textContent = 'Correct!';
+                inputField.style.backgroundColor = 'lightgreen'; // Change input field to green
+                inputField.style.color = 'black'; // Ensure text remains readable
+                inputField.disabled = true; // Disable input field
             } else {
                 result.style.color = 'red';
                 result.textContent = 'Incorrect. Try again!';
             }
         }
+
+        function checkAnswer1() {
+            const correctFlag = 'flag{okyouareastar!}';
+            const inputField = document.getElementById('userInput');
+            const input = inputField.value.trim();
+            const result = document.getElementById('result');
+
+            if (input === correctFlag) {
+                result.style.color = 'green';
+                result.textContent = 'Correct!';
+                inputField.style.backgroundColor = 'lightgreen'; // Change input field to green
+                inputField.style.color = 'black'; // Ensure text remains readable
+                inputField.disabled = true; // Disable input field
+            } else {
+                result.style.color = 'red';
+                result.textContent = 'Incorrect. Try again!';
+            }
+        }
+
     </script>
     <style>
         .header {
