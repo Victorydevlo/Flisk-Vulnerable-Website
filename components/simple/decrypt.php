@@ -106,7 +106,7 @@
             <div class="input-container">
                 <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
                     it.</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <input type="text" id="userInputs" placeholder="Type your answer here...">
                 <button onclick="checkAnswer1()">Submit</button>
                 <p class="result" id="results"></p>
             </div>
@@ -115,7 +115,7 @@
             <div class="input-container">
                 <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
                     this.</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <input type="text" id="userInputs2" placeholder="Type your answer here...">
                 <button onclick="checkAnswer2()">Submit</button>
                 <p class="result" id="results2"></p>
             </div>
@@ -147,7 +147,7 @@
 
         function checkAnswer1() {
             const correctFlag = 'flag{okyouareastar!}';
-            const inputField = document.getElementById('userInput');
+            const inputField = document.getElementById('userInputs');
             const input = inputField.value.trim();
             const result = document.getElementById('results');
 
@@ -165,7 +165,7 @@
 
         function checkAnswer2() {
             const correctFlag = 'flag{youarefinallyamasteratthis}';
-            const inputField = document.getElementById('userInput');
+            const inputField = document.getElementById('userInputs2');
             const input = inputField.value.trim();
             const result = document.getElementById('results2');
 
