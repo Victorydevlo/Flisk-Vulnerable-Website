@@ -15,6 +15,7 @@
             <span style="color: blue;">JS</span>
         </div>
         <div class="auth-buttons">
+        <img src="images/lb.png" style="width: 40px;" class="  display: block; margin-left: auto; margin-right: auto;"> </img>
             <a href="userinfo/login.php">
                 <button>Login</button>
             </a>
