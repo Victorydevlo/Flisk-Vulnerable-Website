@@ -144,6 +144,7 @@
         right: 10px;
         display: flex;
         gap: 10px;
+        top: 9px;
     }
 
     .navbar .auth-buttons button {

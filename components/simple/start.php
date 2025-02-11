@@ -29,7 +29,7 @@
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
-            <h3>Task 1: Finding Hidden Flags in an Image</h3>
+            <h3>How this works</h3>
         </div>
         <div class="task-content" id="content1">
             <p>Welsome to your Learner Path
