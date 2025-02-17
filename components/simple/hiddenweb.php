@@ -74,6 +74,7 @@
     </ul>
         </div>
     </div>
+
     <div class="task">
         <div class="task-header" onclick="toggleContent('content3')">
             <h3>Get Working</h3>
@@ -97,8 +98,8 @@
 
             
             <div class="input-container">
-                <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
-                    this.</p>
+            <iframe src="http://132.145.31.21:6080/vnc.html" width="1024" height="768"></iframe>
+
                 <input type="text" id="userInputs2" placeholder="Type your answer here...">
                 <button onclick="checkAnswer2()">Submit</button>
                 <p class="result" id="results2"></p>
