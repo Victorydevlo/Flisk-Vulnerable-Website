@@ -1,25 +1,29 @@
 <?php
 include 'connection.php';
 
-// Initialize error message variable
 $error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
-    $email = $_POST['email'];
+    $username = trim($_POST['username']);
+    $password = trim($_POST['password']);
+    $email = trim($_POST['email']);
 
-    // Insert user into the database with plaintext password (not recommended for production)
-    $sql = "INSERT INTO users (username, password, email, is_admin) VALUES ('$username', '$password', '$email', 0)";
-
-    if ($conn->query($sql) === TRUE) {
-        // Successful registration
-        header("Location: login.php");  // Redirect to login page after successful registration
-        exit;
+    if (empty($username) || empty($password) || empty($email)) {
+        $error_message = "All fields are required.";
     } else {
-        // Log the error and display a general message to the user
-        $error_message = "Something went wrong, please try again later.";
-        error_log("Error in registration: " . $conn->error);  // Log detailed error for debugging
+        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
+        $stmt = $conn->prepare("INSERT INTO users (username, password, email, is_admin) VALUES (?, ?, ?, 0)");
+        $stmt->bind_param("sss", $username, $hashed_password, $email);
+
+        if ($stmt->execute()) {
+            header("Location: login.php");
+            exit;
+        } else {
+            $error_message = "Something went wrong, please try again later.";
+            error_log("Error in registration: " . $stmt->error);
+        }
+
+        $stmt->close();
     }
 }
 ?>
@@ -35,26 +39,48 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin: 0;
             padding: 0;
             font-family: Arial, sans-serif;
-            background-color: #f4f4f9;
+            background-color: #121212;
+            color: #e0e0e0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
+            flex-direction: column;
+        }
+
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #1f1f1f;
+            color: white;
+            padding: 10px 20px;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
         }
 
         .register-container {
             width: 300px;
-            background: #fff;
+            background: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             text-align: center;
+            margin-top: 80px;
         }
 
         h1 {
             font-size: 24px;
             margin-bottom: 20px;
-            color: #333;
+            color: #ffffff;
         }
 
         form {
@@ -68,8 +94,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             margin-bottom: 15px;
             padding: 10px;
             font-size: 16px;
-            border: 1px solid #ccc;
+            border: 1px solid #444;
             border-radius: 4px;
+            background: #2a2a2a;
+            color: #e0e0e0;
         }
 
         button {
@@ -99,7 +127,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         .link a {
-            color: #333;
+            color: #bb86fc;
             text-decoration: none;
         }
 
@@ -109,23 +137,31 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </style>
 </head>
 <body>
-    <div class="register-container">
-        <h1>Register</h1>
 
-        <!-- Display error message if any -->
-        <?php if ($error_message): ?>
-            <div class="error"><?php echo $error_message; ?></div>
-        <?php endif; ?>
-
-        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-            <input type="text" name="username" placeholder="Username" required>
-            <input type="email" name="email" placeholder="Email" required>
-            <input type="password" name="password" placeholder="Password" required>
-            <button type="submit">Register</button>
-        </form>
-        <div class="link">
-            <p>Already have an account? <a href="login.php">Login here</a></p>
-        </div>
+<div class="navbar">
+    <div class="logo">
+        <span style="color: white;">Flisk</span>
+        <span style="color: blue;">JS</span>
     </div>
+</div>
+
+<div class="register-container">
+    <h1>Register</h1>
+
+    <?php if (!empty($error_message)): ?>
+        <div class="error"><?php echo $error_message; ?></div>
+    <?php endif; ?>
+
+    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+        <input type="text" name="username" placeholder="Username" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password" placeholder="Password" required>
+        <button type="submit">Register</button>
+    </form>
+    <div class="link">
+        <p>Already have an account? <a href="login.php">Login here</a></p>
+    </div>
+</div>
+
 </body>
 </html>
