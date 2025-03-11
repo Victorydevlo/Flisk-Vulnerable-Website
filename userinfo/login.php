@@ -206,12 +206,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <body>
 
-    <div class="navbar">
-        <div class="logo">
-            <span style="color: white;">Flisk</span>
+<div class="navbar">
+    <div class="logo">
+        <a href="../index.php" style="color: white; text-decoration: none;">
+            <span>Flisk</span>
             <span style="color: blue;">JS</span>
-        </div>
+        </a>
     </div>
+</div>
 
     <div class="login-container">
         <h1>Login</h1>
