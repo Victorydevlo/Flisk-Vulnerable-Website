@@ -4,48 +4,75 @@ include 'connection.php';
 
 $error_message = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
+if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
+    $error_message = "You tried too many times. Please try again in " . ceil(($_SESSION['lockout_time'] - time()) / 60) . " minutes.";
+} else {
+    unset($_SESSION['lockout_time']);
+    unset($_SESSION['failed_attempts']);
+}
 
-    if (empty($username) || empty($password)) {
-        $_SESSION['error_message'] = "Username and password are required.";
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (isset($_SESSION['failed_attempts']) && $_SESSION['failed_attempts'] >= 10) {
+        $_SESSION['lockout_time'] = time() + (10 * 60);
+        $error_message = "You tried too many times. Please try again in 10 minutes.";
+    } else {
+        $username = trim($_POST['username']);
+        $password = trim($_POST['password']);
+
+        if (empty($username) || empty($password)) {
+            $_SESSION['error_message'] = "Username and password are required.";
+            header("Location: " . $_SERVER['PHP_SELF']);
+            exit;
+        }
+
+        $stmt = $conn->prepare("SELECT username, password, is_admin FROM users WHERE username = ?");
+        
+        if (!$stmt) {
+            die("Database error: " . $conn->error);
+        }
+
+        $stmt->bind_param("s", $username);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
+        if ($result->num_rows > 0) {
+            $user = $result->fetch_assoc();
+            
+            if (password_verify($password, $user['password'])) {
+                $_SESSION['username'] = $user['username'];
+                $_SESSION['is_admin'] = $user['is_admin'];
+
+                unset($_SESSION['failed_attempts']);
+
+                header("Location: ../index.php");
+                exit;
+            } else {
+                $_SESSION['error_message'] = "Incorrect password. Please try again.";
+                increment_failed_attempts();
+            }
+        } else {
+            $_SESSION['error_message'] = "User not found. Please try again.";
+            increment_failed_attempts();
+        }
+
+        $stmt->close();
         header("Location: " . $_SERVER['PHP_SELF']);
         exit;
     }
+}
 
-    $stmt = $conn->prepare("SELECT username, password, is_admin FROM users WHERE username = ?");
-    
-    if (!$stmt) {
-        die("Database error: " . $conn->error);
+function increment_failed_attempts() {
+    if (!isset($_SESSION['failed_attempts'])) {
+        $_SESSION['failed_attempts'] = 0;
     }
+    $_SESSION['failed_attempts']++;
 
-    $stmt->bind_param("s", $username);
-    $stmt->execute();
-    $result = $stmt->get_result();
-
-    if ($result->num_rows > 0) {
-        $user = $result->fetch_assoc();
-        
-        if (password_verify($password, $user['password'])) {
-            $_SESSION['username'] = $user['username'];
-            $_SESSION['is_admin'] = $user['is_admin'];
-
-            // Redirect to the homepage after successful login
-            header("Location: ../index.php");
-            exit;
-        } else {
-            $_SESSION['error_message'] = "Invalid username or password (password mismatch).";
-        }
-    } else {
-        $_SESSION['error_message'] = "Invalid username or password (user not found).";
+    if ($_SESSION['failed_attempts'] >= 10) {
+        $_SESSION['lockout_time'] = time() + (10 * 60);
     }
-
-    $stmt->close();
-    header("Location: " . $_SERVER['PHP_SELF']);
-    exit;
 }
 ?>
+
 
 
 <!DOCTYPE html>
@@ -218,8 +245,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="login-container">
         <h1>Login</h1>
 
-        <?php if (!empty($error_message)): ?>
-            <div class="error"><?php echo $error_message; ?></div>
+        
+        <?php if (!empty($_SESSION['error_message'])): ?>
+            <div class="error"><?php echo $_SESSION['error_message']; ?></div>
+            <?php unset($_SESSION['error_message']);?>
         <?php endif; ?>
 
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
