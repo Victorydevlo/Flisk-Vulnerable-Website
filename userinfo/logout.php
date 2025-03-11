@@ -2,6 +2,6 @@
 session_start();
 session_unset();
 session_destroy();
-header('Location: index.php'); // Redirect back to the homepage
+header('Location: ../index.php'); // Redirect back to the homepage
 exit();
 ?>
