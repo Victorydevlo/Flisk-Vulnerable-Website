@@ -115,7 +115,7 @@
 
             <div class="input-container">
                 <p>Click the button to get the VNC IP and Port</p>
-                <button id="vncButton"onclick="showVncInfo()">Get VNC IP & Port</button>
+                <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                 <div id="vncResult" class="result" style="display: none;"></div>
                 <input type="text" id="userInputs2" placeholder="Type your answer here...">
                 <button onclick="checkAnswer2()">Submit</button>
@@ -128,22 +128,22 @@
         function showVncInfo() {
             var button = document.getElementById("vncButton");
             var resultDiv = document.getElementById("vncResult");
-        
+
             button.style.display = "none";
             resultDiv.style.display = "block";
             resultDiv.innerText = "Loading VNC IP and Port...";
 
             let dots = 0;
-        let interval = setInterval(() => {
-            dots = (dots + 1) % 4;
-            resultDiv.innerText = "Loading VNC IP and Port" + ".".repeat(dots);
-        }, 500); 
+            let interval = setInterval(() => {
+                dots = (dots + 1) % 4;
+                resultDiv.innerText = "Loading VNC IP and Port" + ".".repeat(dots);
+            }, 500);
 
-        
-        setTimeout(() => {
-            clearInterval(interval);
-            resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5901";
-        }, 5000);
+
+            setTimeout(() => {
+                clearInterval(interval);
+                resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5901";
+            }, 5000);
         }
 
         function toggleContent(id) {

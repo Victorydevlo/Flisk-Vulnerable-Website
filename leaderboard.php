@@ -18,6 +18,7 @@ if ($result === false) {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -71,7 +72,8 @@ if ($result === false) {
             border-collapse: collapse;
         }
 
-        th, td {
+        th,
+        td {
             padding: 10px;
             text-align: center;
             border: 1px solid #444;
@@ -94,52 +96,53 @@ if ($result === false) {
             font-size: 14px;
             margin-bottom: 15px;
         }
-
     </style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <div class="logo">
-        <a href="index.php" style="color: white; text-decoration: none;">
-            <span>Flisk</span>
-            <span style="color: blue;">JS</span>
-        </a>
+    <div class="navbar">
+        <div class="logo">
+            <a href="index.php" style="color: white; text-decoration: none;">
+                <span>Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="leaderboard-container">
-    <h1>Leaderboard</h1>
+    <div class="leaderboard-container">
+        <h1>Leaderboard</h1>
 
-    <?php if ($result->num_rows > 0): ?>
-        <table>
-            <thead>
-                <tr>
-                    <th>Rank</th>
-                    <th>Username</th>
-                    <th>Points</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php
-                $rank = 1;
-                while ($row = $result->fetch_assoc()) {
-                    echo "<tr>";
-                    echo "<td>" . $rank . "</td>";
-                    echo "<td>" . htmlspecialchars($row['username']) . "</td>";
-                    echo "<td>" . htmlspecialchars($row['points']) . "</td>";
-                    echo "</tr>";
-                    $rank++;
-                }
-                ?>
-            </tbody>
-        </table>
-    <?php else: ?>
-        <p>No users found in the leaderboard.</p>
-    <?php endif; ?>
-</div>
+        <?php if ($result->num_rows > 0): ?>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Rank</th>
+                        <th>Username</th>
+                        <th>Points</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <?php
+                    $rank = 1;
+                    while ($row = $result->fetch_assoc()) {
+                        echo "<tr>";
+                        echo "<td>" . $rank . "</td>";
+                        echo "<td>" . htmlspecialchars($row['username']) . "</td>";
+                        echo "<td>" . htmlspecialchars($row['points']) . "</td>";
+                        echo "</tr>";
+                        $rank++;
+                    }
+                    ?>
+                </tbody>
+            </table>
+        <?php else: ?>
+            <p>No users found in the leaderboard.</p>
+        <?php endif; ?>
+    </div>
 
 </body>
+
 </html>
 
 <?php

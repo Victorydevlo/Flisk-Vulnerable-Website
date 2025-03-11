@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,34 +102,35 @@ session_start();
         }
     </style>
 </head>
+
 <body>
-<div class="navbar">
-    <div class="logo">
-        <span style="color: white;">Flisk</span>
-        <span style="color: blue;">JS</span>
-    </div>
-    
-    <div class="auth-buttons">
-        <?php if (isset($_SESSION['username'])): ?>
-            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-            <div class="user-dropdown">
-                <button class="user-icon"><i class="fas fa-user-circle"></i></button>
-                <div class="dropdown-menu">
-                    <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
-                    <a href="leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                    <a href="userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+    <div class="navbar">
+        <div class="logo">
+            <span style="color: white;">Flisk</span>
+            <span style="color: blue;">JS</span>
+        </div>
+
+        <div class="auth-buttons">
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <div class="user-dropdown">
+                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
+                        <a href="leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
                 </div>
-            </div>
-        <?php else: ?>
-            <a href="userinfo/login.php">
-                <button>Login</button>
-            </a>
-            <a href="userinfo/register.php">
-                <button>Register</button>
-            </a>
-        <?php endif; ?>
+            <?php else: ?>
+                <a href="userinfo/login.php">
+                    <button>Login</button>
+                </a>
+                <a href="userinfo/register.php">
+                    <button>Register</button>
+                </a>
+            <?php endif; ?>
+        </div>
     </div>
-</div>
 
 
     <div class="header" style="text-align: center; padding: 50px 20px;">

@@ -27,6 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -133,34 +134,36 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     </style>
 </head>
+
 <body>
 
-<div class="navbar">
-    <div class="logo">
-        <a href="../index.php" style="color: white; text-decoration: none;">
-            <span>Flisk</span>
-            <span style="color: blue;">JS</span>
-        </a>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../index.php" style="color: white; text-decoration: none;">
+                <span>Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
+        </div>
     </div>
-</div>
 
-<div class="register-container">
-    <h1>Register</h1>
+    <div class="register-container">
+        <h1>Register</h1>
 
-    <?php if (!empty($error_message)): ?>
-        <div class="error"><?php echo $error_message; ?></div>
-    <?php endif; ?>
+        <?php if (!empty($error_message)): ?>
+            <div class="error"><?php echo $error_message; ?></div>
+        <?php endif; ?>
 
-    <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
-        <input type="text" name="username" placeholder="Username" required>
-        <input type="email" name="email" placeholder="Email" required>
-        <input type="password" name="password" placeholder="Password" required>
-        <button type="submit">Register</button>
-    </form>
-    <div class="link">
-        <p>Already have an account? <a href="login.php">Login here</a></p>
+        <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+            <input type="text" name="username" placeholder="Username" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Register</button>
+        </form>
+        <div class="link">
+            <p>Already have an account? <a href="login.php">Login here</a></p>
+        </div>
     </div>
-</div>
 
 </body>
+
 </html>

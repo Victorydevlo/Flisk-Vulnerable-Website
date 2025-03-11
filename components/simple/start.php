@@ -101,10 +101,10 @@ session_start();
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
-                            result.textContent += ' ' + data.message; // Show success message
+                            result.textContent = data.message; // Show message (prevents multiple submissions)
                         } else {
                             result.style.color = 'red';
-                            result.textContent = data.message; // Show error message
+                            result.textContent = data.message;
                         }
                     })
                     .catch(error => console.error('Error:', error));

@@ -26,7 +26,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $stmt = $conn->prepare("SELECT username, password, is_admin FROM users WHERE username = ?");
-        
+
         if (!$stmt) {
             die("Database error: " . $conn->error);
         }
@@ -37,7 +37,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
-            
+
             if (password_verify($password, $user['password'])) {
                 $_SESSION['username'] = $user['username'];
                 $_SESSION['is_admin'] = $user['is_admin'];
@@ -61,7 +61,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-function increment_failed_attempts() {
+function increment_failed_attempts()
+{
     if (!isset($_SESSION['failed_attempts'])) {
         $_SESSION['failed_attempts'] = 0;
     }
@@ -77,6 +78,7 @@ function increment_failed_attempts() {
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -233,22 +235,22 @@ function increment_failed_attempts() {
 
 <body>
 
-<div class="navbar">
-    <div class="logo">
-        <a href="../index.php" style="color: white; text-decoration: none;">
-            <span>Flisk</span>
-            <span style="color: blue;">JS</span>
-        </a>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../index.php" style="color: white; text-decoration: none;">
+                <span>Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
+        </div>
     </div>
-</div>
 
     <div class="login-container">
         <h1>Login</h1>
 
-        
+
         <?php if (!empty($_SESSION['error_message'])): ?>
             <div class="error"><?php echo $_SESSION['error_message']; ?></div>
-            <?php unset($_SESSION['error_message']);?>
+            <?php unset($_SESSION['error_message']); ?>
         <?php endif; ?>
 
         <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
@@ -262,4 +264,5 @@ function increment_failed_attempts() {
     </div>
 
 </body>
+
 </html>
