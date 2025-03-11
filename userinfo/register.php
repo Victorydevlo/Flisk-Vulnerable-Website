@@ -1,32 +1,29 @@
 <?php
+session_start();
 include 'connection.php';
-
-$error_message = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = trim($_POST['username']);
-    $password = trim($_POST['password']);
+    $password = password_hash(trim($_POST['password']), PASSWORD_DEFAULT); // Secure hashing
     $email = trim($_POST['email']);
 
-    if (empty($username) || empty($password) || empty($email)) {
-        $error_message = "All fields are required.";
-    } else {
-        $hashed_password = password_hash($password, PASSWORD_DEFAULT);
-        $stmt = $conn->prepare("INSERT INTO users (username, password, email, is_admin) VALUES (?, ?, ?, 0)");
-        $stmt->bind_param("sss", $username, $hashed_password, $email);
+    $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
+    $stmt->bind_param("sss", $username, $password, $email);
 
-        if ($stmt->execute()) {
-            header("Location: login.php");
-            exit;
-        } else {
-            $error_message = "Something went wrong, please try again later.";
-            error_log("Error in registration: " . $stmt->error);
-        }
+    if ($stmt->execute()) {
+        $user_id = $stmt->insert_id; // Get new user's ID
 
-        $stmt->close();
+        $stmt = $conn->prepare("INSERT INTO leaderboard (user_id, points) VALUES (?, 0)");
+        $stmt->bind_param("i", $user_id);
+        $stmt->execute();
     }
+
+    $stmt->close();
+    header("Location: login.php");
+    exit();
 }
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
