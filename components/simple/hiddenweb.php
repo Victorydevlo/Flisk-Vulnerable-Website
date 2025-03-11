@@ -32,19 +32,25 @@
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-        <strong>What is GoBuster?</strong>
-    <p>GoBuster is a tool used to find hidden or unlisted pages on a website by brute-forcing URLs. It works by trying different combinations of words or paths, such as '/admin', '/config', or '/uploads', and checking if they exist on the server. This technique is commonly used by hackers or security researchers to discover hidden files or directories that could contain sensitive data or vulnerabilities.
-        if an attacker gets access to any of this information it could cause lots of trouble, expecially if they are able to extract Sensitive Informations.
-    </p>
+            <strong>What is GoBuster?</strong>
+            <p>GoBuster is a tool used to find hidden or unlisted pages on a website by brute-forcing URLs. It works by
+                trying different combinations of words or paths, such as '/admin', '/config', or '/uploads', and
+                checking if they exist on the server. This technique is commonly used by hackers or security researchers
+                to discover hidden files or directories that could contain sensitive data or vulnerabilities.
+                if an attacker gets access to any of this information it could cause lots of trouble, expecially if they
+                are able to extract Sensitive Informations.
+            </p>
 
-    <strong>What Can GoBuster Find?</strong>
-    <ul>
-        <li>Old or unused pages that were left behind.</li>
-        <li>Hidden admin panels.</li>
-        <li>Files or folders that should not be publicly accessible.</li>
-    </ul>
+            <strong>What Can GoBuster Find?</strong>
+            <ul>
+                <li>Old or unused pages that were left behind.</li>
+                <li>Hidden admin panels.</li>
+                <li>Files or folders that should not be publicly accessible.</li>
+            </ul>
 
-    <p>For example, an attacker may run GoBuster on your website to find access points that were not meant to be exposed. If an attacker discovers such pages, it can lead to security risks such as unauthorized access to sensitive information or exploitation of vulnerabilities in outdated software.</p>
+            <p>For example, an attacker may run GoBuster on your website to find access points that were not meant to be
+                exposed. If an attacker discovers such pages, it can lead to security risks such as unauthorized access
+                to sensitive information or exploitation of vulnerabilities in outdated software.</p>
 
         </div>
     </div>
@@ -55,23 +61,32 @@
         </div>
 
         <div class="task-content" id="content2">
-        <strong>Risks of Hidden Pages</strong>
-    <p>When hackers use GoBuster to find unused or hidden pages, they may be able to discover:</p>
-    <ul>
-        <li><strong>Sensitive Information:</strong> If you have old admin panels, backups, or configuration files still accessible, this could be a major security risk.</li>
-        <li><strong>Vulnerabilities:</strong> Hidden pages may contain outdated software or security holes that can be exploited.</li>
-        <li><strong>Access to Admin Functions:</strong> Hidden admin panels, if poorly protected, can be discovered and used to compromise the website.</li>
-    </ul>
+            <strong>Risks of Hidden Pages</strong>
+            <p>When hackers use GoBuster to find unused or hidden pages, they may be able to discover:</p>
+            <ul>
+                <li><strong>Sensitive Information:</strong> If you have old admin panels, backups, or configuration
+                    files still accessible, this could be a major security risk.</li>
+                <li><strong>Vulnerabilities:</strong> Hidden pages may contain outdated software or security holes that
+                    can be exploited.</li>
+                <li><strong>Access to Admin Functions:</strong> Hidden admin panels, if poorly protected, can be
+                    discovered and used to compromise the website.</li>
+            </ul>
 
-    <strong>How to Prevent This Risk</strong>
-    <p>To prevent hackers from exploiting hidden pages with GoBuster, consider the following best practices:</p>
-    <ul>
-        <li><strong>Hide Sensitive Pages:</strong> Avoid using simple names like '/admin', '/login', or '/config'. Instead, use less predictable paths to make it harder for tools like GoBuster to find them.</li>
-        <li><strong>Use Authentication:</strong> Secure sensitive pages with authentication (e.g., password protection) and ensure they are not publicly accessible.</li>
-        <li><strong>Limit Directory Listing:</strong> Disable directory listing on your server so that if an attacker stumbles upon a directory, they cannot view the files in it.</li>
-        <li><strong>Monitor Logs:</strong> Regularly review web server logs to spot any suspicious access attempts or patterns that could indicate someone is trying to find hidden pages.</li>
-        <li><strong>Limit Access:</strong> Restrict access to sensitive pages by IP address or require VPNs for users who need to access them.</li>
-    </ul>
+            <strong>How to Prevent This Risk</strong>
+            <p>To prevent hackers from exploiting hidden pages with GoBuster, consider the following best practices:</p>
+            <ul>
+                <li><strong>Hide Sensitive Pages:</strong> Avoid using simple names like '/admin', '/login', or
+                    '/config'. Instead, use less predictable paths to make it harder for tools like GoBuster to find
+                    them.</li>
+                <li><strong>Use Authentication:</strong> Secure sensitive pages with authentication (e.g., password
+                    protection) and ensure they are not publicly accessible.</li>
+                <li><strong>Limit Directory Listing:</strong> Disable directory listing on your server so that if an
+                    attacker stumbles upon a directory, they cannot view the files in it.</li>
+                <li><strong>Monitor Logs:</strong> Regularly review web server logs to spot any suspicious access
+                    attempts or patterns that could indicate someone is trying to find hidden pages.</li>
+                <li><strong>Limit Access:</strong> Restrict access to sensitive pages by IP address or require VPNs for
+                    users who need to access them.</li>
+            </ul>
         </div>
     </div>
 
@@ -83,23 +98,25 @@
             <div class="input-container">
                 <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
                 <p>What tool can a hacker or attacker use to extract information from a website?
-                    </p>
+                </p>
                 <input type="text" id="userInput" placeholder="Type your answer here...">
                 <button onclick="checkAnswer()">Submit</button>
                 <p class="result" id="result"></p>
             </div>
 
             <div class="input-container">
-                <p>What type of information should a developer make sure that they keep secure to prevent this attack from being a serious one?</p>
+                <p>What type of information should a developer make sure that they keep secure to prevent this attack
+                    from being a serious one?</p>
                 <input type="text" id="userInputs" placeholder="Type your answer here...">
                 <button onclick="checkAnswer1()">Submit</button>
                 <p class="result" id="results"></p>
             </div>
 
-            
-            <div class="input-container">
-            <iframe src="http://132.145.31.21:6080/vnc.html" width="1024" height="768"></iframe>
 
+            <div class="input-container">
+                <p>Click the button to get the VNC IP and Port</p>
+                <button onclick="showVncInfo()">Get VNC IP & Port</button>
+                <div id="vncResult" class="result"></div>
                 <input type="text" id="userInputs2" placeholder="Type your answer here...">
                 <button onclick="checkAnswer2()">Submit</button>
                 <p class="result" id="results2"></p>
@@ -107,6 +124,12 @@
         </div>
     </div>
     <script>
+
+        function showVncInfo() {
+            var vncInfo = "132.145.31.21:5901";
+            document.getElementById("vncResult").innerText = "VNC IP and Port: " + vncInfo;
+        }
+
         function toggleContent(id) {
             const content = document.getElementById(id);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
@@ -302,5 +325,26 @@
 
     .navbar .auth-buttons button:hover {
         background-color: #0056b3;
+    }
+</style>
+
+<style>
+    .btn {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn:hover {
+        background-color: #45a049;
+    }
+
+    .result {
+        margin-top: 20px;
+        font-size: 20px;
+        font-weight: bold;
     }
 </style>
