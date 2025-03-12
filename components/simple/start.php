@@ -13,9 +13,8 @@ session_start();
 </head>
 
 <body>
-    <div class="navbar"
-        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #1f1f1f; color: white;">
-        <div class="logo" style="font-size: 1.5rem; font-weight: bold; gap: 1.2rem;">
+    <div class="navbar">
+        <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
@@ -31,12 +30,8 @@ session_start();
                     </div>
                 </div>
             <?php else: ?>
-                <a href="userinfo/login.php">
-                    <button>Login</button>
-                </a>
-                <a href="userinfo/register.php">
-                    <button>Register</button>
-                </a>
+                <a href="../../userinfo/login.php"><button>Login</button></a>
+                <a href="../../userinfo/register.php"><button>Register</button></a>
             <?php endif; ?>
         </div>
     </div>
@@ -101,7 +96,7 @@ session_start();
                     .then(response => response.json())
                     .then(data => {
                         if (data.status === 'success') {
-                            result.textContent = data.message; // Show message (prevents multiple submissions)
+                            result.textContent = data.message;
                         } else {
                             result.style.color = 'red';
                             result.textContent = data.message;
@@ -295,3 +290,52 @@ session_start();
 </body>
 
 </html>
+
+
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #1e1e1e;
+        color: #f4f4f4;
+    }
+
+    .navbar {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #f4f4f4;
+        padding: 10px 20px;
+        position: relative;
+        z-index: 2;
+    }
+
+    .navbar .logo {
+        font-size: 24px;
+        font-weight: bold;
+        flex-grow: center;
+    }
+
+
+    .navbar .auth-buttons {
+        position: absolute;
+        right: 10px;
+        display: flex;
+        gap: 10px;
+    }
+
+    .navbar .auth-buttons button {
+        background-color: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 14px;
+    }
+
+    .navbar .auth-buttons button:hover {
+        background-color: #0056b3;
+    }
+</style>

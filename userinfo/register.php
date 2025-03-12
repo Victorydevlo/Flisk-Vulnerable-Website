@@ -9,14 +9,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = $conn->prepare("INSERT INTO users (username, password, email) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $password, $email);
+    $stmt->execute();
+    $user_id = $stmt->insert_id;
+    $stmt->close();
 
-    if ($stmt->execute()) {
-        $user_id = $stmt->insert_id; // Get new user's ID
-
-        $stmt = $conn->prepare("INSERT INTO leaderboard (user_id, points) VALUES (?, 0)");
-        $stmt->bind_param("i", $user_id);
-        $stmt->execute();
-    }
+    $stmt = $conn->prepare("INSERT INTO leaderboard (user_id, username, points) VALUES (?, ?, 0)");
+    $stmt->bind_param("is", $user_id, $username);
+    $stmt->execute();
 
     $stmt->close();
     header("Location: login.php");
