@@ -22,7 +22,6 @@ if ($check_stmt->num_rows > 0) {
     $response['status'] = 'success';
     $response['message'] = 'Correct! You have already claimed points for this flag.';
 } else {
-    $points_earned = 5;
     $insert_stmt = $conn->prepare("INSERT INTO flag_submissions (user_id, flag, submitted) VALUES (?, ?, 1)");
     $insert_stmt->bind_param("is", $user_id, $correct_flag);
     $insert_stmt->execute();
