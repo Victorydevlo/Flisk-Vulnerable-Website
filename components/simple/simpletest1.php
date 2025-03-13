@@ -3,7 +3,6 @@ session_start();
 include '../../userinfo/connection.php';
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,7 +14,7 @@ include '../../userinfo/connection.php';
 </head>
 
 <body>
-<div class="navbar">
+    <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -39,40 +38,44 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Hidden Hacks</div>
+        <div class="title">Your Journey</div>
     </div>
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
-            <h3>Task 1: Finding Hidden Flags in an Image</h3>
+            <h3>How this works</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>Hiding a flag inside an image, a technique known as
-                <strong>steganography</strong>
-                , is a method of concealing information within an image file in such a way that it is not visible to the
-                human eye.
+            <p>Welcome to your Learner Path
+                <strong>Flag Example</strong>
+                Here you will learn how this website works and how you capture the flags.
             </p>
-            <!-- Task Content Here -->
+            <ul>
+                <li>
+                    <strong>How it works:</strong>
+                    you will be asked to do specific tasks which will be explained to you very briefly on each section,
+                    and the flag will be hidden in each section. For example, the answer for this exercise is
+                    flag{first}.
+                </li>
+            </ul>
         </div>
     </div>
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content2')">
-            <h3>Task 2: Your Turn</h3>
+            <h3>Flag Insertion</h3>
         </div>
 
         <div class="task-content" id="content2">
-            <div class="input-container">
-                <p>In this exercise you'll be tasked to find the flag inside of this file and once you have found it you
-                    should paste it under here.</p>
-                <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
-                <p>What’s the Flag?</p>
-                <form id="flagForm" action="flag_submission.php" method="POST">
+            <form id="flagForm" action="flagtwo_submission.php" method="POST">
+                <div class="input-container">
+                    <p>What's the Flag?</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
-                    <button type="submit">Submit</button>
-                </form>
-                <p class="result" id="result"></p>
-            </div>
+                    <button type="submit" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
+            </form>
         </div>
     </div>
 
@@ -85,39 +88,47 @@ include '../../userinfo/connection.php';
         document.getElementById('flagForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
-            const input = document.getElementById('userInput').value.trim().toLowerCase();
+            const input = document.getElementById('userInput');
             const result = document.getElementById('result');
+            const submitButton = document.getElementById('submitBtn');
+            const loadingMessage = document.getElementById('loadingMessage');
 
             result.style.color = 'orange';
             result.textContent = 'Submitting your flag...';
+            
 
-            fetch('/flag_sub/flagtwo_submission.php', {
+            fetch('flagtwo_submission.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `flag=${encodeURIComponent(input)}`
+                body: `flag=${encodeURIComponent(input.value.trim())}`
             })
-                .then(response => response.json())
+                .then(response => response.json())  // Parse JSON response
                 .then(data => {
                     if (data.status === 'success') {
                         result.style.color = 'green';
                         result.textContent = data.message;
+                        input.disabled = true;
+                        submitButton.disabled = true;
                     } else {
                         result.style.color = 'red';
                         result.textContent = data.message;
                     }
+                    loadingMessage.style.display = 'none';  // Hide loading message after submission
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     result.style.color = 'red';
                     result.textContent = 'Something went wrong, please try again.';
+                    loadingMessage.style.display = 'none';  // Hide loading message on error
                 });
         });
+
     </script>
 
     <style>
         .header {
             height: 200px;
-            background: linear-gradient(to right, #0b1a30, #0d6dd6);
+            background: linear-gradient(to right, rgb(11, 48, 35), rgb(13, 214, 150));
             display: flex;
             align-items: center;
             justify-content: center;
@@ -189,9 +200,29 @@ include '../../userinfo/connection.php';
             cursor: pointer;
             border: none;
             padding: 15px 32px;
-            float: center;
             margin-top: 10px;
         }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #1e1e1e;
+            color: #f4f4f4;
+        }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            background-color: #1f1f1f;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
         .auth-buttons {
             display: flex;
             align-items: center;
@@ -262,9 +293,6 @@ include '../../userinfo/connection.php';
             display: block;
         }
     </style>
-</body>
-
-</body>
 
 </html>
 

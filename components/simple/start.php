@@ -70,6 +70,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
                     <p>What's the Flag?</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+
                     <button type="submit" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                 </div>
@@ -119,7 +120,6 @@ include '../../userinfo/connection.php';
                     result.textContent = 'Something went wrong, please try again.';
                 });
         });
-
     </script>
 
     <style>
