@@ -8,19 +8,26 @@
 </head>
 
 <body>
-    <div class="navbar"
-        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #1f1f1f; color: white;">
-        <div class="logo" style="font-size: 1.5rem; font-weight: bold; gap: 1.2rem;">
+<div class="navbar">
+        <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
         <div class="auth-buttons">
-            <a href="userinfo/login.php">
-                <button>Login</button>
-            </a>
-            <a href="userinfo/login.php">
-                <button>Register</button>
-            </a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <div class="user-dropdown">
+                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="../../profile.php"><i class="fas fa-user"></i> Profile</a>
+                        <a href="../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a href="../../userinfo/login.php"><button>Login</button></a>
+                <a href="../../userinfo/register.php"><button>Register</button></a>
+            <?php endif; ?>
         </div>
     </div>
 

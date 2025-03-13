@@ -1,3 +1,9 @@
+<?php
+session_start();
+include '../../userinfo/connection.php';
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,25 +14,33 @@
 </head>
 
 <body>
-    <div class="navbar"
-        style="display: flex; justify-content: space-between; align-items: center; padding: 10px 20px; background-color: #1f1f1f; color: white;">
-        <div class="logo" style="font-size: 1.5rem; font-weight: bold; gap: 1.2rem;">
+<div class="navbar">
+        <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
         <div class="auth-buttons">
-            <a href="userinfo/login.php">
-                <button>Login</button>
-            </a>
-            <a href="userinfo/login.php">
-                <button>Register</button>
-            </a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <div class="user-dropdown">
+                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="../../profile.php"><i class="fas fa-user"></i> Profile</a>
+                        <a href="../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a href="../../userinfo/login.php"><button>Login</button></a>
+                <a href="../../userinfo/register.php"><button>Register</button></a>
+            <?php endif; ?>
         </div>
     </div>
 
     <div class="header">
         <div class="title">Hidden Hacks</div>
     </div>
+
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
             <h3>Task 1: Finding Hidden Flags in an Image</h3>
@@ -36,39 +50,8 @@
                 <strong>steganography</strong>
                 , is a method of concealing information within an image file in such a way that it is not visible to the
                 human eye.
-                Here’s a more professional breakdown of how it works and its uses:
             </p>
-            <ul>
-                <li>
-                    <strong>How it works:</strong>
-                    The process involves embedding a flag or secret data within the pixel values or metadata of an image
-                    file. The image itself remains visually unchanged,
-                    but the hidden information is encoded into the file structure, which can only be retrieved using the
-                    right decoding method.
-                </li>
-                <li>
-                    <strong>Common uses:</strong>
-                    <ul>
-                        <li><strong>Data exfiltration:</strong> Hackers might use steganography to secretly transfer
-                            data out of a system without detection by security measures, as the image file appears
-                            normal.</li>
-                        <li><strong>Bypassing security filters:</strong> Since steganographic images often look like
-                            regular media files, they can be used to bypass firewalls, intrusion detection systems, or
-                            antivirus software that scans for suspicious activity.</li>
-                        <li><strong>Covert communication:</strong> In some cases, steganography is used for secure
-                            communication between parties without alerting eavesdroppers.</li>
-                        <li><strong>Capture the Flag (CTF) challenges:</strong> In ethical hacking or cybersecurity
-                            competitions, participants often hide flags in images as part of the challenge, encouraging
-                            participants to uncover hidden information using various tools and techniques.</li>
-                            <li><strong>Tools:</strong> Tools like Hex Editor can help you see and read through images hex and that is were hacker hide    
-                            flags in an undetectable way.</li>
-                    </ul>
-                </li>
-            </ul>
-            <p>Steganography provides a clever way to hide data in plain sight while evading detection, making it a
-                useful technique for both legitimate and malicious purposes.</p>
-
-            <img src="../../images/hex.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
+            <!-- Task Content Here -->
         </div>
     </div>
 
@@ -79,11 +62,14 @@
 
         <div class="task-content" id="content2">
             <div class="input-container">
-                <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it you should paste it under here.</p>
+                <p>In this exercise you'll be tasked to find the flag inside of this file and once you have found it you
+                    should paste it under here.</p>
                 <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
-                <p>Whats the Flag?</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
-                <button onclick="checkAnswer()">Submit</button>
+                <p>What’s the Flag?</p>
+                <form id="flagForm" action="flag_submission.php" method="POST">
+                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <button type="submit">Submit</button>
+                </form>
                 <p class="result" id="result"></p>
             </div>
         </div>
@@ -95,19 +81,38 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
 
-        function checkAnswer() {
+        document.getElementById('flagForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
             const input = document.getElementById('userInput').value.trim().toLowerCase();
             const result = document.getElementById('result');
 
-            if (input === 'flag{the_answer_is_clear_now}') {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+            result.style.color = 'orange';
+            result.textContent = 'Submitting your flag...';
+
+            fetch('/flag_sub/flagtwo_submission.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `flag=${encodeURIComponent(input)}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        result.style.color = 'green';
+                        result.textContent = data.message;
+                    } else {
+                        result.style.color = 'red';
+                        result.textContent = data.message;
+                    }
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.style.color = 'red';
+                    result.textContent = 'Something went wrong, please try again.';
+                });
+        });
     </script>
+
     <style>
         .header {
             height: 200px;
@@ -153,7 +158,6 @@
 
         .input-container {
             margin-top: 10px;
-            
         }
 
         .input-container input {
@@ -162,8 +166,6 @@
             border-radius: 4px;
             width: 90%;
             color: #1e293b;
-            
-
         }
 
         .result {
@@ -171,14 +173,13 @@
             font-weight: bold;
         }
 
-        input[type="text"],
-        {
+        input[type="text"] {
             margin-bottom: 15px;
             padding: 10px;
             font-size: 16px;
             border: 1px solid #ccc;
             border-radius: 4px;
-            text-align: center
+            text-align: center;
         }
 
         button {
@@ -191,7 +192,7 @@
             margin-top: 10px;
         }
     </style>
-    </head>
+</body>
 
 </body>
 
