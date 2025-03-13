@@ -1,5 +1,6 @@
 <?php
 session_start();
+include '../../userinfo/connection.php';
 ?>
 
 <!DOCTYPE html>
@@ -44,15 +45,16 @@ session_start();
             <h3>How this works</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>Welsome to your Learner Path
+            <p>Welcome to your Learner Path
                 <strong>Flag Example</strong>
-                Here you will learn how this website works and how you catpure the flags
+                Here you will learn how this website works and how you capture the flags.
             </p>
             <ul>
                 <li>
                     <strong>How it works:</strong>
-                    you will be asked to do specific tasks which will be explained to you very briefly on each section
-                    and the flag will be hidden in each section for example the answer for this exercise is flag{firtst}
+                    you will be asked to do specific tasks which will be explained to you very briefly on each section,
+                    and the flag will be hidden in each section. For example, the answer for this exercise is
+                    flag{first}.
                 </li>
             </ul>
         </div>
@@ -64,12 +66,15 @@ session_start();
         </div>
 
         <div class="task-content" id="content2">
-            <div class="input-container">
-                <p>Whats the Flag?</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
-                <button onclick="checkAnswer()">Submit</button>
-                <p class="result" id="result"></p>
-            </div>
+            <form id="flagForm" action="flag_submission.php" method="POST">
+                <div class="input-container">
+                    <p>What's the Flag?</p>
+                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <button type="submit" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                </div>
+            </form>
+
         </div>
     </div>
 
@@ -78,40 +83,45 @@ session_start();
             const content = document.getElementById(id);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
-        function checkAnswer() {
+
+        document.getElementById('flagForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
             const input = document.getElementById('userInput');
             const result = document.getElementById('result');
+            const submitButton = document.getElementById('submitBtn');
             const flagValue = input.value.trim().toLowerCase();
+            const userId = document.querySelector('input[name="user_id"]')?.value || '';
 
-            if (flagValue === 'flag{firtst}') {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                input.disabled = true;
+            result.style.color = 'orange';
+            result.textContent = 'Submitting your flag...';
 
-                fetch('flag_submission.php', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: 'flag=' + encodeURIComponent(flagValue)
+            fetch('flag_submission.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `flag=${encodeURIComponent(flagValue)}&user_id=${encodeURIComponent(userId)}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        result.style.color = 'green';
+                        result.textContent = data.message;
+                        input.disabled = true;
+                        submitButton.disabled = true;
+                    } else {
+                        result.style.color = 'red';
+                        result.textContent = data.message;
+                    }
                 })
-                    .then(response => response.json())
-                    .then(data => {
-                        if (data.status === 'success') {
-                            result.textContent = data.message;
-                        } else {
-                            result.style.color = 'red';
-                            result.textContent = data.message;
-                        }
-                    })
-                    .catch(error => console.error('Error:', error));
-
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
-
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.style.color = 'red';
+                    result.textContent = 'Something went wrong, please try again.';
+                });
+        });
 
     </script>
+
     <style>
         .header {
             height: 200px;
@@ -157,7 +167,6 @@ session_start();
 
         .input-container {
             margin-top: 10px;
-
         }
 
         .input-container input {
@@ -166,8 +175,6 @@ session_start();
             border-radius: 4px;
             width: 90%;
             color: #1e293b;
-
-
         }
 
         .result {
@@ -175,14 +182,13 @@ session_start();
             font-weight: bold;
         }
 
-        input[type="text"],
-        {
-        margin-bottom: 15px;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        text-align: center
+        input[type="text"] {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            text-align: center;
         }
 
         button {
@@ -191,7 +197,6 @@ session_start();
             cursor: pointer;
             border: none;
             padding: 15px 32px;
-            float: center;
             margin-top: 10px;
         }
 
@@ -285,7 +290,6 @@ session_start();
             display: block;
         }
     </style>
-    </head>
 
 </body>
 

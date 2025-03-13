@@ -25,7 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             exit;
         }
 
-        $stmt = $conn->prepare("SELECT username, password, is_admin FROM users WHERE username = ?");
+        $stmt = $conn->prepare("SELECT id, username, password, is_admin FROM users WHERE username = ?");
 
         if (!$stmt) {
             die("Database error: " . $conn->error);
@@ -39,12 +39,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $user = $result->fetch_assoc();
 
             if (password_verify($password, $user['password'])) {
-                $_SESSION['username'] = $user['username'];
-                $_SESSION['is_admin'] = $user['is_admin'];
+                $_SESSION['user_id'] = $user['id'];  // Store the user_id in session
+                $_SESSION['username'] = $user['username']; 
+                $_SESSION['is_admin'] = $user['is_admin']; 
 
-                unset($_SESSION['failed_attempts']);
+                unset($_SESSION['failed_attempts']); // Reset failed attempts on successful login
 
-                header("Location: ../index.php");
+                header("Location: ../index.php");  // Redirect to home page after successful login
                 exit;
             } else {
                 $_SESSION['error_message'] = "Incorrect password. Please try again.";
@@ -56,13 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
 
         $stmt->close();
-        header("Location: " . $_SERVER['PHP_SELF']);
+        header("Location: " . $_SERVER['PHP_SELF']);  // Redirect to self to re-render the page
         exit;
     }
 }
 
-function increment_failed_attempts()
-{
+function increment_failed_attempts() {
     if (!isset($_SESSION['failed_attempts'])) {
         $_SESSION['failed_attempts'] = 0;
     }
@@ -73,8 +73,6 @@ function increment_failed_attempts()
     }
 }
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -119,49 +117,6 @@ function increment_failed_attempts()
             display: flex;
             align-items: center;
             gap: 15px;
-        }
-
-        .user-dropdown {
-            position: relative;
-            display: inline-block;
-        }
-
-        .user-icon {
-            background: none;
-            border: none;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-        }
-
-        .dropdown-menu {
-            display: none;
-            position: absolute;
-            right: 0;
-            background-color: #2a2a2a;
-            min-width: 150px;
-            border-radius: 5px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-        }
-
-        .dropdown-menu a {
-            display: block;
-            padding: 10px;
-            color: white;
-            text-decoration: none;
-            transition: background 0.3s;
-        }
-
-        .dropdown-menu a.logout {
-            color: red;
-        }
-
-        .dropdown-menu a:hover {
-            background-color: #3a3a3a;
-        }
-
-        .user-dropdown:hover .dropdown-menu {
-            display: block;
         }
 
         .login-container {
@@ -246,7 +201,6 @@ function increment_failed_attempts()
 
     <div class="login-container">
         <h1>Login</h1>
-
 
         <?php if (!empty($_SESSION['error_message'])): ?>
             <div class="error"><?php echo $_SESSION['error_message']; ?></div>
