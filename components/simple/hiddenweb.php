@@ -296,6 +296,75 @@
             float: center;
             margin-top: 10px;
         }
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #333;
+            border-radius: 8px;
+            min-width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #444;
+        }
+
+        .logout {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        .logout:hover {
+            background: darkred;
+        }
+
+        .user-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .user-dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
     </head>
 
