@@ -38,26 +38,53 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Your Journey</div>
+        <div class="title">Hidden Hacks</div>
     </div>
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
-            <h3>How this works</h3>
+            <h3>Task 1: Finding Hidden Flags in an Image</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>Welcome to your Learner Path
-                <strong>Flag Example</strong>
-                Here you will learn how this website works and how you capture the flags.
+            <p>Hiding a flag inside an image, a technique known as
+                <strong>steganography</strong>
+                , is a method of concealing information within an image file in such a way that it is not visible to the
+                human eye.
+                Here’s a more professional breakdown of how it works and its uses:
             </p>
             <ul>
                 <li>
                     <strong>How it works:</strong>
-                    you will be asked to do specific tasks which will be explained to you very briefly on each section,
-                    and the flag will be hidden in each section. For example, the answer for this exercise is
-                    flag{first}.
+                    The process involves embedding a flag or secret data within the pixel values or metadata of an image
+                    file. The image itself remains visually unchanged,
+                    but the hidden information is encoded into the file structure, which can only be retrieved using the
+                    right decoding method.
+                </li>
+                <li>
+                    <strong>Common uses:</strong>
+                    <ul>
+                        <li><strong>Data exfiltration:</strong> Hackers might use steganography to secretly transfer
+                            data out of a system without detection by security measures, as the image file appears
+                            normal.</li>
+                        <li><strong>Bypassing security filters:</strong> Since steganographic images often look like
+                            regular media files, they can be used to bypass firewalls, intrusion detection systems, or
+                            antivirus software that scans for suspicious activity.</li>
+                        <li><strong>Covert communication:</strong> In some cases, steganography is used for secure
+                            communication between parties without alerting eavesdroppers.</li>
+                        <li><strong>Capture the Flag (CTF) challenges:</strong> In ethical hacking or cybersecurity
+                            competitions, participants often hide flags in images as part of the challenge, encouraging
+                            participants to uncover hidden information using various tools and techniques.</li>
+                        <li><strong>Tools:</strong> Tools like Hex Editor can help you see and read through images hex
+                            and that is were hacker hide
+                            flags in an undetectable way.</li>
+                    </ul>
                 </li>
             </ul>
+            <p>Steganography provides a clever way to hide data in plain sight while evading detection, making it a
+                useful technique for both legitimate and malicious purposes.</p>
+
+            <img src="../../images/hex.jpg" style="width: 750px;"
+                class="  display: block; margin-left: auto; margin-right: auto;">
         </div>
     </div>
 
@@ -69,6 +96,9 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content2">
             <form id="flagForm" action="flagsub/flagtwo_submission.php" method="POST">
                 <div class="input-container">
+                    <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it
+                        you should paste it under here.</p>
+                    <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
                     <p>What's the Flag?</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
                     <button type="submit" id="submitBtn">Submit</button>
@@ -95,7 +125,7 @@ include '../../userinfo/connection.php';
 
             result.style.color = 'orange';
             result.textContent = 'Submitting your flag...';
-            
+
 
             fetch('flagsub/flagtwo_submission.php', {
                 method: 'POST',
@@ -128,7 +158,7 @@ include '../../userinfo/connection.php';
     <style>
         .header {
             height: 200px;
-            background: linear-gradient(to right, rgb(11, 48, 35), rgb(13, 214, 150));
+            background: linear-gradient(to right, rgb(11, 28, 48), rgb(13, 83, 214));
             display: flex;
             align-items: center;
             justify-content: center;
