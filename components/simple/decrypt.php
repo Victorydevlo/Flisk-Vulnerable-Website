@@ -9,7 +9,7 @@
 </head>
 
 <body>
-<div class="navbar">
+    <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -102,31 +102,34 @@
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <div class="input-container">
-                <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn decode
-                    it.</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
-                <button onclick="checkAnswer()">Submit</button>
-                <p class="result" id="result"></p>
-            </div>
+            <form id="flagForm" action="flagsub/flagdecrypt.php" method="POST">
+                <div class="input-container">
+                    <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
+                    <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn
+                        decode
+                        it.</p>
+                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <button onclick="checkAnswer()">Submit</button>
+                    <p class="result" id="result"></p>
+                </div>
 
-            <div class="input-container">
-                <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
-                    it.</p>
-                <input type="text" id="userInputs" placeholder="Type your answer here...">
-                <button onclick="checkAnswer1()">Submit</button>
-                <p class="result" id="results"></p>
-            </div>
+                <div class="input-container">
+                    <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
+                        it.</p>
+                    <input type="text" id="userInput" name="flag2" placeholder="Type your answer here..." required>
+                    <button onclick="checkAnswer1()">Submit</button>
+                    <p class="result" id="results"></p>
+                </div>
 
-            
-            <div class="input-container">
-                <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
-                    this.</p>
-                <input type="text" id="userInputs2" placeholder="Type your answer here...">
-                <button onclick="checkAnswer2()">Submit</button>
-                <p class="result" id="results2"></p>
-            </div>
+
+                <div class="input-container">
+                    <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
+                        this.</p>
+                    <input type="text" id="userInput" name="flag3" placeholder="Type your answer here..." required>
+                    <button onclick="checkAnswer2()">Submit</button>
+                    <p class="result" id="results2"></p>
+                </div>
+            </form>
         </div>
     </div>
     <script>
@@ -134,7 +137,7 @@
             const content = document.getElementById(id);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
-        
+
         document.getElementById('flagForm').addEventListener('submit', function (e) {
             e.preventDefault();
 
@@ -145,7 +148,7 @@
 
             result.style.color = 'orange';
             result.textContent = 'Submitting your flag...';
-            
+
 
             fetch('flagsub/flagtwo_submission.php', {
                 method: 'POST',
