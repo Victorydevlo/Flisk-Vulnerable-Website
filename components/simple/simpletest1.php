@@ -67,7 +67,7 @@ include '../../userinfo/connection.php';
         </div>
 
         <div class="task-content" id="content2">
-            <form id="flagForm" action="flagtwo_submission.php" method="POST">
+            <form id="flagForm" action="/flag_sub/flagtwo_submission.php" method="POST">
                 <div class="input-container">
                     <p>What's the Flag?</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
@@ -97,7 +97,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             
 
-            fetch('flagtwo_submission.php', {
+            fetch('/flag_sub/flagtwo_submission.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `flag=${encodeURIComponent(input.value.trim())}`
