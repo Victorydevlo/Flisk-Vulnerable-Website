@@ -1,3 +1,8 @@
+<?php
+session_start();
+include '../../userinfo/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,8 +16,10 @@
 <body>
     <div class="navbar">
         <div class="logo">
-            <span style="color: white;">Flisk</span>
-            <span style="color: blue;">JS</span>
+            <a href="../../index.php" style="color: white; text-decoration: none;">
+                <span>Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
         </div>
         <div class="auth-buttons">
             <?php if (isset($_SESSION['username'])): ?>
@@ -104,31 +111,29 @@
         <div class="task-content" id="content3">
             <form id="flagForm" action="flagsub/flagdecrypt.php" method="POST">
                 <div class="input-container">
-                    <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                    <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn
-                        decode
-                        it.</p>
-                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
-                    <button onclick="checkAnswer()">Submit</button>
+                    <p>Decode this message: "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}"</p>
+                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </div>
 
                 <div class="input-container">
-                    <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
-                        it.</p>
-                    <input type="text" id="userInput" name="flag2" placeholder="Type your answer here..." required>
-                    <button onclick="checkAnswer1()">Submit</button>
+                    <p>Decode this message: "ipcu{roprycfhejwet!}"</p>
+                    <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn2">Submit</button>
                     <p class="result" id="results"></p>
+                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
                 </div>
-
 
                 <div class="input-container">
-                    <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
-                        this.</p>
-                    <input type="text" id="userInput" name="flag3" placeholder="Type your answer here..." required>
-                    <button onclick="checkAnswer2()">Submit</button>
+                    <p>Decode this message: "uozt{blfzivurmzoobznzhgvizggsrh}"</p>
+                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn3">Submit</button>
                     <p class="result" id="results2"></p>
+                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
                 </div>
+
             </form>
         </div>
     </div>
@@ -138,43 +143,57 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
 
-        document.getElementById('flagForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const input = document.getElementById('userInput');
-            const result = document.getElementById('result');
-            const submitButton = document.getElementById('submitBtn');
-            const loadingMessage = document.getElementById('loadingMessage');
+        function submitFlag(inputId, resultId, buttonId, loadingId, flagName) {
+            const input = document.getElementById(inputId);
+            const result = document.getElementById(resultId);
+            const button = document.getElementById(buttonId);
+            const loadingMessage = document.getElementById(loadingId);
 
             result.style.color = 'orange';
             result.textContent = 'Submitting your flag...';
+            loadingMessage.style.display = 'inline';
 
-
-            fetch('flagsub/flagtwo_submission.php', {
+            fetch('flagsub/flagdecrypt.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                body: `flag=${encodeURIComponent(input.value.trim())}`
+                body: `${flagName}=${encodeURIComponent(input.value.trim())}`
             })
-                .then(response => response.json())  // Parse JSON response
+                .then(response => response.json())
                 .then(data => {
                     if (data.status === 'success') {
                         result.style.color = 'green';
                         result.textContent = data.message;
                         input.disabled = true;
-                        submitButton.disabled = true;
+                        button.disabled = true;
                     } else {
                         result.style.color = 'red';
                         result.textContent = data.message;
                     }
-                    loadingMessage.style.display = 'none';  // Hide loading message after submission
+                    loadingMessage.style.display = 'none';
                 })
                 .catch(error => {
                     console.error('Error:', error);
                     result.style.color = 'red';
                     result.textContent = 'Something went wrong, please try again.';
-                    loadingMessage.style.display = 'none';  // Hide loading message on error
+                    loadingMessage.style.display = 'none';
                 });
+        }
+
+        document.getElementById('submitBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
         });
+
+        document.getElementById('submitBtn2').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
+        });
+
+        document.getElementById('submitBtn3').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
+        });
+
 
     </script>
     <style>
