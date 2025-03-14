@@ -1,8 +1,7 @@
 <?php
 session_start();
-include '../../userinfo/connection.php';
+include '../../../userinfo/connection.php';
 
-// Ensure the session is valid and the user is logged in
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(["status" => "error", "message" => "Session expired. Please log in again."]);
     exit;
@@ -10,11 +9,13 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $flag = isset($_POST['flag']) ? strtolower(trim($_POST['flag'])) : '';
-$correct_flag = "flag{the_answer_is_clear_now}";  // Correct flag for this task
+$correct_flags = [
+    'flag{younowunderstandtheconceptofcaesar}',
+    'flag{okyouareastar!}',
+    'flag{youarefinallyamasteratthis}'
+];
 
-// Validate if the flag matches
 if ($flag === $correct_flag) {
-    // Flag submission validation
     $stmt = $conn->prepare("SELECT id FROM flag_submissions WHERE user_id = ? AND flag = ?");
     $stmt->bind_param("is", $user_id, $flag);
     $stmt->execute();
@@ -23,14 +24,12 @@ if ($flag === $correct_flag) {
     if ($stmt->num_rows > 0) {
         echo json_encode(["status" => "error", "message" => "You have already claimed points for this flag."]);
     } else {
-        // Insert flag submission
         $stmt->close();
         $stmt = $conn->prepare("INSERT INTO flag_submissions (user_id, flag) VALUES (?, ?)");
         $stmt->bind_param("is", $user_id, $flag);
         $stmt->execute();
         $stmt->close();
 
-        // Add points to the leaderboard
         $points_earned = 10;
         $stmt = $conn->prepare("SELECT points FROM leaderboard WHERE user_id = ?");
         $stmt->bind_param("i", $user_id);

@@ -135,60 +135,43 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
         
+        document.getElementById('flagForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-        function checkAnswer() {
-            const correctFlag = 'flag{younowunderstandtheconceptofcaesar}';
-            const inputField = document.getElementById('userInput');
-            const input = inputField.value.trim();
+            const input = document.getElementById('userInput');
             const result = document.getElementById('result');
+            const submitButton = document.getElementById('submitBtn');
+            const loadingMessage = document.getElementById('loadingMessage');
 
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+            result.style.color = 'orange';
+            result.textContent = 'Submitting your flag...';
+            
 
-        function checkAnswer1() {
-            const correctFlag = 'flag{okyouareastar!}';
-            const inputField = document.getElementById('userInputs');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results');
-
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
-
-        function checkAnswer2() {
-            const correctFlag = 'flag{youarefinallyamasteratthis}';
-            const inputField = document.getElementById('userInputs2');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results2');
-
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+            fetch('flagsub/flagtwo_submission.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `flag=${encodeURIComponent(input.value.trim())}`
+            })
+                .then(response => response.json())  // Parse JSON response
+                .then(data => {
+                    if (data.status === 'success') {
+                        result.style.color = 'green';
+                        result.textContent = data.message;
+                        input.disabled = true;
+                        submitButton.disabled = true;
+                    } else {
+                        result.style.color = 'red';
+                        result.textContent = data.message;
+                    }
+                    loadingMessage.style.display = 'none';  // Hide loading message after submission
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.style.color = 'red';
+                    result.textContent = 'Something went wrong, please try again.';
+                    loadingMessage.style.display = 'none';  // Hide loading message on error
+                });
+        });
 
     </script>
     <style>
