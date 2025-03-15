@@ -14,7 +14,7 @@ include '../../userinfo/connection.php';
 </head>
 
 <body>
-<div class="navbar">
+    <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -87,7 +87,8 @@ include '../../userinfo/connection.php';
         </div>
         <div class="task-content" id="content2">
             <p>Today, you’ll be testing for vulnerabilities in a simulated bank website. Throughout the session, you’ll
-                be asked a series of questions designed to help you identify and exploit weaknesses within the system.</p>
+                be asked a series of questions designed to help you identify and exploit weaknesses within the system.
+            </p>
             <p>Your goal is to carefully analyze the site and capture the hidden <span class="important">flag</span>,
                 which is worth <span class="important">10 points</span>.</p>
             <p class="note">Take your time, stay sharp, and try your best to uncover any vulnerabilities. Good luck!</p>
