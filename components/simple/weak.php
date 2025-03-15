@@ -71,6 +71,13 @@ include '../../userinfo/connection.php';
                 To avoid these issues, developers should ensure that proper validation mechanisms are in place to
                 protect users and the integrity of the financial system.
             </p>
+
+            <p>An attacker could manipulate the request using browser developer tools (like inspecting network requests)
+                to send a transfer amount. If the back-end doesn't validate or enforce this correctly, the transfer
+                could be processed, and the attacker would successfully move money without proper checks.</p>
+            <p>This kind of vulnerability is called <span class="vulnerability-name">Improper Input Validation</span>
+                combined with <span class="vulnerability-name">Insecure Direct Object References (IDOR)</span>.</p>
+
         </div>
     </div>
 
@@ -100,10 +107,7 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <form id="flagForm" action="flagsub/flagweak.php" method="POST">
                 <div class="input-container">
-                    <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                    <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn
-                        decode
-                        it.</p>
+                    <p>When an attacker is able to abuse inputs on a system and exploit it how they want its called?</p>
                     <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
@@ -119,14 +123,20 @@ include '../../userinfo/connection.php';
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </div>
 
-
                 <div class="input-container">
-                    <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
-                        this.</p>
+                    <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn3">Submit</button>
                     <p class="result" id="results2"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
+
+                <div class="input-container">
+                    <p>Click this button to be sent to a dummy website to test your knowledge</p>
+                    <a>
+                        <button id="vncButton" onclick="window.open('websites/index.php', '_blank')">Click Me</button>
+                    </a>
+
                 </div>
             </form>
         </div>
