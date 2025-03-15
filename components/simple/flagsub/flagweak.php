@@ -8,10 +8,11 @@ if (!isset($_SESSION['user_id'])) {
 }
 
 $user_id = $_SESSION['user_id'];
+
 $flags = [
     'flag1' => 'Improper Input Validation',
     'flag2' => 'Inconsistent Transaction Validation',
-    'flag3' => 'flag{youarefinallyamasteratthis}'
+    'flag3' => 'flag{securit3breach}'
 ];
 
 $submitted_flag = null;
@@ -30,7 +31,7 @@ if (!$submitted_flag) {
     exit;
 }
 
-if ($submitted_value !== $flags[$submitted_flag]) {
+if ($submitted_value !== strtolower($flags[$submitted_flag])) {
     echo json_encode(["status" => "error", "message" => "Incorrect flag. Try again!"]);
     exit;
 }
@@ -78,7 +79,8 @@ try {
 
     $conn->commit();
 
-    echo json_encode(["status" => "success", "message" => "Correct! You earned $points_earned points."]);
+    echo json_encode(["status" => "success", "message" => "Correct flag! You earned $points_earned points."]);
+
 } catch (Exception $e) {
     $conn->rollback();
     echo json_encode(["status" => "error", "message" => "An error occurred. Please try again."]);
