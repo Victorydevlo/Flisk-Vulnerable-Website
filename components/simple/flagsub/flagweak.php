@@ -9,8 +9,8 @@ if (!isset($_SESSION['user_id'])) {
 
 $user_id = $_SESSION['user_id'];
 $flags = [
-    'flag1' => 'flag{younowunderstandtheconceptofcaesar}',
-    'flag2' => 'flag{okyouareastar!}',
+    'flag1' => 'Improper Input Validation',
+    'flag2' => 'Inconsistent Transaction Validation',
     'flag3' => 'flag{youarefinallyamasteratthis}'
 ];
 

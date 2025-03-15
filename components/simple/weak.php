@@ -14,7 +14,7 @@ include '../../userinfo/connection.php';
 </head>
 
 <body>
-    <div class="navbar">
+<div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -40,6 +40,7 @@ include '../../userinfo/connection.php';
     <div class="header">
         <div class="title">Inconsistent Transaction Validation</div>
     </div>
+
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
             <h3>Explanation</h3>
@@ -77,7 +78,6 @@ include '../../userinfo/connection.php';
                 could be processed, and the attacker would successfully move money without proper checks.</p>
             <p>This kind of vulnerability is called <span class="vulnerability-name">Improper Input Validation</span>
                 combined with <span class="vulnerability-name">Insecure Direct Object References (IDOR)</span>.</p>
-
         </div>
     </div>
 
@@ -85,21 +85,15 @@ include '../../userinfo/connection.php';
         <div class="task-header" onclick="toggleContent('content2')">
             <h3>Getting Your Hand On</h3>
         </div>
-
         <div class="task-content" id="content2">
-
             <p>Today, you’ll be testing for vulnerabilities in a simulated bank website. Throughout the session, you’ll
-                be asked a series of questions designed to help you identify and exploit weaknesses within the system.
-            </p>
-
+                be asked a series of questions designed to help you identify and exploit weaknesses within the system.</p>
             <p>Your goal is to carefully analyze the site and capture the hidden <span class="important">flag</span>,
                 which is worth <span class="important">10 points</span>.</p>
-
             <p class="note">Take your time, stay sharp, and try your best to uncover any vulnerabilities. Good luck!</p>
-
-
         </div>
     </div>
+
     <div class="task">
         <div class="task-header" onclick="toggleContent('content3')">
             <h3>Get Working</h3>
@@ -115,32 +109,29 @@ include '../../userinfo/connection.php';
                 </div>
 
                 <div class="input-container">
-                    <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
-                        it.</p>
+                    <p>Because its happening in a bank, the vulnerability is called? </p>
                     <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn2">Submit</button>
                     <p class="result" id="results"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>Click this button to be sent to a dummy website to test your knowledge</p>
-                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn3">Submit</button>
-                    <p class="result" id="results2"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
                 </div>
 
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
                         <button id="vncButton" onclick="window.open('websites/index.php', '_blank')">Click Me</button>
+                        <br>
+                        <p>Type the black below</p>
+                        <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                        <button type="button" id="submitBtn3">Submit</button>
+                        <p class="result" id="results2"></p>
+                        <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
                     </a>
-
                 </div>
             </form>
         </div>
     </div>
+
     <script>
         function toggleContent(id) {
             const content = document.getElementById(id);
@@ -197,7 +188,6 @@ include '../../userinfo/connection.php';
             e.preventDefault();
             submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
         });
-
     </script>
     <style>
         .header {
@@ -352,7 +342,6 @@ include '../../userinfo/connection.php';
             display: block;
         }
     </style>
-    </head>
 
 </body>
 
