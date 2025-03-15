@@ -1,3 +1,8 @@
+<?php
+session_start();
+include '../../userinfo/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -9,7 +14,7 @@
 </head>
 
 <body>
-<div class="navbar">
+    <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -33,64 +38,58 @@
     </div>
 
     <div class="header">
-        <div class="title">Weak Passwords</div>
+        <div class="title">Inconsistent Transaction Validation</div>
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>//</p>
-
-            <p>///</p>
+            <p>
+                In today's digital world, many websites and applications, especially banking apps, allow users to input
+                values like quantities or balances to perform financial transactions. These systems make it incredibly
+                convenient for users to transfer or receive money, with just a simple input of the desired amount. This
+                ease of use has revolutionized the way we manage and access our finances.
+            </p>
+            <p>
+                However, there can be significant issues that arise from this convenience, one of which is
+                <strong>Inconsistent Transaction Validation</strong>. Below are some key concerns that come with this
+                vulnerability:
+            </p>
             <ul>
-                <li><strong>Symmetric Decryption (AES, DES, 3DES)</strong> – Uses the same key for both encryption and
-                    decryption.</li>
-                <li><strong>Asymmetric Decryption (RSA, ECC)</strong> – Uses a public key for encryption and a private
-                    key for decryption.</li>
-                <li><strong>Hash-Based Decryption (Rainbow Tables, Brute Force)</strong> – Attempts to reverse hash
-                    functions using precomputed tables or exhaustive searching.</li>
+                <li><strong>Inconsistent Validation</strong> – The system may fail to properly validate the amounts
+                    input by the user, leading to errors like negative balances or improper transfers.</li>
+                <li><strong>Lack of Business Rule Enforcement</strong> – Banking systems may not properly enforce rules
+                    like preventing negative balances or checking that the user has sufficient funds to complete a
+                    transfer.</li>
+                <li><strong>Security Risks</strong> – If the system doesn't validate transactions properly, malicious
+                    users could exploit it, leading to potential fraud or financial manipulation.</li>
+                <li><strong>System Instability</strong> – Without proper validation, transactions can cause unexpected
+                    issues, potentially leading to system crashes or data corruption.</li>
             </ul>
-
-            <ul>
-                <li>
-                    <strong>How it works:</strong>
-                    The process involves embedding a flag or secret data within the pixel values or metadata of an image
-                    file. The image itself remains visually unchanged,
-                    but the hidden information is encoded into the file structure, which can only be retrieved using the
-                    right decoding method.
-                </li>
-            </ul>
+            <p>
+                To avoid these issues, developers should ensure that proper validation mechanisms are in place to
+                protect users and the integrity of the financial system.
+            </p>
         </div>
     </div>
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content2')">
-            <h3>Cipher Encryption and Decryption</h3>
+            <h3>Getting Your Hand On</h3>
         </div>
 
         <div class="task-content" id="content2">
-            <p>Common types of ciphers include:</p>
 
-            <ul>
-                <li>
-                    <strong>Caesar Cipher</strong> – A substitution cipher that shifts each letter in the plaintext by a
-                    fixed number of positions in the alphabet.<br>
-                    <strong>Example:</strong> With a shift of 3, "HELLO" becomes "KHOOR".
-                </li>
+            <p>Today, you’ll be testing for vulnerabilities in a simulated bank website. Throughout the session, you’ll
+                be asked a series of questions designed to help you identify and exploit weaknesses within the system.
+            </p>
 
-                <li>
-                    <strong>Substitution Cipher</strong> – Replaces each letter in the plaintext with another letter,
-                    number, or symbol according to a fixed system.<br>
-                    <strong>Example:</strong> If A → M, B → N, C → O, etc., then "HELLO" might become "URYYB".
-                </li>
+            <p>Your goal is to carefully analyze the site and capture the hidden <span class="important">flag</span>,
+                which is worth <span class="important">10 points</span>.</p>
 
-                <li>
-                    <strong>Vigenère Cipher</strong> – A more complex substitution cipher that uses a keyword to
-                    determine multiple shifts, making it harder to break.<br>
-                    <strong>Example:</strong> Using the keyword "KEY", "HELLO" is encrypted as "RIJVS".
-                </li>
-            </ul>
+            <p class="note">Take your time, stay sharp, and try your best to uncover any vulnerabilities. Good luck!</p>
+
 
         </div>
     </div>
@@ -99,31 +98,37 @@
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <div class="input-container">
-                <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn decode
-                    it.</p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
-                <button onclick="checkAnswer()">Submit</button>
-                <p class="result" id="result"></p>
-            </div>
+            <form id="flagForm" action="flagsub/flagweak.php" method="POST">
+                <div class="input-container">
+                    <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
+                    <p>Heres an Encoded message "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}" using what you have learn
+                        decode
+                        it.</p>
+                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
 
-            <div class="input-container">
-                <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
-                    it.</p>
-                <input type="text" id="userInputs" placeholder="Type your answer here...">
-                <button onclick="checkAnswer1()">Submit</button>
-                <p class="result" id="results"></p>
-            </div>
+                <div class="input-container">
+                    <p>Heres a Key "decoder" Decode this message "ipcu{roprycfhejwet!}" using what you have learn decode
+                        it.</p>
+                    <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn2">Submit</button>
+                    <p class="result" id="results"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
 
-            
-            <div class="input-container">
-                <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
-                    this.</p>
-                <input type="text" id="userInputs2" placeholder="Type your answer here...">
-                <button onclick="checkAnswer2()">Submit</button>
-                <p class="result" id="results2"></p>
-            </div>
+
+                <div class="input-container">
+                    <p>"uozt{blfzivurmzoobznzhgvizggsrh}" Using what you have learn decode
+                        this.</p>
+                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn3">Submit</button>
+                    <p class="result" id="results2"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
+            </form>
         </div>
     </div>
     <script>
@@ -132,59 +137,56 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
 
-        function checkAnswer() {
-            const correctFlag = 'flag{younowunderstandtheconceptofcaesar}';
-            const inputField = document.getElementById('userInput');
-            const input = inputField.value.trim();
-            const result = document.getElementById('result');
+        function submitFlag(inputId, resultId, buttonId, loadingId, flagName) {
+            const input = document.getElementById(inputId);
+            const result = document.getElementById(resultId);
+            const button = document.getElementById(buttonId);
+            const loadingMessage = document.getElementById(loadingId);
 
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
+            result.style.color = 'orange';
+            result.textContent = 'Submitting your flag...';
+            loadingMessage.style.display = 'inline';
+
+            fetch('flagsub/flagweak.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `${flagName}=${encodeURIComponent(input.value.trim())}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        result.style.color = 'green';
+                        result.textContent = data.message;
+                        input.disabled = true;
+                        button.disabled = true;
+                    } else {
+                        result.style.color = 'red';
+                        result.textContent = data.message;
+                    }
+                    loadingMessage.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.style.color = 'red';
+                    result.textContent = 'Something went wrong, please try again.';
+                    loadingMessage.style.display = 'none';
+                });
         }
 
-        function checkAnswer1() {
-            const correctFlag = 'flag{okyouareastar!}';
-            const inputField = document.getElementById('userInputs');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results');
+        document.getElementById('submitBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
+        });
 
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+        document.getElementById('submitBtn2').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
+        });
 
-        function checkAnswer2() {
-            const correctFlag = 'flag{youarefinallyamasteratthis}';
-            const inputField = document.getElementById('userInputs2');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results2');
-
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+        document.getElementById('submitBtn3').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
+        });
 
     </script>
     <style>
@@ -268,6 +270,76 @@
             padding: 15px 32px;
             float: center;
             margin-top: 10px;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #333;
+            border-radius: 8px;
+            min-width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #444;
+        }
+
+        .logout {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        .logout:hover {
+            background: darkred;
+        }
+
+        .user-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .user-dropdown:hover .dropdown-menu {
+            display: block;
         }
     </style>
     </head>
