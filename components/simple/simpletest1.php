@@ -16,8 +16,10 @@ include '../../userinfo/connection.php';
 <body>
     <div class="navbar">
         <div class="logo">
-            <span style="color: white;">Flisk</span>
-            <span style="color: blue;">JS</span>
+            <a href="../../index.php" style="color: white; text-decoration: none;">
+                <span>Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
         </div>
         <div class="auth-buttons">
             <?php if (isset($_SESSION['username'])): ?>

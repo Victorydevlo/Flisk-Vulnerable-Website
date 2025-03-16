@@ -190,8 +190,8 @@ session_start();
                 style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
             </div>
             <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Simple Passwords</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;">Get to understand the detrimental effect of using weak Passwords
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Inconsistent Transaction Validation</h3>
+                <p style="font-size: 0.9rem; color: #e0e0e0;">
                 </p>
                 <a href="simple/weak.php"
                     style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
@@ -238,34 +238,15 @@ session_start();
 
     <div style="text-align: center; padding: 40px 20px;">
         <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+            style="position: relative; background: url('../images/exam.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
             <div
                 style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
             </div>
             <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Webpage</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>In this exercise you will learn how to access hidden pages
-                     in a website and prevent it</i>
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exam</h3>
+                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>Put What you have learnt to the test</i>
                 </p>
-                <a href="simple/hiddenweb.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
-            </div>
-        </div>
-    </div>
-
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Webpage</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>In this exercise you will learn how to access hidden pages
-                     in a website and prevent it</i>
-                </p>
-                <a href="simple/hiddenweb.php"
+                <a href="simple/examination.php"
                     style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                     More</a>
             </div>
