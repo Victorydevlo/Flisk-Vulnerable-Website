@@ -131,8 +131,7 @@ include '../../userinfo/connection.php';
                 </div>
 
                 <div class="input-container">
-                    <p>When SQL injection is exploited on a banking website, what type of vulnerabilities could it lead
-                        to, such as unauthorized data access or financial manipulation?</p>
+                    <p>What are some of the potential consequences of a successful SQL Injection attack on a banking website?</p>
                     <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn2">Submit</button>
                     <p class="result" id="results"></p>
@@ -146,52 +145,16 @@ include '../../userinfo/connection.php';
                     <p class="result" id="result3"></p>
                     <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
                 </div>
-
-                <div class="input-container">
-                    <p>What method should developers use to prevent SQL Injection vulnerabilities in web applications?
-                    </p>
-                    <input type="text" id="userInput4" name="flag4" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn4">Submit</button>
-                    <p class="result" id="result4"></p>
-                    <p id="loadingMessage4" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>What attack vector allows an attacker to bypass authentication by manipulating SQL queries with
-                        the use of 'OR 1=1' or similar methods?</p>
-                    <input type="text" id="userInput5" name="flag5" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn5">Submit</button>
-                    <p class="result" id="result5"></p>
-                    <p id="loadingMessage5" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>Which of the following is NOT a potential breach caused by SQL Injection: data exposure,
-                        financial manipulation, system crashes, or user authentication bypass?</p>
-                    <input type="text" id="userInput6" name="flag6" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn6">Submit</button>
-                    <p class="result" id="result6"></p>
-                    <p id="loadingMessage6" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>In the case of SQL Injection, what type of database query vulnerability arises when user inputs
-                        are directly executed without validation or parameterization?</p>
-                    <input type="text" id="userInput7" name="flag7" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn7">Submit</button>
-                    <p class="result" id="result7"></p>
-                    <p id="loadingMessage7" style="display:none;">Submitting your flag...</p>
-                </div>
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
                         <button id="vncButton" onclick="window.open('websites/index.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
-                        <button type="button" id="submitBtn3">Submit</button>
-                        <p class="result" id="results2"></p>
-                        <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
+                        <input type="text" id="userInput8" name="flag8" placeholder="Type your answer here..." required>
+                        <button type="button" id="submitBtn8">Submit</button>
+                        <p class="result" id="result8"></p>
+                        <p id="loadingMessage8" style="display:none;">Submitting your flag...</p>
                     </a>
                 </div>
             </form>
@@ -252,7 +215,32 @@ include '../../userinfo/connection.php';
 
         document.getElementById('submitBtn3').addEventListener('click', function (e) {
             e.preventDefault();
-            submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
+            submitFlag('userInput3', 'results3', 'submitBtn3', 'loadingMessage3', 'flag3');
+        });
+
+        document.getElementById('submitBtn4').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput4', 'result4', 'submitBtn4', 'loadingMessage4', 'flag4');
+        });
+
+        document.getElementById('submitBtn5').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput5', 'result5', 'submitBtn5', 'loadingMessage5', 'flag5');
+        });
+
+        document.getElementById('submitBtn6').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput6', 'result6', 'submitBtn6', 'loadingMessage6', 'flag6');
+        });
+
+        document.getElementById('submitBtn7').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput7', 'result7', 'submitBtn7', 'loadingMessage7', 'flag7');
+        });
+
+        document.getElementById('submitBtn8').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput8', 'result8', 'submitBtn8', 'loadingMessage8', 'flag8');
         });
     </script>
     <style>
