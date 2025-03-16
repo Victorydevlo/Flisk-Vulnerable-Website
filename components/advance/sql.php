@@ -148,7 +148,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
-                        <button id="vncButton" onclick="window.open('websites/index.php', '_blank')">Click Me</button>
+                        <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
                         <input type="text" id="userInput8" name="flag8" placeholder="Type your answer here..." required>
@@ -246,7 +246,7 @@ include '../../userinfo/connection.php';
     <style>
         .header {
             height: 200px;
-            background: linear-gradient(to right, #0b1a30, #0d6dd6);
+            background: linear-gradient(to right,rgb(48, 40, 11),rgb(214, 194, 13));
             display: flex;
             align-items: center;
             justify-content: center;
