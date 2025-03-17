@@ -11,7 +11,7 @@ $user_id = $_SESSION['user_id'];
 
 $flags = [
     'flag1' => 'SQL Injection',
-    'flag2' => 'Authentication Bypass',
+    'flag2' => 'Data Loss',
     'flag3' => 'Privilege Escalation',
     'flag8' => 'f1aG{D3m1try_1s_Sup3r_Smart_123}'
 ];

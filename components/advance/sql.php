@@ -120,7 +120,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/flagweak.php" method="POST">
+            <form id="flagForm" action="filechecker/sqlfilesubmission.php" method="POST">
                 <div class="input-container">
                     <p>What is the term used to describe the attack where an attacker manipulates a website's input
                         fields to execute unauthorized SQL commands?</p>
@@ -177,7 +177,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/flagweak.php', {
+            fetch('filechecker/sqlfilesubmission.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
@@ -215,7 +215,7 @@ include '../../userinfo/connection.php';
 
         document.getElementById('submitBtn3').addEventListener('click', function (e) {
             e.preventDefault();
-            submitFlag('userInput3', 'results3', 'submitBtn3', 'loadingMessage3', 'flag3');
+            submitFlag('userInput3', 'result3', 'submitBtn3', 'loadingMessage3', 'flag3');
         });
 
         document.getElementById('submitBtn8').addEventListener('click', function (e) {
