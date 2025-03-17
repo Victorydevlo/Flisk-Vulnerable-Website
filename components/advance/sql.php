@@ -124,7 +124,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
                     <p>What is the term used to describe the attack where an attacker manipulates a website's input
                         fields to execute unauthorized SQL commands?</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput"  autocomplete="off" name="flag1" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
@@ -132,7 +132,7 @@ include '../../userinfo/connection.php';
 
                 <div class="input-container">
                     <p>What are some of the potential consequences of a successful SQL Injection attack on a banking website?</p>
-                    <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput2"  autocomplete="off" name="flag2" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn2">Submit</button>
                     <p class="result" id="results"></p>
                     <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
@@ -140,7 +140,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
                     <p>What is one common consequence of SQL injection attacks that can affect the integrity of user
                         data?</p>
-                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput3"  autocomplete="off" name="flag3" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn3">Submit</button>
                     <p class="result" id="result3"></p>
                     <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
@@ -151,7 +151,7 @@ include '../../userinfo/connection.php';
                         <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput8" name="flag8" placeholder="Type your answer here..." required>
+                        <input type="text" id="userInput8"  autocomplete="off" name="flag8" placeholder="Type your answer here..." required>
                         <button type="button" id="submitBtn8">Submit</button>
                         <p class="result" id="result8"></p>
                         <p id="loadingMessage8" style="display:none;">Submitting your flag...</p>
@@ -216,26 +216,6 @@ include '../../userinfo/connection.php';
         document.getElementById('submitBtn3').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput3', 'results3', 'submitBtn3', 'loadingMessage3', 'flag3');
-        });
-
-        document.getElementById('submitBtn4').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput4', 'result4', 'submitBtn4', 'loadingMessage4', 'flag4');
-        });
-
-        document.getElementById('submitBtn5').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput5', 'result5', 'submitBtn5', 'loadingMessage5', 'flag5');
-        });
-
-        document.getElementById('submitBtn6').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput6', 'result6', 'submitBtn6', 'loadingMessage6', 'flag6');
-        });
-
-        document.getElementById('submitBtn7').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput7', 'result7', 'submitBtn7', 'loadingMessage7', 'flag7');
         });
 
         document.getElementById('submitBtn8').addEventListener('click', function (e) {
