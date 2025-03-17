@@ -150,7 +150,7 @@ include '../../userinfo/connection.php';
                     <a>
                         <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click Me</button>
                         <br>
-                        <p>Type the black below</p>
+                        <p>Type the flag below</p>
                         <input type="text" id="userInput8"  autocomplete="off" name="flag8" placeholder="Type your answer here..." required>
                         <button type="button" id="submitBtn8">Submit</button>
                         <p class="result" id="result8"></p>
