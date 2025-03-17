@@ -156,7 +156,7 @@ SELECT 1, username, password FROM users;
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="filechecker/sqlfilesubmission.php" method="POST">
+            <form id="flagForm" action="filechecker/unionsubmission.php" method="POST">
                 <div class="input-container">
                     <p>What SQL operator is commonly exploited in a Union-based SQL Injection attack?</p>
                     <input type="text" id="userInput1" autocomplete="off" name="flag1"
@@ -205,7 +205,7 @@ SELECT 1, username, password FROM users;
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
-                        <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click
+                        <button id="vncButton" onclick="window.open('websites/sqlunion/index.php', '_blank')">Click
                             Me</button>
                         <br>
                         <p>Type the flag below</p>

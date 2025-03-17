@@ -10,9 +10,11 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag1' => 'SQL Injection',
-    'flag2' => 'Data Loss',
-    'flag3' => 'Privilege Escalation',
+    'flag1' => 'UNION',
+    'flag2' => 'Concatenation',
+    'flag3' => 'User credentials',
+    'flag4' => 'Columns',
+    'flag5' => 'Parameterized queries',
     'flag8' => 'f1aG{D3m1try_1s_Sup3r_Smart_123}'
 ];
 

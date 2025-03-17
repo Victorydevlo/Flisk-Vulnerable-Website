@@ -1,27 +1,35 @@
 <?php
+session_start();
 include 'connection.php';
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $username = $_POST['username'];
-    $password = $_POST['password'];
+if (!isset($_SESSION['username'])) {
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username']) && isset($_POST['password'])) {
+        $username = $_POST['username'];
+        $password = $_POST['password'];
+        
+        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+        $result = $pdo->query($sql);
+        $user = $result->fetch(PDO::FETCH_ASSOC);
 
-    $sql = "SELECT * FROM users WHERE username = '$username' AND password = '$password'";
-    $result = $pdo->query($sql);
-    $user = $result->fetch(PDO::FETCH_ASSOC);
-
-    if ($user) {
-        session_start();
-        $_SESSION['username'] = $username;
-        header('Location: index.php');
-        exit;
+        if ($user && password_verify($password, $user['password'])) {
+            $_SESSION['username'] = $user['username'];
+            header('Location: index.php');
+            exit;
+        } else {
+            echo "Invalid username or password.";
+        }
     } else {
-        echo "Invalid username or password.";
+        header('Location: login.php');
+        exit;
     }
 }
+
+$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
