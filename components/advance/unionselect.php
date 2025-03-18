@@ -294,6 +294,7 @@ SELECT 1, username, password FROM users;
     </script>
     <style>
         .header {
+            
             height: 200px;
             background: linear-gradient(to right, rgb(48, 40, 11), rgb(214, 194, 13));
             display: flex;
