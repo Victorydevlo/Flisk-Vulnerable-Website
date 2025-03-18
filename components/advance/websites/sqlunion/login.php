@@ -1,35 +1,36 @@
 <?php
-session_start();
 include 'connection.php';
 
-if (!isset($_SESSION['username'])) {
-    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['username']) && isset($_POST['password'])) {
-        $username = $_POST['username'];
-        $password = $_POST['password'];
-        
-        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
-        $result = $pdo->query($sql);
-        $user = $result->fetch(PDO::FETCH_ASSOC);
+$pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        if ($user && password_verify($password, $user['password'])) {
-            $_SESSION['username'] = $user['username'];
+$error = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    try {
+        $sql = "SELECT * FROM users WHERE username = '$username' AND password = ?";
+        $stmt = $pdo->prepare($sql);
+        $stmt->execute([$password]);
+        $user = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($user) {
+            session_start();
+            $_SESSION['username'] = $username;
             header('Location: index.php');
             exit;
         } else {
-            echo "Invalid username or password.";
+            $error = "Invalid username or password.";
         }
-    } else {
-        header('Location: login.php');
-        exit;
+    } catch (PDOException $e) {
+        $error = "SQL Error: " . $e->getMessage();
     }
 }
-
-$username = $_SESSION['username'];
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -57,13 +58,20 @@ $username = $_SESSION['username'];
             padding: 10px 20px;
             font-size: 16px;
             cursor: pointer;
-            background-color:rgb(61, 255, 51);
+            background-color: rgb(61, 255, 51);
             color: white;
             border: none;
             border-radius: 5px;
         }
         .login-form button:hover {
-            background-color:rgb(0, 199, 86);
+            background-color: rgb(0, 199, 86);
+        }
+        .error-message {
+            color: red;
+            margin-top: 10px;
+            word-wrap: break-word;
+            max-width: 400px;
+            text-align: center;
         }
     </style>
 </head>
@@ -72,10 +80,13 @@ $username = $_SESSION['username'];
     
     <div class="login-form">
         <form method="POST">
-            Username: <input type="text"  autocomplete="off" name="username" required><br>
-            Password: <input type="password"  autocomplete="off" name="password" required><br>
+            Username: <input type="text" autocomplete="off" name="username" required><br>
+            Password: <input type="password" autocomplete="off" name="password" required><br>
             <button type="submit">Login</button>
         </form>
+        <?php if (!empty($error)) : ?>
+            <p class="error-message"><?php echo $error; ?></p>
+        <?php endif; ?>
     </div>
 </body>
 </html>

@@ -15,7 +15,7 @@ $flags = [
     'flag3' => 'User credentials',
     'flag4' => 'Columns',
     'flag5' => 'Parameterized queries',
-    'flag8' => 'f1aG{D3m1try_1s_Sup3r_Smart_123}'
+    'flag8' => 'f1aG{D3m1try_1s_V3ry_Sup3r_Smart_123}'
 ];
 
 $submitted_flag = null;

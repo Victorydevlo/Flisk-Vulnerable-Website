@@ -16,11 +16,6 @@ $username = $_SESSION['username'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Welcome - Flower Website</title>
-    <script>
-        window.addEventListener('beforeunload', function () {
-            navigator.sendBeacon('logout.php');
-        });
-    </script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -57,7 +52,9 @@ $username = $_SESSION['username'];
     <div class="welcome-message">
         <?php
         if ($username === 'Demitry') {
+            
             echo "Welcome Demitry, you are surprisingly smart f1aG{D3m1try_1s_Sup3r_Smart_123}";
+            echo "<div style='color: green;'></div>";
         } else {
             echo "Welcome, " . htmlspecialchars($username) . ". You are logged in.";
         }

@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Inconsistent Transaction Validation</div>
+        <div class="title">SQL Union-based Injection</div>
     </div>
 
     <div class="task">
@@ -85,19 +85,19 @@ include '../../userinfo/connection.php';
             <h4>Example of a Vulnerable SQL Query:</h4>
             <pre>
 SELECT id, name, email FROM users WHERE id = '$user_id';
-    </pre>
+            </pre>
 
             <p>If the input is not properly sanitized, an attacker could enter:</p>
             <pre>
 1 UNION SELECT 1, username, password FROM users;
-    </pre>
+            </pre>
 
             <p>The resulting SQL query would be:</p>
             <pre>
 SELECT id, name, email FROM users WHERE id = '1' 
 UNION 
 SELECT 1, username, password FROM users;
-    </pre>
+            </pre>
 
             <p>If the number of selected columns matches, the database returns results from both queries, exposing
                 usernames and passwords from the <code>users</code> table.</p>
@@ -236,7 +236,7 @@ SELECT 1, username, password FROM users;
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('filechecker/sqlfilesubmission.php', {
+            fetch('filechecker/unionsubmission.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
@@ -262,7 +262,7 @@ SELECT 1, username, password FROM users;
                 });
         }
 
-        document.getElementById('submitBtn').addEventListener('click', function (e) {
+        document.getElementById('submitBtn1').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput1', 'result1', 'submitBtn1', 'loadingMessage1', 'flag1');
         });
@@ -277,12 +277,12 @@ SELECT 1, username, password FROM users;
             submitFlag('userInput3', 'result3', 'submitBtn3', 'loadingMessage3', 'flag3');
         });
 
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
+        document.getElementById('submitBtn4').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput4', 'result4', 'submitBtn4', 'loadingMessage4', 'flag4');
         });
 
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
+        document.getElementById('submitBtn5').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput5', 'result5', 'submitBtn5', 'loadingMessage5', 'flag5');
         });
