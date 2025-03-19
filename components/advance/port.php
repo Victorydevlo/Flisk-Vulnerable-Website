@@ -133,12 +133,12 @@ nmap -p 1-65535 -T4 -A -v <target_ip>
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-        CTF_FLAG{Open_Ports_Are_Dangerous}
 
             <div class="input-container">
                 <p>An unsecured web service is running on a non-standard port. Your goal is to find the open port and retrieve the flag.</p>
                 <strong>Hint:</strong><p> The service is not running on the usual port 80 or 443.</p>
                 <strong>Hint:</strong><p>Tools like nmap or curl might help you find the hidden flag.</p>
+                <p> using Curl to the hhtp ip adreass could help you find the flag as well dont forget the port and the flag file... hint the flag is hidden</p>
                 <button id="Hint" onclick="showHint()">Secret Hint</button>
                 <div id="Hinthid" class="result2" style="display: none;"></div>
             </div>
