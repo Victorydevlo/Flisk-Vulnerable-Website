@@ -133,12 +133,14 @@ nmap -p 1-65535 -T4 -A -v <target_ip>
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
+        CTF_FLAG{Open_Ports_Are_Dangerous}
 
             <div class="input-container">
                 <p>An unsecured web service is running on a non-standard port. Your goal is to find the open port and retrieve the flag.</p>
                 <strong>Hint:</strong><p> The service is not running on the usual port 80 or 443.</p>
                 <strong>Hint:</strong><p>Tools like nmap or curl might help you find the hidden flag.</p>
-                <button id="Hint" onclick="showHint()">python3 -m http.server 8081</button>
+                <button id="Hint" onclick="showHint()">Secret Hint</button>
+                <div id="Hinthid" class="result2" style="display: none;"></div>
             </div>
             <form id="flagForm" action="filechecker/portsub.php" method="POST">
                 <div class="input-container">
@@ -178,6 +180,27 @@ nmap -p 1-65535 -T4 -A -v <target_ip>
             setTimeout(() => {
                 clearInterval(interval);
                 resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5902";
+            }, 5000);
+        }
+
+        function showHint() {
+            var button = document.getElementById("Hint");
+            var resultDiv = document.getElementById("Hinthid");
+
+            button.style.display = "none";
+            resultDiv.style.display = "block";
+            resultDiv.innerText = "Loading VNC IP and Port...";
+
+            let dots = 0;
+            let interval = setInterval(() => {
+                dots = (dots + 1) % 4;
+                resultDiv.innerText = "Incoming Hint" + ".".repeat(dots);
+            }, 500);
+
+
+            setTimeout(() => {
+                clearInterval(interval);
+                resultDiv.innerText = "make sure to run python3 -m http.server 8081 in a different terminal and being in the correct directory will help you find the flag";
             }, 5000);
         }
         function toggleContent(id) {
