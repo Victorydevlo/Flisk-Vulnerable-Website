@@ -118,6 +118,7 @@ session_start();
                     <div class="dropdown-menu">
                         <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
                         <a href="leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="help.php"><i class="fas fa-help"></i> Help</a>
                         <a href="userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                     </div>
                 </div>
