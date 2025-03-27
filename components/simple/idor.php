@@ -86,33 +86,53 @@
         </div>
 
         <div class="task-content" id="content2">
-            <strong>Risks of Hidden Pages</strong>
-            <p>When hackers use GoBuster to find unused or hidden pages, they may be able to discover:</p>
+            <strong>How an IDOR Attack Works</strong>
+            <p>Insecure Direct Object Reference (IDOR) attacks occur when a website does not properly verify user
+                permissions,
+                allowing attackers to access or manipulate data by modifying request parameters. This can expose
+                sensitive information,
+                grant unauthorized access, or even allow account takeovers.</p>
+
             <ul>
-                <li><strong>Sensitive Information:</strong> If you have old admin panels, backups, or configuration
-                    files still accessible, this could be a major security risk.</li>
-                <li><strong>Vulnerabilities:</strong> Hidden pages may contain outdated software or security holes that
-                    can be exploited.</li>
-                <li><strong>Access to Admin Functions:</strong> Hidden admin panels, if poorly protected, can be
-                    discovered and used to compromise the website.</li>
+                <li><strong>Accessing Unauthorized Data:</strong> Attackers can manipulate URLs or API requests to
+                    access another user's
+                    account, personal details, or confidential files.</li>
+                <li><strong>Modifying User Information:</strong> If an application allows ID-based updates, an attacker
+                    might change
+                    another user’s data, such as email addresses or passwords.</li>
+                <li><strong>Bypassing Authentication:</strong> Poorly secured admin panels or user dashboards can be
+                    accessed by simply
+                    altering an ID or session token.</li>
             </ul>
 
-            <strong>How to Prevent This Risk</strong>
-            <p>To prevent hackers from exploiting hidden pages with GoBuster, consider the following best practices:</p>
+            <strong>How Attackers Use Software to Exploit IDOR</strong>
+            <p>Attackers often use automated tools and scripts to detect and exploit IDOR vulnerabilities:</p>
             <ul>
-                <li><strong>Hide Sensitive Pages:</strong> Avoid using simple names like '/admin', '/login', or
-                    '/config'. Instead, use less predictable paths to make it harder for tools like GoBuster to find
-                    them.</li>
-                <li><strong>Use Authentication:</strong> Secure sensitive pages with authentication (e.g., password
-                    protection) and ensure they are not publicly accessible.</li>
-                <li><strong>Limit Directory Listing:</strong> Disable directory listing on your server so that if an
-                    attacker stumbles upon a directory, they cannot view the files in it.</li>
-                <li><strong>Monitor Logs:</strong> Regularly review web server logs to spot any suspicious access
-                    attempts or patterns that could indicate someone is trying to find hidden pages.</li>
-                <li><strong>Limit Access:</strong> Restrict access to sensitive pages by IP address or require VPNs for
-                    users who need to access them.</li>
+                <li><strong>Burp Suite:</strong> A security testing tool that allows attackers to intercept requests,
+                    modify user IDs,
+                    and analyze server responses.</li>
+                <li><strong>SQLmap:</strong> If IDOR is linked to database queries, attackers may use SQL injection
+                    tools to extract
+                    or modify sensitive information.</li>
+                <li><strong>Fuzzing Tools:</strong> Attackers use tools like **ffuf** or **Intruder (Burp Suite)** to
+                    automate testing
+                    for sequential or predictable ID references.</li>
+            </ul>
+
+            <strong>How to Prevent IDOR Attacks</strong>
+            <p>To prevent attackers from exploiting IDOR vulnerabilities, follow these security measures:</p>
+            <ul>
+                <li><strong>Implement Access Controls:</strong> Always check if the user has permission to access the
+                    requested data.</li>
+                <li><strong>Use Session-Based Authentication:</strong> Ensure that users cannot modify session tokens to
+                    access other accounts.</li>
+                <li><strong>Avoid Sequential IDs:</strong> Use randomized or hashed identifiers instead of numeric user
+                    IDs.</li>
+                <li><strong>Perform Security Audits:</strong> Regularly test your website for IDOR vulnerabilities using
+                    penetration testing tools.</li>
             </ul>
         </div>
+
     </div>
 
     <div class="task">
@@ -122,7 +142,7 @@
         <div class="task-content" id="content3">
             <div class="input-container">
                 <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                <p>What tool can a hacker or attacker use to extract information from a website?
+                <p>What tool can be used to extract information from a website via IDOR?
                 </p>
                 <input type="text" id="userInput" placeholder="Type your answer here...">
                 <button onclick="checkAnswer()">Submit</button>
