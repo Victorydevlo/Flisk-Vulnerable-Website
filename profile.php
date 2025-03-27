@@ -97,19 +97,25 @@ session_start();
             display: flex;
             flex-direction: column;
             align-items: center;
-            text-align: center;
+            justify-content: center;
+            background-color: #2c2c2c;
+            padding: 20px;
+            border-radius: 10px;
+            width: 100%;
+            max-width: 350px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
             margin-top: 20px;
         }
 
         .profile-logo {
-            width: 180px;
-            height: 180px;
-            border-radius: 60%;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
             background-color: #007bff;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 1.2rem;
+            font-size: 2rem;
             color: white;
             font-weight: bold;
         }
@@ -120,6 +126,22 @@ session_start();
             font-weight: bold;
             display: flex;
             justify-content: center;
+        }
+
+        
+        .user-info {
+            width: 100%;
+            padding: 15px;
+            margin-top: 15px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+
+        .user-info div {
+            font-size: 1.1rem;
+            font-weight: bold;
+            padding: 10px;
         }
     </style>
 </head>

@@ -136,7 +136,7 @@ session_start();
 
     <div style="display: flex; flex-wrap: wrap; justify-content: left;">
 
-        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+<!-- '        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
             <div style="text-align: center; padding: 40px 20px;">
                 <div
                     style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
@@ -153,7 +153,7 @@ session_start();
                     </div>
                 </div>
             </div>
-        <?php endif; ?>
+        <?php endif; ?>' -->
         <div style="text-align: center; padding: 40px 20px;">
             <div
                 style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
