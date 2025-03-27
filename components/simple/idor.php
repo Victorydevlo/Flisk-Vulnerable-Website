@@ -42,27 +42,42 @@
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <strong>What is GoBuster?</strong>
-            <p>GoBuster is a tool used to find hidden or unlisted pages on a website by brute-forcing URLs. It works by
-                trying different combinations of words or paths, such as '/admin', '/config', or '/uploads', and
-                checking if they exist on the server. This technique is commonly used by hackers or security researchers
-                to discover hidden files or directories that could contain sensitive data or vulnerabilities.
-                if an attacker gets access to any of this information it could cause lots of trouble, expecially if they
-                are able to extract Sensitive Informations.
-            </p>
+            <strong>What is IDOR?</strong>
+            <p>Insecure Direct Object Reference (IDOR) is a security vulnerability where an attacker can access or
+                modify
+                data that they are not authorized to see, simply by changing a URL parameter, request data, or API
+                endpoint.
+                This happens when a website does not properly check user permissions before granting access to sensitive
+                information.</p>
 
-            <strong>What Can GoBuster Find?</strong>
+            <p>For example, if a website retrieves user profiles using a URL like:</p>
+            <code>https://example.com/profile?id=123</code>
+            <p>An attacker could change the ID number to access another user’s profile, like:</p>
+            <code>https://example.com/profile?id=124</code>
+            <p>This would allow unauthorized access to another user’s data.</p>
+
+            <strong>What Can IDOR Lead To?</strong>
             <ul>
-                <li>Old or unused pages that were left behind.</li>
-                <li>Hidden admin panels.</li>
-                <li>Files or folders that should not be publicly accessible.</li>
+                <li>Unauthorized access to private user data.</li>
+                <li>Manipulation or deletion of sensitive information.</li>
+                <li>Account takeovers or privilege escalation.</li>
             </ul>
 
-            <p>For example, an attacker may run GoBuster on your website to find access points that were not meant to be
-                exposed. If an attacker discovers such pages, it can lead to security risks such as unauthorized access
-                to sensitive information or exploitation of vulnerabilities in outdated software.</p>
+            <p>For example, if an attacker finds an IDOR vulnerability in a banking website, they might be able to view
+                or
+                even transfer money from other accounts without authorization. This could lead to serious data breaches
+                and
+                financial losses.</p>
 
+            <strong>How to Prevent IDOR?</strong>
+            <ul>
+                <li>Implement proper access control checks on the server side.</li>
+                <li>Use session-based authentication and role-based access control (RBAC).</li>
+                <li>Avoid exposing direct object references (e.g., user IDs) in URLs.</li>
+                <li>Validate and enforce permissions before processing user requests.</li>
+            </ul>
         </div>
+
     </div>
 
     <div class="task">
