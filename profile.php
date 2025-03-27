@@ -102,9 +102,9 @@ session_start();
         }
 
         .profile-logo {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
+            width: 180px;
+            height: 180px;
+            border-radius: 60%;
             background-color: #007bff;
             display: flex;
             justify-content: center;
