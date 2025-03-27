@@ -224,7 +224,7 @@ session_start();
                 style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
             </div>
             <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">UNION Selection</h3>
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Command Injection</h3>
                 <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
                 </p>
                 <a href="advance/unionselect.php"
@@ -241,7 +241,7 @@ session_start();
                 style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
             </div>
             <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">UNION Selection</h3>
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Local File Inclusion (LFI)</h3>
                 <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
                 </p>
                 <a href="advance/unionselect.php"
@@ -258,7 +258,7 @@ session_start();
                 style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
             </div>
             <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">UNION Selection</h3>
+                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exams</h3>
                 <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
                 </p>
                 <a href="advance/unionselect.php"
