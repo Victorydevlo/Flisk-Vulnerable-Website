@@ -1,3 +1,8 @@
+<?php
+session_start();
+include '../../userinfo/connection.php';
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -147,10 +152,11 @@
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </div>
-                <form id="flagForm" action="filechecker/portsub.php" method="POST">
+                <form id="flagForm" action="flagsub/idorsub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
+                    <p>Once you have loaded the VM get Burp Suite opened and on the proxy section select open browser and paste this in <strong>http://localhost/idor/idor.php?id=0<strong>, "im feeling a bit intrusive"</p>
                     <button id="vncButton2" onclick="showVncInfo()">Get VNC IP & Port</button>
                     <div id="vncResult2" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
@@ -202,7 +208,7 @@
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/flagweak.php', {
+            fetch('flagsub/idorsub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
