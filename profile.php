@@ -118,12 +118,14 @@ session_start();
             margin-top: 10px;
             font-size: 1.2rem;
             font-weight: bold;
+            display: flex;
+            justify-content: center;
         }
     </style>
 </head>
 
 <body>
-<div class="navbar">
+    <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -132,22 +134,10 @@ session_start();
         <div class="auth-buttons">
             <?php if (isset($_SESSION['username'])): ?>
                 <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-                <div class="user-dropdown">
-                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
-                    <div class="dropdown-menu">
-                        <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
-                        <a href="leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                        <a href="help.php"><i class="fas fa-help"></i> Help</a>
-                        <a href="userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                    </div>
-                </div>
+                <a href="userinfo/logout.php"><button>Logout</button></a>
             <?php else: ?>
-                <a href="userinfo/login.php">
-                    <button>Login</button>
-                </a>
-                <a href="userinfo/register.php">
-                    <button>Register</button>
-                </a>
+                <a href="userinfo/login.php"><button>Login</button></a>
+                <a href="userinfo/register.php"><button>Register</button></a>
             <?php endif; ?>
         </div>
     </div>
@@ -157,7 +147,16 @@ session_start();
             <div class="profile-logo">
                 <?php echo strtoupper(substr($_SESSION['username'], 0, 1)); ?>
             </div>
-            <div class="username"><?php echo htmlspecialchars($_SESSION['username']); ?></div>
+
+            <div class="user-info">
+                <label>Username:</label>
+                <div><?php echo htmlspecialchars($_SESSION['username']); ?></div>
+            </div>
+
+            <div class="user-info">
+                <label>Leaderboard Points:</label>
+                <div><?php echo $_SESSION['leaderboard_points']; ?></div>
+            </div>
         </div>
     <?php endif; ?>
 </body>
