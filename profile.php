@@ -89,22 +89,41 @@ session_start();
             background: darkred;
         }
 
-        .user-icon {
-            background: none;
-            border: none;
-            cursor: pointer;
-            color: white;
-            font-size: 1.5rem;
-        }
-
         .user-dropdown:hover .dropdown-menu {
             display: block;
+        }
+
+        .profile-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .profile-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background-color: #007bff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 1.2rem;
+            color: white;
+            font-weight: bold;
+        }
+
+        .username {
+            margin-top: 10px;
+            font-size: 1.2rem;
+            font-weight: bold;
         }
     </style>
 </head>
 
 <body>
-    <div class="navbar">
+<div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
@@ -133,57 +152,14 @@ session_start();
         </div>
     </div>
 
-
-
+    <?php if (isset($_SESSION['username'])): ?>
+        <div class="profile-container">
+            <div class="profile-logo">
+                <?php echo strtoupper(substr($_SESSION['username'], 0, 1)); ?>
+            </div>
+            <div class="username"><?php echo htmlspecialchars($_SESSION['username']); ?></div>
+        </div>
+    <?php endif; ?>
 </body>
 
 </html>
-
-
-
-<style>
-    body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background-color: #1e1e1e;
-        color: #f4f4f4;
-    }
-
-    .navbar {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: #f4f4f4;
-        padding: 10px 20px;
-        position: relative;
-        z-index: 2;
-    }
-
-    .navbar .logo {
-        font-size: 24px;
-        font-weight: bold;
-        flex-grow: center;
-    }
-
-
-    .navbar .auth-buttons {
-        position: absolute;
-        right: 10px;
-        display: flex;
-        gap: 10px;
-    }
-
-    .navbar .auth-buttons button {
-        background-color: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 4px;
-        cursor: pointer;
-        font-size: 14px;
-    }
-
-    .navbar .auth-buttons button:hover {
-        background-color: #0056b3;
-    }
-</style>
