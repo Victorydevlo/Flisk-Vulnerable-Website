@@ -191,50 +191,22 @@ session_start();
             </div>
         </div>
 
-        <div class="ide-section"
-            style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
-            <div style="max-width: 50%; text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">SQL Injection</h2>
-                <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to
-                    prevent unauthorized access and vulnerabilities.</p>
-                <button
-                    style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start
-                    Learning</button>
-            </div>
-            <div
-                style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: gold;">
-                #1</div>
-        </div>
+        <div style="text-align: center; margin-top: 50px;">
+    <h2 style="color: white;">Featured CTF Challenges</h2>
+    <p style="color: #e0e0e0;">Test your skills with real-world cybersecurity challenges.</p>
 
-        <div class="ide-section"
-            style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
-            <div style="max-width: 50%; text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">Scanning</h2>
-                <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to
-                    prevent unauthorized access and vulnerabilities.</p>
-                <button
-                    style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start
-                    Learning</button>
-            </div>
-            <div
-                style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: silver;">
-                #2</div>
+    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
+        <div style="background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
+            <h3>SQL Injection</h3>
+            <p>Exploit an unsecured login form to gain unauthorized access.</p>
+            <a href="challenges/sqlinjection.php" 
+               style="display: inline-block; padding: 8px 12px; margin-top: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
+                Try Now
+            </a>
         </div>
+    </div>
+</div>
 
-        <div class="ide-section"
-            style="display: flex; justify-content: center; align-items: center; padding: 40px 20px; position: relative;">
-            <div style="max-width: 50%; text-align: center;">
-                <h2 style="font-size: 2rem; margin-bottom: 20px;">Scanning</h2>
-                <p style="font-size: 1rem; margin-bottom: 20px; color: #aaa;">Write, run, and debug code securely to
-                    prevent unauthorized access and vulnerabilities.</p>
-                <button
-                    style="background-color: #007bff; border: none; color: black; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-size: 1rem;">Start
-                    Learning</button>
-            </div>
-            <div
-                style="position: absolute; top: 50%; left: 10%; transform: translateY(-50%); font-size: 5rem; font-weight: bold; color: brown;">
-                #3</div>
-        </div>
 </body>
 
 </html>
