@@ -35,7 +35,7 @@
     </div>
 
     <div class="header">
-        <div class="title">Hidden WebPages</div>
+        <div class="title">IDOR</div>
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
@@ -141,31 +141,27 @@
         </div>
         <div class="task-content" id="content3">
             <div class="input-container">
-                <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
-                <p>What tool can be used to extract information from a website via IDOR?
-                </p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
-                <button onclick="checkAnswer()">Submit</button>
-                <p class="result" id="result"></p>
-            </div>
+                    <p>What tool can be used to extract information from a website via IDOR?</p>
+                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
+                <form id="flagForm" action="filechecker/portsub.php" method="POST">
+                <div class="input-container">
 
-            <div class="input-container">
-                <p>What type of information should a developer make sure that they keep secure to prevent this attack
-                    from being a serious one?</p>
-                <input type="text" id="userInputs" placeholder="Type your answer here...">
-                <button onclick="checkAnswer1()">Submit</button>
-                <p class="result" id="results"></p>
-            </div>
+                    <p>Click the button to get the VNC IP and Port</p>
+                    <button id="vncButton2" onclick="showVncInfo()">Get VNC IP & Port</button>
+                    <div id="vncResult2" class="result" style="display: none;"></div>
+                    <p>Type the flag below</p>
+                    <input type="text" id="userInput2" autocomplete="off" name="flag2"
+                        placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn2">Submit</button>
+                    <p class="result" id="result2"></p>
+                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
 
-
-            <div class="input-container">
-                <p>Click the button to get the VNC IP and Port</p>
-                <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
-                <div id="vncResult" class="result" style="display: none;"></div>
-                <input type="text" id="userInputs2" placeholder="Type your answer here...">
-                <button onclick="checkAnswer2()">Submit</button>
-                <p class="result" id="results2"></p>
-            </div>
+                </div>
+            </form>
         </div>
     </div>
     <script>
@@ -196,59 +192,51 @@
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
         }
 
-        function checkAnswer() {
-            const correctFlag = 'GoBuster';
-            const inputField = document.getElementById('userInput');
-            const input = inputField.value.trim();
-            const result = document.getElementById('result');
+        function submitFlag(inputId, resultId, buttonId, loadingId, flagName) {
+            const input = document.getElementById(inputId);
+            const result = document.getElementById(resultId);
+            const button = document.getElementById(buttonId);
+            const loadingMessage = document.getElementById(loadingId);
 
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again! make sure you use the correct case';
-            }
+            result.style.color = 'orange';
+            result.textContent = 'Submitting your flag...';
+            loadingMessage.style.display = 'inline';
+
+            fetch('flagsub/flagweak.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: `${flagName}=${encodeURIComponent(input.value.trim())}`
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.status === 'success') {
+                        result.style.color = 'green';
+                        result.textContent = data.message;
+                        input.disabled = true;
+                        button.disabled = true;
+                    } else {
+                        result.style.color = 'red';
+                        result.textContent = data.message;
+                    }
+                    loadingMessage.style.display = 'none';
+                })
+                .catch(error => {
+                    console.error('Error:', error);
+                    result.style.color = 'red';
+                    result.textContent = 'Something went wrong, please try again.';
+                    loadingMessage.style.display = 'none';
+                });
         }
 
-        function checkAnswer1() {
-            const correctFlag = 'Sensitive informations';
-            const inputField = document.getElementById('userInputs');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results');
+        document.getElementById('submitBtn').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
+        });
 
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
-
-        function checkAnswer2() {
-            const correctFlag = 'flag{donewithmyvmhack}';
-            const inputField = document.getElementById('userInputs2');
-            const input = inputField.value.trim();
-            const result = document.getElementById('results2');
-
-            if (input === correctFlag) {
-                result.style.color = 'green';
-                result.textContent = 'Correct!';
-                inputField.style.backgroundColor = 'lightgreen';
-                inputField.style.color = 'black';
-                inputField.disabled = true;
-            } else {
-                result.style.color = 'red';
-                result.textContent = 'Incorrect. Try again!';
-            }
-        }
+        document.getElementById('submitBtn2').addEventListener('click', function (e) {
+            e.preventDefault();
+            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
+        });
 
     </script>
     <style>
