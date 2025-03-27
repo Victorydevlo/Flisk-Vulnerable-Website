@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,22 +102,23 @@ session_start();
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
-        
+
         <div class="auth-buttons">
             <?php if (isset($_SESSION['username'])): ?>
                 <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
                 <div class="user-dropdown">
                     <button class="user-icon"><i class="fas fa-user-circle"></i></button>
                     <div class="dropdown-menu">
-                        <a href="profile.php"><i class="fas fa-user"></i> Profile</a>
-                        <a href="leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                        <a href="logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                        <a href="../profile.php"><i class="fas fa-user"></i> Profile</a>
+                        <a href="../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                     </div>
                 </div>
             <?php else: ?>
@@ -130,146 +132,170 @@ session_start();
         </div>
     </div>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: left;">
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Beginners Journey</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets Start With something simple
-                </p>
-                <a href="simple/start.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
-            </div>
-        </div>
-    </div>
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Flags</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">Flags can be hidden in many different ways today
-                    ill ve showing you
-                    how to find this types of flags
-                </p>
-                <a href="simple/simpletest1.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
-            </div>
-        </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/dec.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Decryption</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;">Get involved with the world of encryption and decryption
-                </p>
-                <a href="simple/decrypt.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
-            </div>
-        </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 15px;">
-        <div
-            style="position: relative; background: url('../images/lock3.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Inconsistent Transaction Validation</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;">
-                </p>
-                <a href="simple/weak.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
-            </div>
-        </div>
-    </div>
+    <div style="display: flex; flex-wrap: wrap; justify-content: left;">
 
-    <div style="text-align: center; padding: 40px 15px;">
-        <div
-            style="position: relative; background: url('../images/hidden.png') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-            <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
+            <div style="text-align: center; padding: 40px 20px;">
+                <div
+                    style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                    <div
+                        style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                    </div>
+                    <div style="position: relative; z-index: 2;">
+                        <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Beginners Journey</h3>
+                        <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets Start With something simple
+                        </p>
+                        <a href="simple/start.php"
+                            style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                            More</a>
+                    </div>
+                </div>
             </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Webpage</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>In this exercise you will learn how to access hidden pages
-                     in a website and prevent it</i>
-                </p>
-                <a href="simple/hiddenweb.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+        <?php endif; ?>
+        <div style="text-align: center; padding: 40px 20px;">
+            <div
+                style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Beginners Journey</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets Start With something simple
+                    </p>
+                    <a href="simple/start.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
+        <div style="text-align: center; padding: 40px 20px;">
+            <div
+                style="position: relative; background: url('../images/lock.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Flags</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">Flags can be hidden in many different ways
+                        today
+                        ill ve showing you
+                        how to find this types of flags
+                    </p>
+                    <a href="simple/simpletest1.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">IDOR</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>learning about idor</i>
-                </p>
-                <a href="simple/hiddenweb.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/dec.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Decryption</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">Get involved with the world of encryption and
+                        decryption
+                    </p>
+                    <a href="simple/decrypt.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 15px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">IDOR</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>learning about idor</i>
-                </p>
-                <a href="simple/hiddenweb.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock3.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Inconsistent Transaction Validation</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;">
+                    </p>
+                    <a href="simple/weak.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/exam.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 15px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exam</h3>
-                <p style="font-size: 0.9rem; color: #e0e0e0;"><i>Put What you have learnt to the test</i>
-                </p>
-                <a href="simple/examination.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/hidden.png') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Webpage</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;"><i>In this exercise you will learn how to access
+                            hidden pages
+                            in a website and prevent it</i>
+                    </p>
+                    <a href="simple/hiddenweb.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
+
+        <div style="text-align: center; padding: 40px 20px;">
+            <div
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">IDOR</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;"><i>learning about idor</i>
+                    </p>
+                    <a href="simple/hiddenweb.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 40px 20px;">
+            <div
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">IDOR</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;"><i>learning about idor</i>
+                    </p>
+                    <a href="simple/hiddenweb.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; padding: 40px 20px;">
+            <div
+                style="position: relative; background: url('../images/exam.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exam</h3>
+                    <p style="font-size: 0.9rem; color: #e0e0e0;"><i>Put What you have learnt to the test</i>
+                    </p>
+                    <a href="simple/examination.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
+            </div>
+        </div>
+
     </div>
-    
-</div>
 </body>
 
 </html>
