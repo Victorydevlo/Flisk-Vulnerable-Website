@@ -156,14 +156,14 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
-                    <p>Once you have loaded the VM get Burp Suite opened and on the proxy section select open browser and paste this in <strong>http://localhost/idor/idor.php?id=0<strong>, "im feeling a bit intrusive"</p>
-                    <button id="vncButton2" onclick="showVncInfo()">Get VNC IP & Port</button>
-                    <div id="vncResult2" class="result" style="display: none;"></div>
+                    <p>Once you have loaded the VM get Burp Suite opened and on the proxy section select open browser and paste this in <strong>http://localhost/idor/idor.php?id=0</strong>, "im feeling a bit intrusive"</p>
+                    <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
+                    <div id="vncResult" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
                     <input type="text" id="userInput2" autocomplete="off" name="flag2"
                         placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn2">Submit</button>
-                    <p class="result" id="result2"></p>
+                    <p class="result" id="results"></p>
                     <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
 
                 </div>

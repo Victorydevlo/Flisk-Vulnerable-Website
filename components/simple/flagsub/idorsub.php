@@ -11,7 +11,7 @@ $user_id = $_SESSION['user_id'];
 
 $flags = [
     'flag1' => 'Burp Suite',
-    'flag3' => 'flag{numbersofnumbers}'
+    'flag2' => 'flag{numbersofnumbers}'
 ];
 
 $submitted_flag = null;
