@@ -55,7 +55,7 @@ try {
     $stmt->execute();
     $stmt->close();
 
-    $points_earned = 10;
+    $points_earned = 15;
 
     $stmt = $conn->prepare("SELECT points FROM leaderboard WHERE user_id = ?");
     $stmt->bind_param("i", $user_id);
