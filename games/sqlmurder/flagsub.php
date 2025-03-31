@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../../../userinfo/connection.php';
+include '../../userinfo/connection.php';
 
 if (!isset($_SESSION['user_id'])) {
     echo json_encode(["status" => "error", "message" => "Session expired. Please log in again."]);

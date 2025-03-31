@@ -146,17 +146,19 @@ include '../../userinfo/connection.php';
         </div>
         <div class="task-content" id="content3">
             <div class="input-container">
-                    <p>What tool can be used to extract information from a website via IDOR?</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn">Submit</button>
-                    <p class="result" id="result"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-                <form id="flagForm" action="flagsub/idorsub.php" method="POST">
+                <p>What tool can be used to extract information from a website via IDOR?</p>
+                <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                <button type="button" id="submitBtn">Submit</button>
+                <p class="result" id="result"></p>
+                <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+            </div>
+            <form id="flagForm" action="flagsub/idorsub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
-                    <p>Once you have loaded the VM get Burp Suite opened and on the proxy section select open browser and paste this in <strong>http://localhost/idor/idor.php?id=0</strong>, "im feeling a bit intrusive"</p>
+                    <p>Once you have loaded the VM get Burp Suite opened and on the proxy section select open browser
+                        and paste this in <strong>http://localhost/idor/idor.php?id=0</strong>, "im feeling a bit
+                        intrusive"</p>
                     <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                     <div id="vncResult" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
