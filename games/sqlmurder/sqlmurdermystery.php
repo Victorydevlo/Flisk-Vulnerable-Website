@@ -250,7 +250,7 @@ $conn->close();
     <h1>SQL Murder Mystery</h1>
     <p>Solve the case</p>
 
-    <img src="images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
+    <img src="../images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
 
     <h3>There has been a serious murder is West City! and you have been hired to solve this crime
         We trust in you. </h3>
