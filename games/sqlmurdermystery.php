@@ -59,8 +59,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $result2 = executeQuery($conn, $query2);
     }
     if (isset($_POST['query3'])) {
-        $query2 = trim($_POST['query3']);
-        $result2 = executeQuery($conn, $query2);
+        $query3 = trim($_POST['query3']);
+        $result3 = executeQuery($conn, $query3);
     }
 }
 
