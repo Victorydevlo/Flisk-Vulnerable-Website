@@ -129,7 +129,7 @@ $conn->close();
     <h2> Database </h2>
 
     <p>to see evrything in the database run <strong>
-            SELECT * FROM mmgame</Strong>
+            SHOW tables;</Strong>
 
     </p>
 
