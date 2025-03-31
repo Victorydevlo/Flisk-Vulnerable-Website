@@ -93,7 +93,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
 
     <h2> Database </h2>
 
-    <p>to see evrything in the database run</Strong>
+    <p>to see evrything in the database run <strong> SELECT name 
+  FROM reports
+ where type = 'table'</Strong>
 
     </p>
 
