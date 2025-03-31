@@ -1,6 +1,6 @@
 <?php
 session_start();
-include '../userinfo/connection.php';
+include '../../userinfo/connection.php';
 ?>
 
 <?php
@@ -223,7 +223,7 @@ $conn->close();
 </head>
 <div class="navbar">
     <div class="logo">
-        <a href="../index.php" style="color: white; text-decoration: none;">
+        <a href="../../../index.php" style="color: white; text-decoration: none;">
             <span style="color: black">Flisk</span>
             <span style="color: blue;">JS</span>
         </a>
@@ -234,9 +234,9 @@ $conn->close();
             <div class="user-dropdown">
                 <button class="user-icon"><i class="fas fa-user-circle"></i></button>
                 <div class="dropdown-menu">
-                    <a href="../profile.php"><i class="fas fa-user"></i> Profile</a>
-                    <a href="../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                    <a href="../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    <a href="../../../profile.php"><i class="fas fa-user"></i> Profile</a>
+                    <a href="../../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                    <a href="../../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
                 </div>
             </div>
         <?php else: ?>
