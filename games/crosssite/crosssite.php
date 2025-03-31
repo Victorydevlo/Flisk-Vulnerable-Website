@@ -37,6 +37,7 @@ include '../../userinfo/connection.php';
         body {
             font-family: Arial, sans-serif;
             text-align: center;
+            background-color: #333;
         }
 
         h1 {
@@ -157,7 +158,9 @@ include '../../userinfo/connection.php';
 </div>
 
 <body>
-    <h1>Product Website</h1>
+    <div style="background-color: orange; padding: 10px; margin: 10px auto; width: 98%; text-align: center; border-radius: 8px;">
+        <h1>Product Website</h1>
+    </div>
     <p>Solve the case</p>
 
     <img src="../images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
