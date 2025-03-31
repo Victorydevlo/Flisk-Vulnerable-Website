@@ -158,14 +158,14 @@ include '../../userinfo/connection.php';
 </div>
 
 <body>
-<div style="display: flex; gap: 20px; padding: 20px;"></div>
-        <h1>Product Website</h1>
-    </div>
+<div style="width: 97%; padding: 20px; background-color:rgb(253, 68, 0); text-align: center; border-radius: 4px;">
+    <h1 style="margin: 0; color: black;">Product Website</h1>
+</div>
 <div style="display: flex; gap: 20px; padding: 20px;">
     <div style="width: 20%; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
         <h3>Search</h3>
         <form method="GET" action="">
-            <input type="text" name="search" placeholder="Search products..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+            <input type="text" name="search" placeholder="Search products..." style="width: 90%; padding: 8px; margin-bottom: 10px;">
             <button type="submit" style="width: 100%; padding: 8px; background-color: orange; color: white; border: none; border-radius: 4px;">Search</button>
         </form>
         <?php if (isset($_GET['search'])): ?>
@@ -182,13 +182,19 @@ include '../../userinfo/connection.php';
             ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg']
         ];
 
-        foreach ($products as $product): ?>
-            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; text-align: center;">
-                <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" style="width: 100%; border-radius: 8px;">
-                <h3><?php echo htmlspecialchars($product['title']); ?></h3>
-                <p style="color: green; font-weight: bold;"><?php echo htmlspecialchars($product['price']); ?></p>
-            </div>
-        <?php endforeach; ?>
+        $searchTerm = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
+
+        foreach ($products as $product):
+            if ($searchTerm === '' || 
+                strpos(strtolower($product['title']), $searchTerm) !== false || 
+                strpos(strtolower($product['price']), $searchTerm) !== false): ?>
+                <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; text-align: center;">
+                    <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" style="width: 100%; border-radius: 8px;">
+                    <h3><?php echo htmlspecialchars($product['title']); ?></h3>
+                    <p style="color: green; font-weight: bold;"><?php echo htmlspecialchars($product['price']); ?></p>
+                </div>
+            <?php endif; 
+        endforeach; ?>
     </div>
 </div>
 </body>
