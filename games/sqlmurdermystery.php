@@ -18,7 +18,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
             die("<p style='color: red;'>Invalid query detected!</p>");
         }
     }
-    $result = $conn->query($query);
+    $stmt = $conn->prepare($query);
+    if ($stmt) {
+        $stmt->execute();
+        $result = $stmt->get_result();
+    } else {
+        die("<p style='color: red;'>Invalid query format!</p>");
+    }
 }
 ?>
 
@@ -27,7 +33,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
 
 <head>
     <style>
-
         textarea {
             width: 100%;
             height: 100px;
@@ -88,20 +93,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
 
     <h2> Database </h2>
     <p>You will have to use a detabase to retrive the information that you nned to solve this crime
-        heres an example of the Database bellow
+        heres an example of the Database bellow, run this command - <Strong> Select * From reports where name = 'John
+            Doe'</Strong>
+
     </p>
 
     <h2>Run SQL Query</h2>
     <form method="post">
-        <textarea name="query" placeholder="Enter your SQL command here..."><?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?></textarea><br>
+        <textarea name="query" style="width: 670px" placeholder="Enter your SQL command here...">
+            <?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?>
+    </textarea>
+        <br>
         <button type="submit">RUN ⇩</button>
-        <button type="button" onclick="resetForm()">RESET</button>
+
     </form>
 
     <?php if (isset($result) && $result && $result->num_rows > 0): ?>
         <table>
             <tr>
-                <?php 
+                <?php
                 $columns = array_keys($result->fetch_assoc());
                 foreach ($columns as $col) {
                     echo "<th>" . htmlspecialchars($col) . "</th>";
@@ -121,15 +131,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
     <?php endif; ?>
 
     <script>
-        function resetForm() {
-            document.querySelector('#queryInput').value = "<?php echo $default_query; ?>";
-            updateLineNumbers();
-        }
         function updateLineNumbers() {
             let textArea = document.getElementById('queryInput');
             let lines = textArea.value.split('\n').length;
             let lineNumbers = document.getElementById('lineNumbers');
-            lineNumbers.innerHTML = Array.from({length: lines}, (_, i) => i + 1).join('<br>');
+            lineNumbers.innerHTML = Array.from({ length: lines }, (_, i) => i + 1).join('<br>');
         }
         updateLineNumbers();
     </script>
