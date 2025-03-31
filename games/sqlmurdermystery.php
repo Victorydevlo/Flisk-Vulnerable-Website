@@ -1,4 +1,26 @@
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$database = "games";
 
+$conn = new mysqli($servername, $username, $password, $database);
+
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
+    $query = trim($_POST['query']);
+    $blacklist = ['DROP', 'DELETE', 'UPDATE', 'INSERT'];
+    foreach ($blacklist as $word) {
+        if (stripos($query, $word) !== false) {
+            die("<p style='color: red;'>Invalid query detected!</p>");
+        }
+    }
+    $result = $conn->query($query);
+}
+?>
 
 <!DOCTYPE html>
 <html lang="en">
