@@ -17,7 +17,7 @@ if ($conn->connect_error) {
 
 function executeQuery($conn, $query)
 {
-    $blacklist = ['DROP', 'DELETE', 'UPDATE', 'INSERT'];
+    $blacklist = ['DROP', 'DELETE', 'UPDATE'];
     foreach ($blacklist as $word) {
         if (stripos($query, $word) !== false) {
             return "<p style='color: red;'>Invalid query detected!</p>";
@@ -52,7 +52,24 @@ function executeQuery($conn, $query)
     }
 }
 
-$result1 = $result2 = $result3 = "";
+function checkKiller($conn, $query)
+{
+    $stmt = $conn->prepare($query);
+    $stmt->execute();
+    $result = $stmt->get_result();
+
+    $result = $conn->query("SELECT * FROM solutions WHERE name = 'Demitry Colton'");
+    
+    if ($result && $result->num_rows > 0) {
+        $conn->query("DELETE FROM solutions");
+        return "<p>Well done, Demitry Colton is the killer! Here’s the flag: flag{GoldMedalMaster}</p>";
+    }
+
+    $conn->query("DELETE FROM solutions");
+    return "<p>They are not the killer!</p>";
+}
+
+$result1 = $result2 = $result3 = $result4 ="";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['query1'])) {
@@ -67,6 +84,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $query3 = trim($_POST['query3']);
         $result3 = executeQuery($conn, $query3);
     }
+    if (isset($_POST['query4'])) {
+        $query4 = trim($_POST['query4']);
+        $result4 = checkKiller($conn, $query4);
+    }
 }
 
 $conn->close();
@@ -76,6 +97,7 @@ $conn->close();
 <html lang="en">
 
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <style>
         textarea {
             width: 60%;
@@ -120,7 +142,7 @@ $conn->close();
             justify-content: space-between;
             align-items: center;
             padding: 10px 20px;
-            
+
         }
 
         .logo {
@@ -200,29 +222,30 @@ $conn->close();
     </style>
 </head>
 <div class="navbar">
-        <div class="logo">
-            <a href="../../index.php" style="color: white; text-decoration: none;">
-                <span style="color: black">Flisk</span>
-                <span style="color: blue;">JS</span>
-            </a>
-        </div>
-        <div class="auth-buttons">
-            <?php if (isset($_SESSION['username'])): ?>
-                <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-                <div class="user-dropdown">
-                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
-                    <div class="dropdown-menu">
-                        <a href="../../profile.php"><i class="fas fa-user"></i> Profile</a>
-                        <a href="../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                        <a href="../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                    </div>
-                </div>
-            <?php else: ?>
-                <a href="../../userinfo/login.php"><button>Login</button></a>
-                <a href="../../userinfo/register.php"><button>Register</button></a>
-            <?php endif; ?>
-        </div>
+    <div class="logo">
+        <a href="../index.php" style="color: white; text-decoration: none;">
+            <span style="color: black">Flisk</span>
+            <span style="color: blue;">JS</span>
+        </a>
     </div>
+    <div class="auth-buttons">
+        <?php if (isset($_SESSION['username'])): ?>
+            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+            <div class="user-dropdown">
+                <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                <div class="dropdown-menu">
+                    <a href="../profile.php"><i class="fas fa-user"></i> Profile</a>
+                    <a href="../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                    <a href="../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                </div>
+            </div>
+        <?php else: ?>
+            <a href="../../userinfo/login.php"><button>Login</button></a>
+            <a href="../../userinfo/register.php"><button>Register</button></a>
+        <?php endif; ?>
+    </div>
+</div>
+
 <body>
     <h1>SQL Murder Mystery</h1>
     <p>Solve the case</p>
@@ -242,7 +265,7 @@ $conn->close();
 
     <h2> Database </h2>
 
-    <p>To see evrything in the database run 
+    <p>To see evrything in the database run
         <strong>
             SHOW tables;
         </Strong>
@@ -272,7 +295,8 @@ $conn->close();
     <div><?php echo $result2; ?></div>
 
 
-    <p>Now that you have what you need to find the murderer you can begin. If you're really comfortable with SQL, you can probably get it from here.
+    <p>Now that you have what you need to find the murderer you can begin. If you're really comfortable with SQL, you
+        can probably get it from here.
     </p>
     <h2>Run SQL Query</h2>
     <form method="post">
@@ -282,6 +306,17 @@ $conn->close();
         <button type="submit">RUN ⇩</button>
     </form>
     <div><?php echo $result3; ?></div>
+
+    <h1>Insert Answer here</h1>
+    <p>INSERT INTO solutions VALUES ("") and if the name you have inserted is correct you will get the points</p>
+    <h2>Run SQL Query</h2>
+    <form method="post">
+        <textarea name="query4" 
+        placeholder="Enter your SQL command here..."><?php echo isset($_POST['query4']) ? htmlspecialchars($_POST['query4']) : ''; ?></textarea>
+        <br>
+        <button type="submit">RUN ⇩</button>
+    </form>
+    <div><?php echo $result4; ?></div>
 
     <script>
         function updateLineNumbers() {
