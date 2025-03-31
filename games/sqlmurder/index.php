@@ -38,72 +38,6 @@ include '../../userinfo/connection.php';
             <?php endif; ?>
         </div>
     </div>
-
-    <div class="header">
-        <div class="title">Decryption</div>
-    </div>
-    <div class="task">
-        <div class="task-header" onclick="toggleContent('content1')">
-            <h3>Explanation</h3>
-        </div>
-        <div class="task-content" id="content1">
-            <p>Encryption is the process of converting plaintext data into a coded format (ciphertext) to prevent
-                unauthorized access, ensuring data confidentiality and security.
-                Decryption is the reverse process, where the encoded data is transformed back into its original form
-                using a key or algorithm.</p>
-
-            <p>Common decryption methods include:</p>
-            <ul>
-                <li><strong>Symmetric Decryption (AES, DES, 3DES)</strong> – Uses the same key for both encryption and
-                    decryption.</li>
-                <li><strong>Asymmetric Decryption (RSA, ECC)</strong> – Uses a public key for encryption and a private
-                    key for decryption.</li>
-                <li><strong>Hash-Based Decryption (Rainbow Tables, Brute Force)</strong> – Attempts to reverse hash
-                    functions using precomputed tables or exhaustive searching.</li>
-            </ul>
-
-            <ul>
-                <li>
-                    <strong>How it works:</strong>
-                    The process involves embedding a flag or secret data within the pixel values or metadata of an image
-                    file. The image itself remains visually unchanged,
-                    but the hidden information is encoded into the file structure, which can only be retrieved using the
-                    right decoding method.
-                </li>
-            </ul>
-        </div>
-    </div>
-
-    <div class="task">
-        <div class="task-header" onclick="toggleContent('content2')">
-            <h3>Cipher Encryption and Decryption</h3>
-        </div>
-
-        <div class="task-content" id="content2">
-            <p>Common types of ciphers include:</p>
-
-            <ul>
-                <li>
-                    <strong>Caesar Cipher</strong> – A substitution cipher that shifts each letter in the plaintext by a
-                    fixed number of positions in the alphabet.<br>
-                    <strong>Example:</strong> With a shift of 3, "HELLO" becomes "KHOOR".
-                </li>
-
-                <li>
-                    <strong>Substitution Cipher</strong> – Replaces each letter in the plaintext with another letter,
-                    number, or symbol according to a fixed system.<br>
-                    <strong>Example:</strong> If A → M, B → N, C → O, etc., then "HELLO" might become "URYYB".
-                </li>
-
-                <li>
-                    <strong>Vigenère Cipher</strong> – A more complex substitution cipher that uses a keyword to
-                    determine multiple shifts, making it harder to break.<br>
-                    <strong>Example:</strong> Using the keyword "KEY", "HELLO" is encrypted as "RIJVS".
-                </li>
-            </ul>
-
-        </div>
-    </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content3')">
             <h3>Get Working</h3>
@@ -116,22 +50,6 @@ include '../../userinfo/connection.php';
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>Decode this message: "ipcu{roprycfhejwet!}"</p>
-                    <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn2">Submit</button>
-                    <p class="result" id="results"></p>
-                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>Decode this message: "uozt{blfzivurmzoobznzhgvizggsrh}"</p>
-                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn3">Submit</button>
-                    <p class="result" id="results2"></p>
-                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
                 </div>
 
             </form>
@@ -182,16 +100,6 @@ include '../../userinfo/connection.php';
         document.getElementById('submitBtn').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
-        });
-
-        document.getElementById('submitBtn2').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
-        });
-
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
         });
 
 
