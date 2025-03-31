@@ -47,7 +47,7 @@ function executeQuery($conn, $query)
     }
 }
 
-$result1 = $result2 = "";
+$result1 = $result2 = $result3 = "";
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (isset($_POST['query1'])) {
@@ -156,6 +156,18 @@ $conn->close();
         <button type="submit">RUN ⇩</button>
     </form>
     <div><?php echo $result2; ?></div>
+
+
+    <p>Now that you have what you need to find the murderer you can begin.
+    </p>
+    <h2>Run SQL Query</h2>
+    <form method="post">
+        <textarea name="query2"
+            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query2']) ? htmlspecialchars($_POST['query2']) : ''; ?></textarea>
+        <br>
+        <button type="submit">RUN ⇩</button>
+    </form>
+    <div><?php echo $result3; ?></div>
 
     <script>
         function updateLineNumbers() {
