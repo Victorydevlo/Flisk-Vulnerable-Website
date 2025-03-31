@@ -184,7 +184,7 @@ session_start();
                 <h2 style="margin-bottom: 10px;">MAster of Knowledge</h2>
                 <p style="font-size: 1rem; color: #e0e0e0;">Test your skills in the ultimate
                     cybersecurity game. Are you ready to prove your knowledge?</p>
-                <a href="tournamentofknowledge.php"
+                <a href="fight.php"
                     style="display: inline-block; padding: 10px 20px; margin-top: 15px; background-color: #FFD700; color: black; font-weight: bold; text-decoration: none; border-radius: 5px; transition: background 0.3s;">
                     Enter Tournament
                 </a>
