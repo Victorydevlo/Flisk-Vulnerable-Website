@@ -128,9 +128,10 @@ $conn->close();
 
     <h2> Database </h2>
 
-    <p>to see evrything in the database run <strong>
-            SHOW tables;</Strong>
-
+    <p>To see evrything in the database run 
+        <strong>
+            SHOW tables;
+        </Strong>
     </p>
 
     <h2>Run SQL Query</h2>
