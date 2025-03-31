@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "games";
+$database = "mmgame";
 
 $conn = new mysqli($servername, $username, $password, $database);
 
@@ -91,9 +91,51 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
         heres an example of the Database bellow
     </p>
 
+    <h2>Run SQL Query</h2>
+    <form method="post">
+        <textarea name="query" placeholder="Enter your SQL command here..."><?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?></textarea><br>
+        <button type="submit">RUN ⇩</button>
+        <button type="button" onclick="resetForm()">RESET</button>
+    </form>
 
+    <?php if (isset($result) && $result && $result->num_rows > 0): ?>
+        <table>
+            <tr>
+                <?php 
+                $columns = array_keys($result->fetch_assoc());
+                foreach ($columns as $col) {
+                    echo "<th>" . htmlspecialchars($col) . "</th>";
+                }
+                echo "</tr>";
+                $result->data_seek(0);
+                ?>
+            </tr>
+            <?php while ($row = $result->fetch_assoc()): ?>
+                <tr>
+                    <?php foreach ($columns as $col): ?>
+                        <td><?php echo htmlspecialchars($row[$col]); ?></td>
+                    <?php endforeach; ?>
+                </tr>
+            <?php endwhile; ?>
+        </table>
+    <?php endif; ?>
 
+    <script>
+        function resetForm() {
+            document.querySelector('#queryInput').value = "<?php echo $default_query; ?>";
+            updateLineNumbers();
+        }
+        function updateLineNumbers() {
+            let textArea = document.getElementById('queryInput');
+            let lines = textArea.value.split('\n').length;
+            let lineNumbers = document.getElementById('lineNumbers');
+            lineNumbers.innerHTML = Array.from({length: lines}, (_, i) => i + 1).join('<br>');
+        }
+        updateLineNumbers();
+    </script>
 
 </body>
 
 </html>
+
+<?php $conn->close(); ?>
