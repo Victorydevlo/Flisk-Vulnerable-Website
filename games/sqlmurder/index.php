@@ -52,7 +52,7 @@ include '../../userinfo/connection.php';
                     <p>Type the black below</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
-                    <p class="result" id="results"></p>
+                    <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </a>
             </div>
