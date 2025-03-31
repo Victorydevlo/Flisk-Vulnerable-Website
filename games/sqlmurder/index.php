@@ -50,10 +50,10 @@ include '../../userinfo/connection.php';
                     <button id="vncButton" onclick="window.open('sqlmurdermystery.php', '_blank')">Click Me</button>
                     <br>
                     <p>Type the black below</p>
-                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn3">Submit</button>
                     <p class="result" id="results2"></p>
-                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </a>
             </div>
         </form>
@@ -102,7 +102,7 @@ include '../../userinfo/connection.php';
 
         document.getElementById('submitBtn').addEventListener('click', function (e) {
             e.preventDefault();
-            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
+            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag');
         });
 
 
