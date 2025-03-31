@@ -2,11 +2,9 @@
 session_start();
 include '../../userinfo/connection.php';
 
-
 if (!isset($_SESSION['initialized'])) {
     $_SESSION['initialized'] = true;
 }
-
 
 $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
 ?>
@@ -17,7 +15,6 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
 <head>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js"></script>
     <style>
-        
         textarea {
             width: 60%;
             height: 100px;
@@ -39,7 +36,6 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
             background-color: #f2f2f2;
         }
 
-       
         body {
             font-family: Arial, sans-serif;
             text-align: center;
@@ -235,6 +231,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
         </form>
         <?php if (isset($_GET['search'])): ?>
             <p style="margin-top: 10px; color: red;">Search term: <?php echo $_GET['search']; ?></p>
+            <p style="color: black;">Try using <code>&lt;script&gt;alert("TEST");&lt;/script&gt;</code> and see what happens!</p>
         <?php endif; ?>
     </div>
 
@@ -245,7 +242,9 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
             ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
             ['title' => 'Laptop', 'price' => '$3000', 'image' => 'images/laptop.jpg'],
             ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
-            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg']
+            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg'],
+            
+            ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg'] 
         ];
 
         $secretProducts = [
@@ -255,7 +254,9 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
             ['title' => 'Kidney', 'price' => '$9999999', 'image' => 'images/kidney.jpg'],
             ['title' => 'Cornea', 'price' => '$9999999', 'image' => 'images/cornea.jpg'],
             ['title' => 'Skin', 'price' => '$9999999', 'image' => 'images/skin.jpg'],
-            ['title' => 'Pancreas', 'price' => '$9999999', 'image' => 'images/pancreas.jpg']
+            ['title' => 'Pancreas', 'price' => '$9999999', 'image' => 'images/pancreas.jpg'],
+          
+            ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg']
         ];
 
         $products = $isSecretSession ? $secretProducts : $defaultProducts;
@@ -263,10 +264,11 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
         $searchTerm = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
 
         foreach ($products as $product):
-            if ($searchTerm === '' || 
+           
+            if (($searchTerm === '' || 
                 strpos(strtolower($product['title']), $searchTerm) !== false || 
-                strpos(strtolower($product['price']), $searchTerm) !== false):
-                ?>
+                strpos(strtolower($product['price']), $searchTerm) !== false) && 
+                ($isSecretSession || $product['title'] !== 'Key' || $searchTerm !== '')): ?>
                 <div class="product-container">
                     <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" style="width: 100%; border-radius: 8px;">
                     <h3 class="product-title"><?php echo htmlspecialchars($product['title']); ?></h3>
