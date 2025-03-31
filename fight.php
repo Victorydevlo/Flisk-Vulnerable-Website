@@ -136,7 +136,7 @@ session_start();
 
     <div class="content" style="text-align: center; padding: 50px;">
         <h1>Welcome to the Games</h1>
-        <p>This wont be easy..</p>
+        <p>Here you will be put into a real world situation and you will be asked to solve case that look like real ones, make sure you aree at a competent level, before playing these games.</p>
         <div style="display: flex; flex-wrap: wrap; justify-content: left;">
         <div style="text-align: center; padding: 40px 20px;">
             <div
