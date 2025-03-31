@@ -186,7 +186,7 @@ session_start();
                     cybersecurity game. Are you ready to prove your knowledge?</p>
                 <a href="fight.php"
                     style="display: inline-block; padding: 10px 20px; margin-top: 15px; background-color: #FFD700; color: black; font-weight: bold; text-decoration: none; border-radius: 5px; transition: background 0.3s;">
-                    Enter Tournament
+                    Start!
                 </a>
             </div>
         </div>
