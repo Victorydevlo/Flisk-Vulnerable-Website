@@ -162,83 +162,24 @@ include '../../userinfo/connection.php';
         <h1>Product Website</h1>
     </div>
 
-    <img src="../images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
+    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px;">
+        <?php 
+        $products = [
+            ['title' => 'Soap', 'price' => '$1000', 'image' => 'images/soap.jpg'],
+            ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
+            ['title' => 'Laptop', 'price' => '$3000', 'image' => 'image/laptop.jpg'],
+            ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
+            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'image/mouse.jpg']
+        ];
 
-    <h3>There has been a serious murder is West City! and you have been hired to solve this crime
-        We trust in you. </h3>
-    <p>use what you have learned about SQL to solve this crime, there are going to be help along side you.</p>
-
-    <h1> West City UnderGround Murder </h1>
-
-    <p>As the police officer who has been put in charge of solving this crime, you work day and night on this,
-        but somehow you slept in and lost the police report that was given to you, you do remember that
-        the crime happened in West city on April 10th 2025.
-    </p>
-
-    <h2> Database </h2>
-
-    <p>To see evrything in the database run
-        <strong>
-            SHOW tables;
-        </Strong>
-    </p>
-
-    <h2>Run SQL Query</h2>
-    <form method="post">
-        <textarea name="query1"
-            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query1']) ? htmlspecialchars($_POST['query1']) : ''; ?></textarea>
-        <br>
-        <button type="submit">RUN ⇩</button>
-    </form>
-    <div><?php echo $result1; ?></div>
-
-    <p>You will have to use a detabase to retrive the information that you need to solve this crime
-        heres an example of the Database bellow, run this command - <Strong> Select * From reports where name = 'John
-            Doe'</Strong>
-
-    </p>
-    <h2>Run SQL Query</h2>
-    <form method="post">
-        <textarea name="query2"
-            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query2']) ? htmlspecialchars($_POST['query2']) : ''; ?></textarea>
-        <br>
-        <button type="submit">RUN ⇩</button>
-    </form>
-    <div><?php echo $result2; ?></div>
-
-
-    <p>Now that you have what you need to find the murderer you can begin. If you're really comfortable with SQL, you
-        can probably get it from here.
-    </p>
-    <h2>Run SQL Query</h2>
-    <form method="post">
-        <textarea name="query3"
-            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query3']) ? htmlspecialchars($_POST['query3']) : ''; ?></textarea>
-        <br>
-        <button type="submit">RUN ⇩</button>
-    </form>
-    <div><?php echo $result3; ?></div>
-
-    <h1>Insert Answer here</h1>
-    <p>INSERT INTO solutions VALUES ("") and if the name you have inserted is correct you will get the points</p>
-    <h2>Run SQL Query</h2>
-    <form method="post">
-        <textarea name="query4" 
-        placeholder="Enter your SQL command here..."><?php echo isset($_POST['query4']) ? htmlspecialchars($_POST['query4']) : ''; ?></textarea>
-        <br>
-        <button type="submit">RUN ⇩</button>
-    </form>
-    <div><?php echo $result4; ?></div>
-
-    <script>
-        function updateLineNumbers() {
-            let textArea = document.getElementById('queryInput');
-            let lines = textArea.value.split('\n').length;
-            let lineNumbers = document.getElementById('lineNumbers');
-            lineNumbers.innerHTML = Array.from({ length: lines }, (_, i) => i + 1).join('<br>');
-        }
-        updateLineNumbers();
-    </script>
+        foreach ($products as $product): ?>
+            <div style="border: 1px solid #ddd; border-radius: 8px; padding: 10px; background-color: #fff; text-align: center;">
+                <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" style="width: 100%; border-radius: 8px;">
+                <h3><?php echo htmlspecialchars($product['title']); ?></h3>
+                <p style="color: green; font-weight: bold;"><?php echo htmlspecialchars($product['price']); ?></p>
+            </div>
+        <?php endforeach; ?>
+    </div>
 
 </body>
 
