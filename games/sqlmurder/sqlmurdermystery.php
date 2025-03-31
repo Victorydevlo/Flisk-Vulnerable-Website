@@ -240,8 +240,8 @@ $conn->close();
                 </div>
             </div>
         <?php else: ?>
-            <a href="../../userinfo/login.php"><button>Login</button></a>
-            <a href="../../userinfo/register.php"><button>Register</button></a>
+            <a href="../../../userinfo/login.php"><button>Login</button></a>
+            <a href="../../../userinfo/register.php"><button>Register</button></a>
         <?php endif; ?>
     </div>
 </div>
