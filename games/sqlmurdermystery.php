@@ -1,4 +1,9 @@
 <?php
+session_start();
+include '../userinfo/connection.php';
+?>
+
+<?php
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -100,7 +105,6 @@ $conn->close();
         body {
             font-family: Arial, sans-serif;
             text-align: center;
-            margin-top: 50px;
         }
 
         h1 {
@@ -110,9 +114,115 @@ $conn->close();
         p {
             color: #555;
         }
+
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+            
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .auth-buttons {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .auth-buttons button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        .auth-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        .user-dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            background-color: #333;
+            border-radius: 8px;
+            min-width: 150px;
+            box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .dropdown-menu a {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: white;
+            text-decoration: none;
+            padding: 10px;
+            transition: background 0.3s;
+        }
+
+        .dropdown-menu a:hover {
+            background: #444;
+        }
+
+        .logout {
+            color: red !important;
+            font-weight: bold;
+        }
+
+        .logout:hover {
+            background: darkred;
+        }
+
+        .user-icon {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        .user-dropdown:hover .dropdown-menu {
+            display: block;
+        }
     </style>
 </head>
-
+<div class="navbar">
+        <div class="logo">
+            <a href="../../index.php" style="color: white; text-decoration: none;">
+                <span style="color: black">Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
+        </div>
+        <div class="auth-buttons">
+            <?php if (isset($_SESSION['username'])): ?>
+                <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
+                <div class="user-dropdown">
+                    <button class="user-icon"><i class="fas fa-user-circle"></i></button>
+                    <div class="dropdown-menu">
+                        <a href="../../profile.php"><i class="fas fa-user"></i> Profile</a>
+                        <a href="../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
+                        <a href="../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <a href="../../userinfo/login.php"><button>Login</button></a>
+                <a href="../../userinfo/register.php"><button>Register</button></a>
+            <?php endif; ?>
+        </div>
+    </div>
 <body>
     <h1>SQL Murder Mystery</h1>
     <p>Solve the case</p>
