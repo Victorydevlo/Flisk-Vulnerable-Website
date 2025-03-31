@@ -40,20 +40,23 @@ include '../../userinfo/connection.php';
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content3')">
+
             <h3>Get Working</h3>
         </div>
-        <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/flagdecrypt.php" method="POST">
-                <div class="input-container">
-                    <p>Decode this message: "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}"</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn">Submit</button>
-                    <p class="result" id="result"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-
-            </form>
-        </div>
+        <form id="flagForm" action="flagsub.php" method="POST">
+            <div class="input-container">
+                <p>Click this button to be sent to a dummy website to test your knowledge</p>
+                <a>
+                    <button id="vncButton" onclick="window.open('sqlmurdermystery.php', '_blank')">Click Me</button>
+                    <br>
+                    <p>Type the black below</p>
+                    <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn3">Submit</button>
+                    <p class="result" id="results2"></p>
+                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
+                </a>
+            </div>
+        </form>
     </div>
     <script>
         function toggleContent(id) {
@@ -71,7 +74,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/flagdecrypt.php', {
+            fetch('flagsub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
