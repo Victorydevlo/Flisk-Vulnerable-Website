@@ -158,7 +158,7 @@ $conn->close();
     <div><?php echo $result2; ?></div>
 
 
-    <p>Now that you have what you need to find the murderer you can begin.
+    <p>Now that you have what you need to find the murderer you can begin. If you're really comfortable with SQL, you can probably get it from here.
     </p>
     <h2>Run SQL Query</h2>
     <form method="post">
