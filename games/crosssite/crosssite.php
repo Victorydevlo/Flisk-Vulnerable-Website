@@ -232,6 +232,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
         <?php if (isset($_GET['search'])): ?>
             <p style="margin-top: 10px; color: red;">Search term: <?php echo $_GET['search']; ?></p>
             <p style="color: black;">Try using <code>&lt;script&gt;alert("TEST");&lt;/script&gt;</code> and see what happens!</p>
+            <p>now do a bit of research and try extracting the cookie, document...</p>
         <?php endif; ?>
     </div>
 
