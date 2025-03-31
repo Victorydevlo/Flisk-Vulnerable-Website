@@ -158,18 +158,25 @@ include '../../userinfo/connection.php';
 </div>
 
 <body>
-    <div style="background-color: orange; padding: 10px; margin: 10px auto; width: 98%; text-align: center; border-radius: 8px;">
-        <h1>Product Website</h1>
+<div style="display: flex; gap: 20px; padding: 20px;">
+    <div style="width: 20%; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
+        <h3>Search</h3>
+        <form method="GET" action="">
+            <input type="text" name="search" placeholder="Search products..." style="width: 100%; padding: 8px; margin-bottom: 10px;">
+            <button type="submit" style="width: 100%; padding: 8px; background-color: orange; color: white; border: none; border-radius: 4px;">Search</button>
+        </form>
+        <?php if (isset($_GET['search'])): ?>
+            <p style="margin-top: 10px; color: red;">Search term: <?php echo htmlspecialchars($_GET['search']); ?></p>
+        <?php endif; ?>
     </div>
-
-    <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 20px;">
+    <div style="width: 80%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
         <?php 
         $products = [
             ['title' => 'Soap', 'price' => '$1000', 'image' => 'images/soap.jpg'],
             ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
-            ['title' => 'Laptop', 'price' => '$3000', 'image' => 'image/laptop.jpg'],
+            ['title' => 'Laptop', 'price' => '$3000', 'image' => 'images/laptop.jpg'],
             ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
-            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'image/mouse.jpg']
+            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg']
         ];
 
         foreach ($products as $product): ?>
@@ -180,7 +187,7 @@ include '../../userinfo/connection.php';
             </div>
         <?php endforeach; ?>
     </div>
-
+</div>
 </body>
 
 </html>
