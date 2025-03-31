@@ -92,6 +92,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
     </p>
 
     <h2> Database </h2>
+
+    <p>to see evrything in the database run</Strong>
+
+    </p>
+
+    <h2>Run SQL Query</h2>
+    <form method="post">
+        <textarea name="query" style="width: 670px" placeholder="Enter your SQL command here...">
+            <?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?>
+    </textarea>
+        <br>
+        <button type="submit">RUN ⇩</button>
+
+    </form>
+
     <p>You will have to use a detabase to retrive the information that you nned to solve this crime
         heres an example of the Database bellow, run this command - <Strong> Select * From reports where name = 'John
             Doe'</Strong>
