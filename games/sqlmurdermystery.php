@@ -162,8 +162,8 @@ $conn->close();
     </p>
     <h2>Run SQL Query</h2>
     <form method="post">
-        <textarea name="query2"
-            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query2']) ? htmlspecialchars($_POST['query2']) : ''; ?></textarea>
+        <textarea name="query3"
+            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query3']) ? htmlspecialchars($_POST['query3']) : ''; ?></textarea>
         <br>
         <button type="submit">RUN ⇩</button>
     </form>
