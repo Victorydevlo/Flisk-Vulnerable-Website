@@ -28,11 +28,11 @@
 
     <img src="images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
 
-    <h2>There has been a serious murder is West City! and you have been hired to solve this crime
-        We trust in you. </h2>
+    <h3>There has been a serious murder is West City! and you have been hired to solve this crime
+        We trust in you. </h3>
     <p>use what you have learned about SQL to solve this crime, there are going to be help along side you.</p>
 
-
+    <h1> West City UnderGround Murder </h1>
 
 
 
