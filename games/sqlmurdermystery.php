@@ -34,6 +34,11 @@
 
     <h1> West City UnderGround Murder </h1>
 
+    <p>As the police officer who has been put in charge of solving this crime, you work day and night on this,
+        but somehow you slept in and lost the police report that was given to you, you do remember that
+        the crime happened in West city on April 10th 2025.
+    </p>
+
 
 
 
