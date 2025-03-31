@@ -158,6 +158,9 @@ include '../../userinfo/connection.php';
 </div>
 
 <body>
+<div style="display: flex; gap: 20px; padding: 20px;"></div>
+        <h1>Product Website</h1>
+    </div>
 <div style="display: flex; gap: 20px; padding: 20px;">
     <div style="width: 20%; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
         <h3>Search</h3>
