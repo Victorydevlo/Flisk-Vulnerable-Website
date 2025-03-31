@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -39,6 +41,10 @@
         the crime happened in West city on April 10th 2025.
     </p>
 
+    <h2> Database </h2>
+    <p>You will have to use a detabase to retrive the information that you nned to solve this crime
+        heres an example of the Database bellow
+    </p>
 
 
 
