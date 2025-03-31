@@ -21,5 +21,8 @@
 <body>
     <h1>SQL Murder Mystery</h1>
     <p>Solve the case</p>
+
+    <img src="images/ss.jpg" style="width: 750px;"
+    class="  display: block; margin-left: auto; margin-right: auto;">
 </body>
 </html>
