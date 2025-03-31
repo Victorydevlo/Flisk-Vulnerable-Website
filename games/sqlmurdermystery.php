@@ -73,7 +73,7 @@ $conn->close();
 <head>
     <style>
         textarea {
-            width: 100%;
+            width: 60%;
             height: 100px;
         }
 
@@ -147,7 +147,7 @@ $conn->close();
     </form>
     <div><?php echo $result1; ?></div>
 
-    <p>You will have to use a detabase to retrive the information that you nned to solve this crime
+    <p>You will have to use a detabase to retrive the information that you need to solve this crime
         heres an example of the Database bellow, run this command - <Strong> Select * From reports where name = 'John
             Doe'</Strong>
 
