@@ -161,7 +161,6 @@ include '../../userinfo/connection.php';
     <div style="background-color: orange; padding: 10px; margin: 10px auto; width: 98%; text-align: center; border-radius: 8px;">
         <h1>Product Website</h1>
     </div>
-    <p>Solve the case</p>
 
     <img src="../images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
 
