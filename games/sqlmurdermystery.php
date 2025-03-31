@@ -10,22 +10,57 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
-    $query = trim($_POST['query']);
+function executeQuery($conn, $query)
+{
     $blacklist = ['DROP', 'DELETE', 'UPDATE', 'INSERT'];
     foreach ($blacklist as $word) {
         if (stripos($query, $word) !== false) {
-            die("<p style='color: red;'>Invalid query detected!</p>");
+            return "<p style='color: red;'>Invalid query detected!</p>";
         }
     }
     $stmt = $conn->prepare($query);
     if ($stmt) {
         $stmt->execute();
         $result = $stmt->get_result();
+        if ($result && $result->num_rows > 0) {
+            $output = "<table><tr>";
+            $columns = array_keys($result->fetch_assoc());
+            foreach ($columns as $col) {
+                $output .= "<th>" . htmlspecialchars($col) . "</th>";
+            }
+            $output .= "</tr>";
+            $result->data_seek(0);
+            while ($row = $result->fetch_assoc()) {
+                $output .= "<tr>";
+                foreach ($columns as $col) {
+                    $output .= "<td>" . htmlspecialchars($row[$col]) . "</td>";
+                }
+                $output .= "</tr>";
+            }
+            $output .= "</table>";
+            return $output;
+        } else {
+            return "<p>No results found.</p>";
+        }
     } else {
-        die("<p style='color: red;'>Invalid query format!</p>");
+        return "<p style='color: red;'>Invalid query format!</p>";
     }
 }
+
+$result1 = $result2 = "";
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    if (isset($_POST['query1'])) {
+        $query1 = trim($_POST['query1']);
+        $result1 = executeQuery($conn, $query1);
+    }
+    if (isset($_POST['query2'])) {
+        $query2 = trim($_POST['query2']);
+        $result2 = executeQuery($conn, $query2);
+    }
+}
+
+$conn->close();
 ?>
 
 <!DOCTYPE html>
@@ -93,9 +128,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
 
     <h2> Database </h2>
 
-    <p>to see evrything in the database run <strong> SELECT name 
-  FROM reports
- where type = 'table'</Strong>
+    <p>to see evrything in the database run <strong>
+         SELECT * FROM mmgame</Strong>
 
     </p>
 
@@ -124,28 +158,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['query'])) {
         <button type="submit">RUN ⇩</button>
 
     </form>
-
-    <?php if (isset($result) && $result && $result->num_rows > 0): ?>
-        <table>
-            <tr>
-                <?php
-                $columns = array_keys($result->fetch_assoc());
-                foreach ($columns as $col) {
-                    echo "<th>" . htmlspecialchars($col) . "</th>";
-                }
-                echo "</tr>";
-                $result->data_seek(0);
-                ?>
-            </tr>
-            <?php while ($row = $result->fetch_assoc()): ?>
-                <tr>
-                    <?php foreach ($columns as $col): ?>
-                        <td><?php echo htmlspecialchars($row[$col]); ?></td>
-                    <?php endforeach; ?>
-                </tr>
-            <?php endwhile; ?>
-        </table>
-    <?php endif; ?>
 
     <script>
         function updateLineNumbers() {
