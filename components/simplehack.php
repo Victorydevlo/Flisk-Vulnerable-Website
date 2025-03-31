@@ -135,25 +135,6 @@ session_start();
 
 
     <div style="display: flex; flex-wrap: wrap; justify-content: left;">
-
-<!-- '        <?php if (isset($_SESSION['is_admin']) && $_SESSION['is_admin'] == 1): ?>
-            <div style="text-align: center; padding: 40px 20px;">
-                <div
-                    style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
-                    <div
-                        style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-                    </div>
-                    <div style="position: relative; z-index: 2;">
-                        <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Beginners Journey</h3>
-                        <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets Start With something simple
-                        </p>
-                        <a href="simple/start.php"
-                            style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                            More</a>
-                    </div>
-                </div>
-            </div>
-        <?php endif; ?>' -->
         <div style="text-align: center; padding: 40px 20px;">
             <div
                 style="position: relative; background: url('../images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
