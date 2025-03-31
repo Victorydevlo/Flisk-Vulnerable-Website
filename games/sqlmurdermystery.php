@@ -129,35 +129,32 @@ $conn->close();
     <h2> Database </h2>
 
     <p>to see evrything in the database run <strong>
-         SELECT * FROM mmgame</Strong>
+            SELECT * FROM mmgame</Strong>
 
     </p>
 
     <h2>Run SQL Query</h2>
     <form method="post">
-        <textarea name="query" style="width: 670px" placeholder="Enter your SQL command here...">
-            <?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?>
-    </textarea>
+        <textarea name="query1"
+            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query1']) ? htmlspecialchars($_POST['query1']) : ''; ?></textarea>
         <br>
         <button type="submit">RUN ⇩</button>
-
     </form>
+    <div><?php echo $result1; ?></div>
 
     <p>You will have to use a detabase to retrive the information that you nned to solve this crime
         heres an example of the Database bellow, run this command - <Strong> Select * From reports where name = 'John
             Doe'</Strong>
 
     </p>
-
     <h2>Run SQL Query</h2>
     <form method="post">
-        <textarea name="query" style="width: 670px" placeholder="Enter your SQL command here...">
-            <?php echo isset($_POST['query']) ? htmlspecialchars($_POST['query']) : ''; ?>
-    </textarea>
+        <textarea name="query2"
+            placeholder="Enter your SQL command here..."><?php echo isset($_POST['query2']) ? htmlspecialchars($_POST['query2']) : ''; ?></textarea>
         <br>
         <button type="submit">RUN ⇩</button>
-
     </form>
+    <div><?php echo $result2; ?></div>
 
     <script>
         function updateLineNumbers() {
@@ -172,5 +169,3 @@ $conn->close();
 </body>
 
 </html>
-
-<?php $conn->close(); ?>
