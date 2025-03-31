@@ -157,7 +157,7 @@ include '../../userinfo/connection.php';
 </div>
 
 <body>
-    <h1>SQL Murder Mystery</h1>
+    <h1>Product Website</h1>
     <p>Solve the case</p>
 
     <img src="../images/ss.jpg" style="width: 750px;" class="  display: block; margin-left: auto; margin-right: auto;">
