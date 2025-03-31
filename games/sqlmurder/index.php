@@ -51,8 +51,8 @@ include '../../userinfo/connection.php';
                     <br>
                     <p>Type the black below</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn3">Submit</button>
-                    <p class="result" id="results2"></p>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <p class="result" id="results"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </a>
             </div>
