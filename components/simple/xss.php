@@ -161,7 +161,7 @@ include '../../userinfo/connection.php';
                 <p class="result" id="result"></p>
                 <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
             </div>
-            <form id="flagForm" action="flagsub/idorsub.php" method="POST">
+            <form id="flagForm" action="flagsub/xsssub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
@@ -219,7 +219,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/idorsub.php', {
+            fetch('flagsub/xsssub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
