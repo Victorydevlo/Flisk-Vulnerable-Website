@@ -219,7 +219,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
 </div>
 
 <div class="secret-page-background">
-    <h1><?php echo $isSecretSession ? "Organ Trade Underground" : "Products page"; ?></h1>
+    <h1><?php echo $isSecretSession ? "Organ Trade Underground flag{upSIDEdown}" : "Products page"; ?></h1>
 </div>
 
 <div style="display: flex; gap: 20px; padding: 20px;">
