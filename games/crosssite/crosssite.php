@@ -200,22 +200,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
             <span style="color: blue;">JS</span>
         </a>
     </div>
-    <div class="auth-buttons">
-        <?php if (isset($_SESSION['username'])): ?>
-            <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
-            <div class="user-dropdown">
-                <button class="user-icon"><i class="fas fa-user-circle"></i></button>
-                <div class="dropdown-menu">
-                    <a href="../../../profile.php"><i class="fas fa-user"></i> Profile</a>
-                    <a href="../../../leaderboard.php"><i class="fas fa-trophy"></i> Leaderboard</a>
-                    <a href="../../../userinfo/logout.php" class="logout"><i class="fas fa-sign-out-alt"></i> Log Out</a>
-                </div>
-            </div>
-        <?php else: ?>
-            <a href="../../../userinfo/login.php"><button>Login</button></a>
-            <a href="../../../userinfo/register.php"><button>Register</button></a>
-        <?php endif; ?>
-    </div>
+    
 </div>
 
 <div class="secret-page-background">
