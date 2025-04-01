@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag' => 'flag{GoldMedalMaster}',
+    'flag' => 'flag{upSIDEdown}',
 ];
 
 $submitted_flag = null;
