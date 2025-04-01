@@ -193,76 +193,82 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
 </head>
 
 <body>
-<div class="navbar">
-    <div class="logo">
-        <a href="../../index.php" style="color: white; text-decoration: none;">
-            <span style="color: black">Flisk</span>
-            <span style="color: blue;">JS</span>
-        </a>
-    </div>
-    
-</div>
+    <div class="navbar">
+        <div class="logo">
+            <a href="../../index.php" style="color: white; text-decoration: none;">
+                <span style="color: black">Flisk</span>
+                <span style="color: blue;">JS</span>
+            </a>
+        </div>
 
-<div class="secret-page-background">
-    <h1><?php echo $isSecretSession ? "Organ Trade Underground flag{upSIDEdown}" : "Products page"; ?></h1>
-</div>
-
-<div style="display: flex; gap: 20px; padding: 20px;">
-    <div style="width: 20%; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
-        <h3>Search</h3>
-        <form method="GET" action="">
-            <input type="text" name="search" placeholder="Search products..." style="width: 90%; padding: 8px; margin-bottom: 10px;">
-            <button type="submit" style="width: 100%; padding: 8px; background-color: orange; color: white; border: none; border-radius: 4px;">Search</button>
-        </form>
-        <?php if (isset($_GET['search'])): ?>
-            <p style="margin-top: 10px; color: red;">Search term: <?php echo $_GET['search']; ?></p>
-            <p style="color: black;">Try using <code>&lt;script&gt;alert("TEST");&lt;/script&gt;</code> and see what happens!</p>
-            <p>now do a bit of research and try extracting the cookie, document...</p>
-        <?php endif; ?>
     </div>
 
-    <div style="width: 80%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
-        <?php
-        $defaultProducts = [
-            ['title' => 'Soap', 'price' => '$1000', 'image' => 'images/soap.jpg'],
-            ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
-            ['title' => 'Laptop', 'price' => '$3000', 'image' => 'images/laptop.jpg'],
-            ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
-            ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg'],
-            
-            ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg'] 
-        ];
-
-        $secretProducts = [
-            ['title' => 'Heart', 'price' => '$9999999', 'image' => 'images/heart.jpg'],
-            ['title' => 'Liver', 'price' => '$9999999', 'image' => 'images/liver.jpg'],
-            ['title' => 'Lungs', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
-            ['title' => 'Kidney', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
-            ['title' => 'Skin', 'price' => '$9999999', 'image' => 'images/skin.jpg'],
-            ['title' => 'Pancreas', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
-          
-            ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg']
-        ];
-
-        $products = $isSecretSession ? $secretProducts : $defaultProducts;
-
-        $searchTerm = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
-
-        foreach ($products as $product):
-           
-            if (($searchTerm === '' || 
-                strpos(strtolower($product['title']), $searchTerm) !== false || 
-                strpos(strtolower($product['price']), $searchTerm) !== false) && 
-                ($isSecretSession || $product['title'] !== 'Key' || $searchTerm !== '')): ?>
-                <div class="product-container">
-                    <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>" style="width: 100%; border-radius: 8px;">
-                    <h3 class="product-title"><?php echo htmlspecialchars($product['title']); ?></h3>
-                    <p class="product-price"><?php echo htmlspecialchars($product['price']); ?></p>
-                </div>
-            <?php endif;
-        endforeach; ?>
+    <div class="secret-page-background">
+        <h1><?php echo $isSecretSession ? "Organ Trade Underground flag{upSIDEdown}" : "Products page"; ?></h1>
     </div>
-</div>
+
+    <div style="display: flex; gap: 20px; padding: 20px;">
+        <div style="width: 20%; background-color: #f2f2f2; padding: 10px; border-radius: 8px;">
+            <h3>Search</h3>
+            <form method="GET" action="">
+                <input type="text" name="search" placeholder="Search products..."
+                    style="width: 90%; padding: 8px; margin-bottom: 10px;">
+                <button type="submit"
+                    style="width: 100%; padding: 8px; background-color: orange; color: white; border: none; border-radius: 4px;">Search</button>
+            </form>
+            <?php if (isset($_GET['search'])): ?>
+                <p style="margin-top: 10px; color: red;">Search term: <?php echo $_GET['search']; ?></p>
+                <p style="color: black;">Try using <code>&lt;script&gt;alert("TEST");&lt;/script&gt;</code> and see what
+                    happens!</p>
+                <p>now do a bit of research and try extracting the cookie, document...</p>
+            <?php endif; ?>
+        </div>
+
+        <div style="width: 80%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
+            <?php
+            $defaultProducts = [
+                ['title' => 'Soap', 'price' => '$1000', 'image' => 'images/soap.jpg'],
+                ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
+                ['title' => 'Laptop', 'price' => '$3000', 'image' => 'images/laptop.jpg'],
+                ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
+                ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg'],
+
+                ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg']
+            ];
+
+            $secretProducts = [
+                ['title' => 'Heart', 'price' => '$9999999', 'image' => 'images/heart.jpg'],
+                ['title' => 'Liver', 'price' => '$9999999', 'image' => 'images/liver.jpg'],
+                ['title' => 'Lungs', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
+                ['title' => 'Kidney', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
+                ['title' => 'Skin', 'price' => '$9999999', 'image' => 'images/skin.jpg'],
+                ['title' => 'Pancreas', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
+
+                ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg']
+            ];
+
+            $products = $isSecretSession ? $secretProducts : $defaultProducts;
+
+            $searchTerm = isset($_GET['search']) ? strtolower(trim($_GET['search'])) : '';
+
+            foreach ($products as $product):
+
+                if (
+                    ($searchTerm === '' ||
+                        strpos(strtolower($product['title']), $searchTerm) !== false ||
+                        strpos(strtolower($product['price']), $searchTerm) !== false) &&
+                    ($isSecretSession || $product['title'] !== 'Key' || $searchTerm !== '')
+                ): ?>
+                    <div class="product-container">
+                        <img src="<?php echo $product['image']; ?>" alt="<?php echo htmlspecialchars($product['title']); ?>"
+                            style="width: 100%; border-radius: 8px;">
+                        <h3 class="product-title"><?php echo htmlspecialchars($product['title']); ?></h3>
+                        <p class="product-price"><?php echo htmlspecialchars($product['price']); ?></p>
+                    </div>
+                <?php endif;
+            endforeach; ?>
+        </div>
+    </div>
 </body>
 
 </html>
