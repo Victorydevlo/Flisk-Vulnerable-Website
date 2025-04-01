@@ -47,7 +47,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
         }
 
         p {
-            color: #555;
+            color:rgb(61, 61, 61);
         }
 
         .navbar {
@@ -227,10 +227,10 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
         <div style="width: 80%; display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px;">
             <?php
             $defaultProducts = [
-                ['title' => 'Soap', 'price' => '$1000', 'image' => 'images/soap.jpg'],
-                ['title' => 'Bottle', 'price' => '$2000', 'image' => 'images/bottle.jpg'],
+                ['title' => 'Soap', 'price' => '$1500', 'image' => 'images/soap.jpg'],
+                ['title' => 'Bottle', 'price' => '$3400', 'image' => 'images/bottle.jpg'],
                 ['title' => 'Laptop', 'price' => '$3000', 'image' => 'images/laptop.jpg'],
-                ['title' => 'Cover', 'price' => '$4000', 'image' => 'images/cover.jpg'],
+                ['title' => 'Cover', 'price' => '$6700', 'image' => 'images/cover.jpg'],
                 ['title' => 'Mouse', 'price' => '$5000', 'image' => 'images/mouse.jpg'],
 
                 ['title' => 'Key', 'price' => 'sessionid = 3t7h8i9s2a3s4e7c2r9et', 'image' => 'images/key.jpg']
