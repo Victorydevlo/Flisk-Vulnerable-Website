@@ -150,7 +150,7 @@ include '../../userinfo/connection.php';
 
             setTimeout(() => {
                 clearInterval(interval);
-                resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5902";
+                resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5901";
             }, 5000);
         }
 
