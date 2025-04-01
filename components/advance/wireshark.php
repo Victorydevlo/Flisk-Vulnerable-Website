@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Ports</div>
+        <div class="title">Wireshark</div>
     </div>
 
     <div class="task">
