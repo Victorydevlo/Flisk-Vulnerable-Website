@@ -156,34 +156,18 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
 
             <form id="flagForm" action="flagsub/xsssub.php" method="POST">
-            <div class="input-container">
-                <p>What is Cross-Site Scripting (XSS)?</p>
-                <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
-                <button type="button" id="submitBtn">Submit</button>
-                <p class="result" id="result"></p>
-                <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-            </div>
-
-            <div class="input-container">
-                <p>What is one way to prevent XSS attacks?</p>
-                <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
-                <button type="button" id="submitBtn3">Submit</button>
-                <p class="result" id="result3"></p>
-                <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
-            </div>
-
-            <div class="input-container">
-                <p>What can XSS attacks be used for?</p>
-                <input type="text" id="userInput4" name="flag4" placeholder="Type your answer here..." required>
-                <button type="button" id="submitBtn4">Submit</button>
-                <p class="result" id="result4"></p>
-                <p id="loadingMessage4" style="display:none;">Submitting your flag...</p>
-            </div>
+                <div class="input-container">
+                    <p>What do attacker inject in a web to Cross-Site Script (XSS)?</p>
+                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+                </div>
 
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
-                        <button id="vncButton" onclick="window.open('websites/xsssweb.php', '_blank')">Click Me</button>
+                        <button id="vncButton" onclick="window.open('websites/xssweb.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
                         <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
