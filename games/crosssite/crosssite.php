@@ -195,7 +195,7 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
 <body>
 <div class="navbar">
     <div class="logo">
-        <a href="../../../index.php" style="color: white; text-decoration: none;">
+        <a href="../../index.php" style="color: white; text-decoration: none;">
             <span style="color: black">Flisk</span>
             <span style="color: blue;">JS</span>
         </a>
