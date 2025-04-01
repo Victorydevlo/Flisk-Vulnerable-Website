@@ -238,7 +238,6 @@ $isSecretSession = session_id() === "3t7h8i9s2a3s4e7c2r9et";
             ['title' => 'Liver', 'price' => '$9999999', 'image' => 'images/liver.jpg'],
             ['title' => 'Lungs', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
             ['title' => 'Kidney', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
-            ['title' => 'Cornea', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
             ['title' => 'Skin', 'price' => '$9999999', 'image' => 'images/skin.jpg'],
             ['title' => 'Pancreas', 'price' => '$9999999', 'image' => 'images/placeholder.jpg'],
           
