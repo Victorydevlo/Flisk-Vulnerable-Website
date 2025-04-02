@@ -6,7 +6,7 @@
     <title>IDOR Task</title>
 </head>
 <body>
-    <h1>Login</h1>
+    <h1 style="text-align: center; font-family: Arial, sans-serif; color:rgb(65, 71, 66); margin-bottom: 20px;">Welcome to the IDOR Challenge</h1>
     <form id="login-form">
         <label for="username">Username:</label>
         <input type="text" id="username" required><br>
