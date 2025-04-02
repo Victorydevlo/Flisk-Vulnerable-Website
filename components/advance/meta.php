@@ -113,7 +113,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="filechecker/portsub.php" method="POST">
+            <form id="flagForm" action="filechecker/metasub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
