@@ -16,7 +16,7 @@
     </form>
     <div id="login-error" style="color: red; display: none;">Invalid login credentials!</div>
     <hr>
-    <h2>User Profile</h2>
+    <h2 style="text-align: center; font-family: Arial, sans-serif; color:rgb(65, 71, 66); margin-bottom: 20px;">User Profile</h2>
     <div id="user-profile" style="display: none;">
         <p id="profile-username"></p>
         <p id="profile-email"></p>
