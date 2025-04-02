@@ -65,10 +65,10 @@ include '../../userinfo/connection.php';
                         <button id="vncButton" onclick="window.open('website/xss/xcrfweb.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
-                        <button type="button" id="submitBtn2">Submit</button>
-                        <p class="result" id="results"></p>
-                        <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
+                        <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                        <button type="button" id="submitBtn">Submit</button>
+                        <p class="result" id="result"></p>
+                        <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                     </a>
                 </div>
             </form>
@@ -120,21 +120,6 @@ include '../../userinfo/connection.php';
         document.getElementById('submitBtn').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
-        });
-
-        document.getElementById('submitBtn2').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
-        });
-
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput3', 'result3', 'submitBtn3', 'loadingMessage3', 'flag3');
-        });
-
-        document.getElementById('submitBtn4').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput4', 'result4', 'submitBtn4', 'loadingMessage4', 'flag4');
         });
 
     </script>
