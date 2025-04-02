@@ -48,7 +48,7 @@ include '../../userinfo/connection.php';
         </div>
         <div class="task-content" id="content1">
             <p>Welcome to the Privilege Escalation challenge! This task is designed to test your understanding of privilege escalation attacks. Your goal is to escalate your privileges on the test website to gain unauthorized access to higher-level functionalities.</p>
-            <p>Analyze the scenario carefully and find a way to exploit a misconfiguration or vulnerability.</p>
+            <p>Analyze the scenario carefully and find a way to exploit a misconfiguration or vulnerability. Suidbash is an interesting file why not google it?</p>
         </div>
     </div>
 
