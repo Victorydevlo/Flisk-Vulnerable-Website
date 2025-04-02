@@ -91,7 +91,7 @@ include '../../userinfo/connection.php';
             security measures, developers and organizations can protect their assets and users from potential
             attacks. </p>
 
-            <p> As a headstart, try running the following command: <code>127.0.0.1; cat worldlist.txt</code>. This will help you understand how command injection works. </p>
+            <p> As a headstart, visit this webpage http://localhost/ping/ping.php try running the following command: <code>127.0.0.1</code>. This will help you understand how command injection works.  now try injecting coomand in it</p>
             <p> Now, use a similar approach to look for <code>flag.txt</code> using the same command structure. Good luck!</p>
         </div>
     </div>
