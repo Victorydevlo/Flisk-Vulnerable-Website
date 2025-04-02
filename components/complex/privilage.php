@@ -61,7 +61,7 @@ include '../../userinfo/connection.php';
         </div>
         <div class="task-content" id="content3">
 
-            <form id="flagForm" action="flagsub/xcrfsub.php" method="POST">
+            <form id="flagForm" action="flagsub/privsub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
