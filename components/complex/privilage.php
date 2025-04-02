@@ -47,8 +47,11 @@ include '../../userinfo/connection.php';
             <h3>Challenge Introduction</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>Welcome to the Privilege Escalation challenge! This task is designed to test your understanding of privilege escalation attacks. Your goal is to escalate your privileges on the test website to gain unauthorized access to higher-level functionalities.</p>
-            <p>Analyze the scenario carefully and find a way to exploit a misconfiguration or vulnerability. Suidbash is an interesting file why not google it?</p>
+            <p>Welcome to the Privilege Escalation challenge! This task is designed to test your understanding of
+                privilege escalation attacks. Your goal is to escalate your privileges on the test website to gain
+                unauthorized access to higher-level functionalities.</p>
+            <p>Analyze the scenario carefully and find a way to exploit a misconfiguration or vulnerability. Suidbash is
+                an interesting file why not google it? the flag will be hidden inside the /root</p>
         </div>
     </div>
 
@@ -60,16 +63,17 @@ include '../../userinfo/connection.php';
 
             <form id="flagForm" action="flagsub/xcrfsub.php" method="POST">
                 <div class="input-container">
-                    <p>Click this button to be sent to a dummy website to test your knowledge</p>
-                    <a>
-                        <button id="vncButton" onclick="window.open('website/cxrf/xcrfweb.php', '_blank')">Click Me</button>
-                        <br>
-                        <p>Type the black below</p>
-                        <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
-                        <button type="button" id="submitBtn">Submit</button>
-                        <p class="result" id="result"></p>
-                        <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                    </a>
+
+                    <p>Click the button to get the VNC IP and Port</p>
+                    <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
+                    <div id="vncResult" class="result" style="display: none;"></div>
+                    <p>Type the flag below</p>
+                    <input type="text" id="userInput" autocomplete="off" name="flag1"
+                        placeholder="Type your answer here..." required>
+                    <button type="button" id="submitBtn">Submit</button>
+                    <p class="result" id="result"></p>
+                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
+
                 </div>
             </form>
         </div>
