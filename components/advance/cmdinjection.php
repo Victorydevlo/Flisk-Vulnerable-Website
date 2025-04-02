@@ -63,12 +63,12 @@ include '../../userinfo/connection.php';
 
             <ul>
             <li><strong>Exploitation of Input Fields</strong> – Attackers often exploit input fields, such as forms
-                or query parameters, to inject malicious commands into the application.</li>
+            or query parameters, to inject malicious commands into the application.</li>
             <li><strong>Chaining Commands</strong> – By using special characters like <code>;</code>, <code>&&</code>, or <code>|</code>, attackers can chain multiple commands to execute additional actions.</li>
             <li><strong>Accessing Sensitive Data</strong> – Attackers can use command injection to read sensitive
-                files, such as configuration files or passwords, from the server.</li>
+            files, such as configuration files or passwords, from the server.</li>
             <li><strong>System Control</strong> – In some cases, attackers can gain full control of the underlying
-                operating system, allowing them to install malware or create backdoors.</li>
+            operating system, allowing them to install malware or create backdoors.</li>
             </ul>
 
             <p> To mitigate the risks associated with command injection, developers and organizations should adopt the
@@ -76,20 +76,23 @@ include '../../userinfo/connection.php';
 
             <ul>
             <li><strong>Input Validation</strong> – Validate and sanitize all user inputs to ensure they conform to
-                expected formats and do not contain malicious characters.</li>
+            expected formats and do not contain malicious characters.</li>
             <li><strong>Use Parameterized Queries</strong> – When interacting with the operating system or databases,
             <li><strong>Least Privilege Principle</strong> – Run applications with the minimum privileges required to
-                reduce the impact of a successful attack.</li>
+            reduce the impact of a successful attack.</li>
             <li><strong>Escape User Input</strong> – Properly escape user input before including it in system
-                commands to neutralize special characters.</li>
+            commands to neutralize special characters.</li>
             <li><strong>Security Testing</strong> – Regularly perform security testing, such as penetration testing
-                and code reviews, to identify and fix vulnerabilities.</li>
+            and code reviews, to identify and fix vulnerabilities.</li>
             </ul>
 
             <p> In conclusion, command injection is a serious threat that can compromise the security and integrity of
             applications and systems. By understanding the nature of this vulnerability and implementing robust
             security measures, developers and organizations can protect their assets and users from potential
             attacks. </p>
+
+            <p> As a headstart, try running the following command: <code>127.0.0.1; cat worldlist.txt</code>. This will help you understand how command injection works. </p>
+            <p> Now, use a similar approach to look for <code>flag.txt</code> using the same command structure. Good luck!</p>
         </div>
     </div>
 
