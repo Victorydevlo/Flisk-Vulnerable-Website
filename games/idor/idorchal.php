@@ -7,12 +7,12 @@
 </head>
 <body>
     <h1 style="text-align: center; font-family: Arial, sans-serif; color:rgb(65, 71, 66); margin-bottom: 20px;">Welcome to the IDOR Challenge</h1>
-    <form id="login-form">
-        <label for="username">Username:</label>
-        <input type="text" id="username" required><br>
-        <label for="password">Password:</label>
-        <input type="password" id="password" required><br>
-        <button type="submit">Login</button>
+    <form id="login-form" style="text-align: center; font-family: Arial, sans-serif; margin-bottom: 20px;">
+        <label for="username" style="display: block; margin-bottom: 10px;">Username:</label>
+        <input type="text" id="username" required style="padding: 5px; margin-bottom: 15px; width: 200px;"><br>
+        <label for="password" style="display: block; margin-bottom: 10px;">Password:</label>
+        <input type="password" id="password" required style="padding: 5px; margin-bottom: 15px; width: 200px;"><br>
+        <button type="submit" style="padding: 10px 20px; background-color: rgb(65, 71, 66); color: white; border: none; cursor: pointer;">Login</button>
     </form>
     <div id="login-error" style="color: red; display: none;">Invalid login credentials!</div>
     <hr>
