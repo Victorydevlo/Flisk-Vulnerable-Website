@@ -1,3 +1,6 @@
 aa
 jjj
 &lt;script&gt;alert(&quot;hi&quot;)&lt;/script&gt;
+&lt;script&gt;alert(document.getElementById(&#039;hiddenFlag&#039;).innerText);&lt;/script&gt;
+
+&lt;script&gt;alert(document.getElementById(&#039;hiddenFlag&#039;).innerText);&lt;/script&gt;

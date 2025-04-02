@@ -23,6 +23,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <textarea name="comment" id="comment" rows="5" cols="40" required></textarea><br>
         <button type="submit">Submit</button>
     </form>
-    <p><a href="comment.php">View Comments</a></p>
+    <p><a href="comments.php">View Comments</a></p>
 </body>
 </html>
