@@ -76,27 +76,6 @@ include '../../userinfo/connection.php';
     </div>
     <script>
 
-        function showVncInfo() {
-            var button = document.getElementById("vncButton");
-            var resultDiv = document.getElementById("vncResult");
-
-            button.style.display = "none";
-            resultDiv.style.display = "block";
-            resultDiv.innerText = "Loading VNC IP and Port...";
-
-            let dots = 0;
-            let interval = setInterval(() => {
-                dots = (dots + 1) % 4;
-                resultDiv.innerText = "Loading VNC IP and Port" + ".".repeat(dots);
-            }, 500);
-
-
-            setTimeout(() => {
-                clearInterval(interval);
-                resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5901";
-            }, 5000);
-        }
-
         function toggleContent(id) {
             const content = document.getElementById(id);
             content.style.display = content.style.display === 'block' ? 'none' : 'block';
@@ -112,7 +91,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/xcrfsub.php', {
+            fetch('flagsub/cxrfsub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
