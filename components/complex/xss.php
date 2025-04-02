@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">IDOR</div>
+        <div class="title">XSS</div>
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
