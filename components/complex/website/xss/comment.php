@@ -19,11 +19,11 @@ if (file_exists($filename)) {
     <ul>
         <?php
         foreach ($comments as $comment) {
-            // Vulnerable to XSS, don't sanitize before outputting
             echo "<li>" . $comment . "</li>";
         }
         ?>
     </ul>
-    <p><a href="xss.php">Submit a Comment</a></p>
+    <p><a href="xssweb.php">Submit a Comment</a></p>
+    <div id="hiddenFlag" style="display:none;">flag{this_is_the_hidden_flag}</div>
 </body>
 </html>

@@ -18,11 +18,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </head>
 <body>
     <h1>Submit Your Comment</h1>
-    <form action="xss.php" method="POST">
+    <form action="xssweb.php" method="POST">
         <label for="comment">Comment:</label><br>
         <textarea name="comment" id="comment" rows="5" cols="40" required></textarea><br>
         <button type="submit">Submit</button>
     </form>
-    <p><a href="view.php">View Comments</a></p>
+    <p><a href="comment.php">View Comments</a></p>
 </body>
 </html>
