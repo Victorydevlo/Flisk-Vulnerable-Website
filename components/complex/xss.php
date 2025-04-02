@@ -49,7 +49,6 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content1">
             <p>Welcome to the XSS challenge! This task won't be easy, but we believe in your skills. Your goal is to perform a Cross-Site Scripting (XSS) attack on the test website. Remember, this is a learning exercise, so take your time and think carefully.</p>
             <p>Good luck, and may your efforts be successful! When you're ready, click the button below to proceed to the test website and begin your challenge.</p>
-            <button id="vncButton" onclick="window.open('websites/xssweb.php', '_blank')">Start Challenge</button>
         </div>
     </div>
 
@@ -60,14 +59,6 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
 
             <form id="flagForm" action="flagsub/xsssub.php" method="POST">
-                <div class="input-container">
-                    <p>What do attacker inject in a web to Cross-Site Script (XSS)?</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn">Submit</button>
-                    <p class="result" id="result"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
