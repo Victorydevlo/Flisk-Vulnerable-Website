@@ -190,38 +190,7 @@ session_start();
                 </a>
             </div>
         </div>
-
-        <div style="text-align: center; margin-top: 50px;">
-    <h2 style="color: white;">Featured CTF Challenges</h2>
-    <p style="color: #e0e0e0;">Test your skills with real-world cybersecurity challenges.</p>
-
-    <div style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; padding: 20px;">
-        <div style="background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-            <h3>SQL Injection</h3>
-            <p>Exploit an unsecured login form to gain unauthorized access.</p>
-            <a href="challenges/sqlinjection.php" 
-               style="display: inline-block; padding: 8px 12px; margin-top: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
-                Try Now
-            </a>
-        </div>
-        <div style="background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-            <h3>SQL Injection</h3>
-            <p>Exploit an unsecured login form to gain unauthorized access.</p>
-            <a href="challenges/sqlinjection.php" 
-               style="display: inline-block; padding: 8px 12px; margin-top: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
-                Try Now
-            </a>
-        </div>
-                <div style="background: #222; padding: 20px; border-radius: 10px; width: 250px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);">
-            <h3>SQL Injection</h3>
-            <p>Exploit an unsecured login form to gain unauthorized access.</p>
-            <a href="challenges/sqlinjection.php" 
-               style="display: inline-block; padding: 8px 12px; margin-top: 10px; background-color: #007bff; color: white; text-decoration: none; border-radius: 5px;">
-                Try Now
-            </a>
-        </div>
     </div>
-</div>
 
 </body>
 
