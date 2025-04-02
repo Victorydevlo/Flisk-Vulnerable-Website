@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">XSS</div>
+        <div class="title">Cross Site Request Forgery</div>
     </div>
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
