@@ -33,5 +33,5 @@ Over the past several days, I have dedicated significant time to setting up the 
    - If installations failed or configurations didn’t work as expected, additional debugging time was required.
    - Ensuring these challenges were properly structured and achievable while maintaining a high difficulty level.
 
-This process was time-consuming but rewarding. Each stage required patience and a methodical approach to guarantee the best experience for participants. The final setup ensures a well-structured, functional, and challenging environment for users engaging with the tasks.
-
+7. **Creating Flags and Priviladge Escalation Tasl
+    - Going to take me 1hr to sent up every safety measuments
