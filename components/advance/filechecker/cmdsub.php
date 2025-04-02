@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag1' => 'CTF_FLAG{LoveForMetaExploit}',
+    'flag1' => 'flag{cmd_injection_success}',
 ];
 
 $submitted_flag = null;
