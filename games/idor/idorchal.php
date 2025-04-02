@@ -35,7 +35,7 @@
     <script>
         const users = {
             'wonder': { username: 'wonder', email: 'wondeer@gmail.com', password: 'userpass', role: 'user', secret: null },
-            'Monork': { username: 'Monork', email: 'Monark@gmail.com', password: 'adminpass', role: 'admin', secret: '55' }
+            'Monork': { username: 'Monork', email: 'Monark@gmail.com', password: 'adminpass', role: 'admin', secret: 'flag{bossmanofthebossmen}' }
         };
 
         const loginForm = document.getElementById('login-form');
@@ -46,6 +46,10 @@
         const profileRole = document.getElementById('profile-role');
         const profileSecret = document.getElementById('profile-secret');
         const logoutButton = document.getElementById('logout-button');
+
+        // Get the user ID from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const userIdFromURL = urlParams.get('id');
 
         loginForm.addEventListener('submit', (e) => {
             e.preventDefault();
@@ -76,9 +80,27 @@
             userProfile.style.display = 'block';
         }
 
+        function displayUserProfileByID(userId) {
+            if (users[userId]) {
+                const user = users[userId];
+                profileUsername.textContent = `Username: ${user.username}`;
+                profileEmail.textContent = `Email: ${user.email}`;
+                profileRole.textContent = `Role: ${user.role}`;
+                profileSecret.textContent = user.role === 'admin' ? `Secret: ${user.secret}` : 'No secret available for normal users';
+                loginForm.style.display = 'none';
+                loginError.style.display = 'none';
+                userProfile.style.display = 'block';
+            } else {
+                loginError.style.display = 'block';
+            }
+        }
+
         if (sessionStorage.getItem('username')) {
             const username = sessionStorage.getItem('username');
             displayUserProfile(username);
+        } else if (userIdFromURL) {
+            // Allow direct access to user profile by manipulating the ID in the URL
+            displayUserProfileByID(userIdFromURL);
         }
     </script>
 </body>
