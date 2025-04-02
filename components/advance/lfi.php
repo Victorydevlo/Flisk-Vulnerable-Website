@@ -42,7 +42,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">CMD Injection</div>
+        <div class="title">LFI</div>
     </div>
 
     <div class="task">
