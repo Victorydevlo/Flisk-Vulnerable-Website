@@ -105,25 +105,10 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-
-            <div class="input-container">
-                <p>An unsecured web service is running on a non-standard port. Your goal is to find the open port and
-                    retrieve the flag.</p>
-                <strong>Hint:</strong>
-                <p> The service is not running on the usual port 80 or 443.</p>
-                <strong>Hint:</strong>
-                <p>Tools like nmap or curl might help you find the hidden flag.</p>
-                <p> using Curl to the hhtp ip adreass could help you find the flag as well dont forget the port and the
-                    flag file... hint the flag is hidden</p>
-                <button id="Hint" onclick="showHint()">Secret Hint</button>
-                <div id="Hinthid" class="result2" style="display: none;"></div>
-            </div>
             <form id="flagForm" action="filechecker/portsub.php" method="POST">
                 <div class="input-container">
 
-                    <p>Click the button to get the VNC IP and Port</p>
-                    <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
-                    <div id="vncResult" class="result" style="display: none;"></div>
+    
                     <p>Type the flag below</p>
                     <input type="text" id="userInput" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
