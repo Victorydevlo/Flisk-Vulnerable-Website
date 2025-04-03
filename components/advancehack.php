@@ -4,6 +4,7 @@ session_start();
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -101,13 +102,14 @@ session_start();
         }
     </style>
 </head>
+
 <body>
     <div class="navbar">
         <div class="logo">
             <span style="color: white;">Flisk</span>
             <span style="color: blue;">JS</span>
         </div>
-        
+
         <div class="auth-buttons">
             <?php if (isset($_SESSION['username'])): ?>
                 <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
@@ -130,162 +132,167 @@ session_start();
         </div>
     </div>
 
-<div style="display: flex; flex-wrap: wrap; justify-content: left;">
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+    <div style="display: flex; flex-wrap: wrap; justify-content: left;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">SQL Injection</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL Injections
-                </p>
-                <a href="advance/sql.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">SQL Injection</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL
+                        Injections
+                    </p>
+                    <a href="advance/sql.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">UNION Selection</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
-                </p>
-                <a href="advance/unionselect.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">UNION Selection</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION
+                        Selection
+                    </p>
+                    <a href="advance/unionselect.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock8.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Ports</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Exploit and scan for open ports
-                </p>
-                <a href="advance/port.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock8.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Ports</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Exploit and scan for open ports
+                    </p>
+                    <a href="advance/port.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/meta.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">MetaEsploit</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Youll be using vm to learn and exploit ports
-                </p>
-                <a href="advance/meta.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/meta.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">MetaEsploit</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Youll be using vm to learn and exploit
+                        ports
+                    </p>
+                    <a href="advance/meta.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/wire.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">WireShark</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Learning Wireshark
-                </p>
-                <a href="advance/wireshark.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/wire.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">WireShark</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Learning Wireshark
+                    </p>
+                    <a href="advance/wireshark.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Command Injection</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
-                </p>
-                <a href="advance/cmdinjection.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Command Injection</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION
+                        Selection
+                    </p>
+                    <a href="advance/cmdinjection.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Local File Inclusion (LFI)</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION Selection
-                </p>
-                <a href="advance/unionselect.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Local File Inclusion (LFI)</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION
+                        Selection
+                    </p>
+                    <a href="advance/unionselect.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/wire.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">WireShark</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Learning Wireshark
-                </p>
-                <a href="advance/wireshark2.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/wire.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">WireShark</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Learning Wireshark
+                    </p>
+                    <a href="advance/wireshark2.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
-    </div>
 
-    <div style="text-align: center; padding: 40px 20px;">
-        <div
-            style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+        <div style="text-align: center; padding: 40px 20px;">
             <div
-                style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
-            </div>
-            <div style="position: relative; z-index: 2;">
-                <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exams</h3>
-                <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">
-                </p>
-                <a href="advance/examination.php"
-                    style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
-                    More</a>
+                style="position: relative; background: url('../images/lock2.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
+                <div
+                    style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
+                </div>
+                <div style="position: relative; z-index: 2;">
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Exams</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">
+                    </p>
+                    <a href="advance/examination.php"
+                        style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
+                        More</a>
+                </div>
             </div>
         </div>
+
     </div>
-    
-</div>
 </body>
 
 </html>
