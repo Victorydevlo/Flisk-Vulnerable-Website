@@ -48,13 +48,13 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="filechecker/portsub.php" method="POST">
+            <form id="flagForm" action="filechecker/wire2sub.php" method="POST">
                 <div class="input-container">
 
                 
                     <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it
                         you should paste it under here.</p>
-                    <p><a href="file_wire/theit.pcapng">Download File</a></p>
+                    <p><a href="file_wire/indenfinites.pcapng">Download File</a></p>
                     <p>Once you have downloaded the file, open it in Wireshark and start analyzing the packets. Look for
                         any suspicious activity or unencrypted data that could lead you to the flag.</p>
                     <p>Once you have found the flag, paste it in the input field below and click submit.</p>                
@@ -71,26 +71,6 @@ include '../../userinfo/connection.php';
 
     <script>
 
-        function showVncInfo() {
-            var button = document.getElementById("vncButton");
-            var resultDiv = document.getElementById("vncResult");
-
-            button.style.display = "none";
-            resultDiv.style.display = "block";
-            resultDiv.innerText = "Loading VNC IP and Port...";
-
-            let dots = 0;
-            let interval = setInterval(() => {
-                dots = (dots + 1) % 4;
-                resultDiv.innerText = "Loading VNC IP and Port" + ".".repeat(dots);
-            }, 500);
-
-
-            setTimeout(() => {
-                clearInterval(interval);
-                resultDiv.innerText = "VNC IP and Port: 132.145.31.21:5902";
-            }, 5000);
-        }
 
         function showHint() {
             var button = document.getElementById("Hint");
@@ -127,7 +107,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('filechecker/portsub.php', {
+            fetch('filechecker/wire2sub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
