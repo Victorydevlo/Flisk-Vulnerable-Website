@@ -66,7 +66,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
-                        <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click Me</button>
+                        <button id="vncButton" onclick="window.open('websites/sql/index.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the flag below</p>
                         <input type="text" id="userInput8"  autocomplete="off" name="flag8" placeholder="Type your answer here..." required>
@@ -95,7 +95,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('filechecker/sqlfilesubmission.php', {
+            fetch('filechecker/sql2filesubmission.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
@@ -120,22 +120,6 @@ include '../../userinfo/connection.php';
                     loadingMessage.style.display = 'none';
                 });
         }
-
-        document.getElementById('submitBtn').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
-        });
-
-        document.getElementById('submitBtn2').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
-        });
-
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput3', 'result3', 'submitBtn3', 'loadingMessage3', 'flag3');
-        });
-
         document.getElementById('submitBtn8').addEventListener('click', function (e) {
             e.preventDefault();
             submitFlag('userInput8', 'result8', 'submitBtn8', 'loadingMessage8', 'flag8');
