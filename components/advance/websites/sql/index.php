@@ -40,7 +40,7 @@ if (isset($_POST['input'])) {
     <h2>SQL Injection Test</h2>
     <form method="post" action="">
         <label for="input">Enter a name:</label>
-        <input type="text" id="input" name="input" required>
+        <input type="text" id="input" name="input" autocomplete="off"required>
         <input type="submit" value="Submit">
     </form>
 </body>
