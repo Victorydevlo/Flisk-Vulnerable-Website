@@ -108,8 +108,13 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="filechecker/portsub.php" method="POST">
                 <div class="input-container">
 
-    
-                    <p>Type the flag below</p>
+                
+                    <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it
+                        you should paste it under here.</p>
+                    <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download File</a></p>
+                    <p>Once you have downloaded the file, open it in Wireshark and start analyzing the packets. Look for
+                        any suspicious activity or unencrypted data that could lead you to the flag.</p>
+                    <p>Once you have found the flag, paste it in the input field below and click submit.</p>                
                     <input type="text" id="userInput" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
