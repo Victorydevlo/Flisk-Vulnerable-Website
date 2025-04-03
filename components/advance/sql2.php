@@ -64,30 +64,6 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <form id="flagForm" action="filechecker/sqlfilesubmission.php" method="POST">
                 <div class="input-container">
-                    <p>What is the term used to describe the attack where an attacker manipulates a website's input
-                        fields to execute unauthorized SQL commands?</p>
-                    <input type="text" id="userInput"  autocomplete="off" name="flag1" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn">Submit</button>
-                    <p class="result" id="result"></p>
-                    <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>What are some of the potential consequences of a successful SQL Injection attack on a banking website?</p>
-                    <input type="text" id="userInput2"  autocomplete="off" name="flag2" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn2">Submit</button>
-                    <p class="result" id="results"></p>
-                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
-                </div>
-                <div class="input-container">
-                    <p>What is one common consequence of SQL injection attacks that can affect the integrity of user
-                        data?</p>
-                    <input type="text" id="userInput3"  autocomplete="off" name="flag3" placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn3">Submit</button>
-                    <p class="result" id="result3"></p>
-                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
-                </div>
-                <div class="input-container">
                     <p>Click this button to be sent to a dummy website to test your knowledge</p>
                     <a>
                         <button id="vncButton" onclick="window.open('websites/sqlinjection/index.php', '_blank')">Click Me</button>
