@@ -111,7 +111,7 @@ include '../../userinfo/connection.php';
                 
                     <p>In this exercise youll be tasked to find the flag inside of this file and once you have found it
                         you should paste it under here.</p>
-                    <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download File</a></p>
+                    <p><a href="file_wire/theit.pcapng">Download File</a></p>
                     <p>Once you have downloaded the file, open it in Wireshark and start analyzing the packets. Look for
                         any suspicious activity or unencrypted data that could lead you to the flag.</p>
                     <p>Once you have found the flag, paste it in the input field below and click submit.</p>                
