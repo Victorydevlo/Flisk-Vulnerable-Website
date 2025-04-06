@@ -72,7 +72,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/cur.php" method="POST">
+            <form id="flagForm" action="flagsub/64ehsub.php" method="POST">
                 <div class="input-container">
                 <p><a href="../../images/hacks/download.php?file=encoded.txt">Download Image</a></p>
                     <p>Submite the flag here</p>
@@ -102,7 +102,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/cur.php', {
+            fetch('flagsub/64ehsub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
