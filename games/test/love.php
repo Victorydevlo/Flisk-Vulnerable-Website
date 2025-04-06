@@ -111,9 +111,16 @@
         <a href="#about">About</a>
         <a href="#contact">Contact Us</a>
     </nav>
+    <div style="text-align: center; margin-bottom: 20px;">
+        <form action="search.php" method="get">
+            <input type="text" name="query" placeholder="Search..." style="padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
+            <button type="submit" style="padding: 10px 20px; background-color: #5c4033; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Search</button>
+        </form>
+    </div>
     <section id="about" class="section">
         <div class="instagram-post">
-            <div class="instagram-header" style="background-color: #f4c542; padding: 10px; color: #fff;">
+            <div class="instagram-header">
+                <img src="https://via.placeholder.com/40" alt="Bee Boss">
                 <span class="author">Bee Boss</span>
             </div>
             <div class="instagram-content">
