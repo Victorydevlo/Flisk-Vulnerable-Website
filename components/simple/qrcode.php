@@ -90,7 +90,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
 
 
-            fetch('flagsub/flagtwo_submission.php', {
+            fetch('flagsub/qrsub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `flag=${encodeURIComponent(input.value.trim())}`
