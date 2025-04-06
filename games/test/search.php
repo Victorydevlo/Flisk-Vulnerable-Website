@@ -32,7 +32,7 @@ $id = $_GET['query'];
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Info</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Assuming love.php uses styles.css -->
+    <link rel="stylesheet" href="styles.css">
 </head>
 <style>
      body {
@@ -77,28 +77,28 @@ $id = $_GET['query'];
         }
 </style>
 <body>
-    <div class="container">
-        <header>
-            <h1>Bee Nation</h1>
+    <div class="container" style="display: flex; flex-direction: column; justify-content: center; align-items: center; height: 100vh; text-align: center;">
+        <header style="width: 100%; background-color: #f4c542; padding: 20px; text-align: center; color: #fff;">
+            <h1 style="margin: 0;">Bee Nation</h1>
         </header>
-        <main>
+        <main style="flex: 1; display: flex; flex-direction: column; justify-content: center; align-items: center;">
             <?php
             if (isset($users[$id])) {
                 $user = $users[$id];
-                echo "<h2>User Info</h2>";
-                echo "<p><strong>Name:</strong> {$user['name']}</p>";
-                echo "<p><strong>Email:</strong> {$user['email']}</p>";
+                echo "<h2 style='margin-bottom: 20px;'>User Info</h2>";
+                echo "<p style='font-size: 1.2em; margin: 5px 0;'><strong>Name:</strong> {$user['name']}</p>";
+                echo "<p style='font-size: 1.2em; margin: 5px 0;'><strong>Email:</strong> {$user['email']}</p>";
 
                 if (isset($user['flag'])) {
-                    echo "<p class='flag'>Flag: {$user['flag']}</p>";
+                    echo "<p style='font-size: 1.2em; margin: 5px 0; color: #d9534f;'><strong>Flag:</strong> {$user['flag']}</p>";
                 }
             } else {
-                echo "<p class='error'>User not found.</p>";
+                echo "<p style='font-size: 1.2em; color: #d9534f;'>User not found.</p>";
             }
             ?>
         </main>
-        <footer>
-            <p>&copy; 2023 Bee Nation</p>
+        <footer style="width: 100%; background-color: #333; color: #fff; text-align: center; padding: 10px;">
+            <p style="margin: 0;">&copy; 2023 Bee Nation</p>
         </footer>
     </div>
 </body>
