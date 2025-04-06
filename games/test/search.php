@@ -21,7 +21,7 @@ function generateUsers($start, $end)
 $generatedUsers = generateUsers(30, 69);
 $users = array_merge($users, $generatedUsers);
 
-$users["162"] = ["name" => "Admin", "email" => "admin@beenation.com", "flag" => "flag{buzzing_through_idors}"];
+$users["162"] = ["name" => "Admin", "email" => "admin@beenation.com", "flag" => "the username is Administratore"];
 
 $id = $_GET['query'];
 
