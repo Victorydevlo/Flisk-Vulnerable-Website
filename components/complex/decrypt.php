@@ -144,7 +144,7 @@ include '../../userinfo/connection.php';
         .header {
             
             height: 200px;
-            background: linear-gradient(to right, rgb(48, 40, 11), rgb(214, 194, 13));
+            background: linear-gradient(to right, rgb(48, 11, 11), rgb(214, 13, 13));
             display: flex;
             align-items: center;
             justify-content: center;
