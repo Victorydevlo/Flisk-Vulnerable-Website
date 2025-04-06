@@ -122,7 +122,6 @@
         <p>Your ultimate source for everything about bees!</p>
         <div class="buttons">
             <a href="login.php">Login</a>
-            <a href="register.php">Register</a>
         </div>
     </header>
     <nav>
