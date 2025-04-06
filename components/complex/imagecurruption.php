@@ -48,8 +48,12 @@ include '../../userinfo/connection.php';
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>To tackle this challenge, set up a Linux virtual machine (VM) as your working environment. Utilize tools such as <code>curl</code> for making HTTP requests and <code>strings</code> for extracting readable text from binary files. These tools, along with others you may discover during your research, will be invaluable. Dive deep into understanding CBC bit-flipping attacks, as they are key to solving this problem. Submit the flag in the format:</p>
-            
+            <p>To tackle this challenge, set up a Linux virtual machine (VM) as your working environment. Utilize tools
+                such as <code>curl</code> for making HTTP requests and <code>strings</code> for extracting readable text
+                from binary files. These tools, along with others you may discover during your research, will be
+                invaluable. Dive deep into understanding CBC bit-flipping attacks, as they are key to solving this
+                problem. Submit the flag in the format:</p>
+
         </div>
     </div>
 
@@ -74,6 +78,7 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <form id="flagForm" action="flagsub/cur.php" method="POST">
                 <div class="input-container">
+                    <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
                     <p>Submite the flag here</p>
                     <input type="text" id="userInput1" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
@@ -134,7 +139,7 @@ include '../../userinfo/connection.php';
     </script>
     <style>
         .header {
-            
+
             height: 200px;
             background: linear-gradient(to right, rgb(48, 11, 11), rgb(214, 13, 13));
             display: flex;
