@@ -95,7 +95,7 @@ include '../../userinfo/connection.php';
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `flag=${encodeURIComponent(input.value.trim())}`
             })
-                .then(response => response.json())  // Parse JSON response
+                .then(response => response.json())
                 .then(data => {
                     if (data.status === 'success') {
                         result.style.color = 'green';
