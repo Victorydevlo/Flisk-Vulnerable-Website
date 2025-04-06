@@ -115,8 +115,7 @@
     </div>
     <section id="about" class="section">
         <div class="instagram-post">
-            <div class="instagram-header">
-                <img src="https://via.placeholder.com/40" alt="Bee Boss">
+            <div class="instagram-header" style="background-color: #f4c542; color: #fff;">
                 <span class="author">Bee Boss</span>
             </div>
             <div class="instagram-content">
