@@ -117,7 +117,6 @@
         <header>
             <h1>About This Project</h1>
             <div class="buttons">
-                <a href="index.php">Home</a>
                 <a href="login.php">Login</a>
             </div>
         </header>
@@ -125,7 +124,6 @@
         <nav>
             <a href="posts.php">Posts</a>
             <a href="love.php">Home</a>
-            <a href="contact.php">Contact</a>
         </nav>
 
         <div class="section">
