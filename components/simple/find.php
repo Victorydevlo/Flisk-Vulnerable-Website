@@ -61,7 +61,7 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="flagsub/findsub.php" method="POST">
                 <div class="input-container">
                     <p>Get the flag from bellow</p>
-                    <p><a href="../../folder/ReportFindings.zip">Download Image</a></p>
+                    <p><a href="../../images/hacks/download.php?file=ReportFindings.zip">Download Image</a></p>
                     <p>What's the Flag?</p>
                     <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
                     <button type="submit" id="submitBtn">Submit</button>
