@@ -128,8 +128,8 @@
     <div class="login-container">
         <h2>Login</h2>
         <form id="loginForm">
-            <input type="text" id="username" placeholder="Username" required>
-            <input type="password" id="password" placeholder="Password" required>
+            <input type="text" id="username" placeholder="Username" autocomplete="off" required>
+            <input type="password" id="password" placeholder="Password" autocomplete="off" required>
             <button type="submit">Login</button>
         </form>
         <p id="errorMessage" class="error"></p>
