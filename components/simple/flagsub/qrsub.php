@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag' => 'flag{numberofnumbers}'
+    'flag' => 'flag{LBU_is_great}'
 ];
 
 $submitted_flag = null;
