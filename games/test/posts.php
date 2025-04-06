@@ -123,8 +123,8 @@
         </header>
 
         <nav>
-            <a href="about.php">About</a>
-            <a href="challenges.php">Challenges</a>
+            <a href="posts.php">Posts</a>
+            <a href="love.php">Home</a>
             <a href="contact.php">Contact</a>
         </nav>
 
