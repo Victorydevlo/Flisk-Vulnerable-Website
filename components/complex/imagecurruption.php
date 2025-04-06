@@ -72,7 +72,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/decryptsub.php" method="POST">
+            <form id="flagForm" action="flagsub/cur.php" method="POST">
                 <div class="input-container">
                     <p>Submite the flag here</p>
                     <input type="text" id="userInput1" autocomplete="off" name="flag1"
@@ -101,7 +101,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/decryptsub.php', {
+            fetch('flagsub/cur.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
