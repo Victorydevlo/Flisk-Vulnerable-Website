@@ -74,7 +74,7 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <form id="flagForm" action="flagsub/cur.php" method="POST">
                 <div class="input-container">
-                <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
+                <p><a href="../../images/hacks/download.php?file=encoded.txt">Download Image</a></p>
                     <p>Submite the flag here</p>
                     <input type="text" id="userInput1" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
