@@ -138,7 +138,7 @@ session_start();
         <h1>Welcome to the Games</h1>
         <p>Here you will be put into a real world situation and you will be asked to solve case that look like real
             ones, make sure you aree at a competent level, before playing these games.</p>
-        <div style="display: flex; flex-wrap: wrap; justify-content: left;">
+        <div style="display: flex; flex-wrap: wrap; justify-content: center;">
             <div style="text-align: center; padding: 40px 20px;">
                 <div
                     style="position: relative; background: url('images/start.jpg') center/cover; border-radius: 10px; padding: 20px; width: 300px; height: 200px; text-align: center; color: #fff; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); overflow: hidden;">
