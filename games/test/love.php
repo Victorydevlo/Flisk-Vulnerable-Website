@@ -128,7 +128,7 @@
         <a href="posts.php">Posts</a>
         <a href="love.php">Home</a>
     </nav>
-    <div style="text-align: center; margin-bottom: 20px;">
+    <div style="text-align: center; margin-bottom: 20px; margin-top: 20px;">
         <form action="search.php" method="get">
             <input type="text" name="query" autocomplete= "off" placeholder="Search..."
                 style="padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
