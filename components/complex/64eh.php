@@ -48,8 +48,7 @@ include '../../userinfo/connection.php';
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>To tackle this challenge, set up a Linux virtual machine (VM) as your working environment. Utilize tools such as <code>curl</code> for making HTTP requests and <code>strings</code> for extracting readable text from binary files. These tools, along with others you may discover during your research, will be invaluable. Dive deep into understanding CBC bit-flipping attacks, as they are key to solving this problem. Submit the flag in the format:</p>
-            
+            <p>To tackle this challenge, focus on understanding basic decryption techniques such as Caesar cipher or other simple substitution methods. Utilize tools or scripts to analyze and decrypt the provided data. These techniques will help you uncover hidden information. Submit the flag in the format:</p>
         </div>
     </div>
 
