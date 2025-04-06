@@ -281,7 +281,7 @@ session_start();
                 <p style="font-size: 0.9rem; color: #e0e0e0;"><i>In this exercise you will learn how to access hidden pages
                      in a website and prevent it</i>
                 </p>
-                <a href="complex/imagecurruption.php"
+                <a href="complex/64eh.php"
                     style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                     More</a>
             </div>
