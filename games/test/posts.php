@@ -131,17 +131,7 @@
         <p>This project is designed to help learners explore and understand common web vulnerabilities through fun, interactive challenges.</p>
     </div>
 
-    <div class="instagram-post">
-        <div class="instagram-header">
-            <img src="https://i.pravatar.cc/40?img=5" alt="Profile Picture">
-            <span class="author">mary</span>
-        </div>
-        <div class="instagram-content">
-            <p>“Built this vulnerable site so you can break it (legally). Learn XSS, SQLi, IDOR, and more! Have fun capturing those flags 🏴‍☠️”</p>
-        </div>
-    </div>
 
-<!-- Comment 1 -->
 <div class="instagram-post">
   <div class="instagram-header">
     <img src="https://i.pravatar.cc/40?img=5" alt="Profile Picture">
@@ -152,7 +142,7 @@
   </div>
 </div>
 
-<!-- Comment 2 -->
+
 <div class="instagram-post">
   <div class="instagram-header">
     <img src="https://i.pravatar.cc/40?img=8" alt="Profile Picture">
@@ -332,7 +322,7 @@
     <span class="author">J4son</span>
   </div>
   <div class="instagram-content">
-    <p>“the password is ........”</p>
+    <p>“the password is Ym05MFlYTnBiWEJzWldGa2JXbHVNVEl6”</p>
   </div>
 </div>
 
