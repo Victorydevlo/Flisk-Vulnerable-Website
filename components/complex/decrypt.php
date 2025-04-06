@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">SQL Union-based Injection</div>
+        <div class="title">Decryption Made Hard</div>
     </div>
 
     <div class="task">
