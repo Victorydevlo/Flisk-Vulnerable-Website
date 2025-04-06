@@ -48,92 +48,16 @@ include '../../userinfo/connection.php';
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <h2>Understanding SQL Union-based Injection</h2>
-            <p>In today's digital landscape, websites and applications rely heavily on databases to store and retrieve
-                critical user information. From banking platforms to e-commerce sites, these systems use Structured
-                Query Language (SQL) to manage data efficiently. However, improper handling of SQL queries can lead to
-                serious vulnerabilities, including <strong>Union-based SQL Injection</strong>—a technique attackers use
-                to extract sensitive data by manipulating SQL queries with the <code>UNION</code> operator.</p>
-
-            <h3>What is SQL Union-based Injection?</h3>
-            <p>SQL Union-based Injection is a specific type of SQL Injection attack that leverages the
-                <code>UNION</code> SQL operator to merge the results of two or more queries. If a web application fails
-                to properly sanitize user inputs, an attacker can inject additional queries to retrieve unauthorized
-                data from different database tables.
-            </p>
-
-            <h3>Key Risks of SQL Union-based Injection:</h3>
-            <ul>
-                <li><strong>Unauthorized Data Retrieval</strong> – Attackers can combine legitimate query results with
-                    additional data, extracting sensitive information like usernames, email addresses, or even hashed
-                    passwords.</li>
-                <li><strong>Exposing Database Structure</strong> – By strategically altering queries, attackers can
-                    uncover the number of columns in a table and their data types, making further exploitation easier.
-                </li>
-                <li><strong>Session Hijacking & Account Takeover</strong> – Attackers may extract authentication tokens,
-                    session IDs, or password hashes to impersonate users or gain administrative access.</li>
-                <li><strong>Regulatory & Compliance Violations</strong> – A successful attack may lead to exposure of
-                    confidential customer data, violating GDPR, PCI-DSS, or other data protection regulations, resulting
-                    in legal consequences.</li>
-            </ul>
-
-            <h3>How SQL Union-based Injection Works</h3>
-            <p>Attackers exploit vulnerable input fields—such as login forms, search bars, or any user-provided
-                parameters—by appending a <code>UNION</code> query that forces the database to return additional
-                records.</p>
-
-            <h4>Example of a Vulnerable SQL Query:</h4>
-            <pre>
-SELECT id, name, email FROM users WHERE id = '$user_id';
-            </pre>
-
-            <p>If the input is not properly sanitized, an attacker could enter:</p>
-            <pre>
-1 UNION SELECT 1, username, password FROM users;
-            </pre>
-
-            <p>The resulting SQL query would be:</p>
-            <pre>
-SELECT id, name, email FROM users WHERE id = '1' 
-UNION 
-SELECT 1, username, password FROM users;
-            </pre>
-
-            <p>If the number of selected columns matches, the database returns results from both queries, exposing
-                usernames and passwords from the <code>users</code> table.</p>
-
-            <h3>Potential Consequences of SQL Union-based Injection</h3>
-            <ul>
-                <li><strong>Exposure of User Data</strong> – Attackers can retrieve personal details, login credentials,
-                    and even financial information.</li>
-                <li><strong>Credential Theft</strong> – Stolen usernames and password hashes can be used for credential
-                    stuffing attacks or account takeovers.</li>
-                <li><strong>Financial and Legal Repercussions</strong> – Organizations may face lawsuits, fines, and
-                    regulatory scrutiny for failing to protect user data.</li>
-                <li><strong>Reputation Damage</strong> – A breach can erode customer trust and negatively impact
-                    business operations.</li>
-            </ul>
-
-            <h3>Preventing SQL Union-based Injection</h3>
-            <p>To mitigate this attack, developers should implement <strong>secure coding practices</strong>, including:
-            </p>
-            <ul>
-                <li><strong>Parameterized Queries & Prepared Statements</strong> – Prevents user inputs from being
-                    executed as SQL commands.</li>
-                <li><strong>Input Validation</strong> – Restricts input formats and blocks special characters used in
-                    SQL Injection attempts.</li>
-                <li><strong>Least Privilege Principle</strong> – Limits database permissions to prevent unauthorized
-                    access to sensitive tables.</li>
-                <li><strong>Web Application Firewalls (WAFs)</strong> – Detects and blocks malicious SQL Injection
-                    attempts in real time.</li>
-            </ul>
-
-            <h3>Conclusion</h3>
-            <p>SQL Union-based Injection is a dangerous attack method that can expose sensitive data and compromise
-                entire systems. By adopting <strong>secure query practices, input validation, and least privilege access
-                    controls</strong>, developers can significantly reduce the risk of exploitation and keep user data
-                safe.</p>
-
+            <h2>Dosty's Final Heist</h2>
+            <p>Dosty has become obsessed with stealing masterpieces. His final heist was almost a success — until you intervened. Right before being caught, he tried to send an encrypted message to his partner hidden in Berlin. You intercepted the transmission. Dosty, being a fan of strong crypto, used AES-CBC encryption — a block cipher operating on 16-byte blocks (represented as 32 hexadecimal characters). Fortunately, during interrogation (and after taking his favorite brush), he reveals that the plaintext of the message was:</p>
+            <pre>TAKE_MONA_LISA!</pre>
+            <p>The message was intercepted as:</p>
+            <pre>{aaec3144f295c25a132e69e12dff894b,2726f1b1b1e9a3f5f07a06cc3c9ea9b5}</pre>
+            <p>This format contains the Initialization Vector (IV) and then the ciphertext (c), separated by a comma and wrapped in curly braces like so: <code>{IV,c}</code></p>
+            <p>As a skilled hacker, you realize that by manipulating the IV using a CBC bit-flipping attack, you can modify the decrypted message received by the recipient. Your goal: change the message to read:</p>
+            <pre>FAKE_MONA_LISA!</pre>
+            <p>Submit the flag in the format:</p>
+            <pre>flag{IV,c}</pre>
         </div>
     </div>
 
