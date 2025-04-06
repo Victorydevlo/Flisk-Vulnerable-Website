@@ -10,7 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag1' => 'flag{seriously_enough_of_this}',
+    'flag1' => 'flag{yes}',
 ];
 
 $submitted_flag = null;
