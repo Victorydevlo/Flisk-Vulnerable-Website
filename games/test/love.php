@@ -56,6 +56,36 @@
         .section h2 {
             color: #f4c542;
         }
+        .instagram-post {
+            max-width: 1700px;
+            margin: 20px auto;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        .instagram-header {
+            display: flex;
+            align-items: center;
+            padding: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        .instagram-header img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            margin-right: 10px;
+        }
+        .instagram-header .author {
+            font-weight: bold;
+            color: #333;
+        }
+        .instagram-content {
+            padding: 15px;
+            text-align: left;
+            color: #333;
+        }
         footer {
             background-color: #333;
             color: #fff;
@@ -82,8 +112,17 @@
         <a href="#contact">Contact Us</a>
     </nav>
     <section id="about" class="section">
-        <h2>Know About Bees</h2>
-        <p>Bees are fascinating creatures that play a crucial role in pollination and maintaining biodiversity. They are known for their hard work, teamwork, and the production of honey. Without bees, many plants and crops would struggle to reproduce, making them essential for our ecosystem.</p>
+        <div class="instagram-post">
+            <div class="instagram-header">
+                <img src="https://via.placeholder.com/40" alt="Bee Boss">
+                <span class="author">Bee Boss</span>
+            </div>
+            <div class="instagram-content">
+                <p>Bees are fascinating creatures that play a crucial role in pollination and maintaining biodiversity. They are known for their hard work, teamwork, and the production of honey. Without bees, many plants and crops would struggle to reproduce, making them essential for our ecosystem.</p>
+                <p>Did you know that there are over 20,000 species of bees worldwide? Each species has unique characteristics and behaviors, contributing to the diversity of our planet. From the industrious honeybee to the solitary mason bee, these insects are vital to the health of our environment.</p>
+                <p>Unfortunately, bee populations are declining due to habitat loss, pesticide use, and climate change. It's crucial to take action to protect these incredible creatures. Planting bee-friendly flowers, reducing pesticide use, and supporting local beekeepers are just a few ways you can help.</p>
+            </div>
+        </div>
     </section>
     <footer>
         <p>&copy; 2023 BeeNation. All rights reserved.</p>
