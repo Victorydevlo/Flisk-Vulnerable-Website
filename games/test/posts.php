@@ -115,7 +115,7 @@
 
     <body>
         <header>
-            <h1>About This Project</h1>
+            <h1>Posts On This Project</h1>
             <div class="buttons">
                 <a href="login.php">Login</a>
             </div>
