@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Currupted Images</div>
+        <div class="title">64 Big Times</div>
     </div>
 
     <div class="task">
