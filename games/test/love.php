@@ -125,7 +125,7 @@
         </div>
     </header>
     <nav>
-        <a href="about.php">About</a>
+        <a href="posts.php">About</a>
         <a href="#home">Home</a>
         <a href="#contact">Contact Us</a>
     </nav>
