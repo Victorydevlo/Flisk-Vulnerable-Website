@@ -192,7 +192,7 @@ session_start();
                     </div>
                     <div style="position: relative; z-index: 2;">
                         <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Simple But Hard!</h3>
-                        <a href="games/idor/idorchal.php"
+                        <a href="games/test/love.php"
                             style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                             More</a>
                     </div>
