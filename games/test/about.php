@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BeeNation</title>
+    <title>About</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -30,7 +29,6 @@
         .buttons a {
             text-decoration: none;
             background-color: #5c4033;
-            /* Dark brown */
             color: #fff;
             padding: 10px 20px;
             border-radius: 5px;
@@ -39,7 +37,6 @@
 
         nav {
             background-color: #5c4033;
-            /* Dark brown */
             display: flex;
             justify-content: center;
             padding: 10px 0;
@@ -56,7 +53,6 @@
 
         nav a:hover {
             background-color: #f4c542;
-            /* Yellow hover effect */
             color: #333;
         }
 
@@ -115,49 +111,38 @@
         }
     </style>
 </head>
-
 <body>
     <header>
-        <h1>Welcome to BeeNation</h1>
-        <p>Your ultimate source for everything about bees!</p>
+        <h1>About This Project</h1>
         <div class="buttons">
+            <a href="index.php">Home</a>
             <a href="login.php">Login</a>
         </div>
     </header>
+
     <nav>
         <a href="about.php">About</a>
-        <a href="#home">Home</a>
-        <a href="#contact">Contact Us</a>
+        <a href="challenges.php">Challenges</a>
+        <a href="contact.php">Contact</a>
     </nav>
-    <div style="text-align: center; margin-bottom: 20px;">
-        <form action="search.php" method="get">
-            <input type="text" name="query" placeholder="Search..."
-                style="padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
-            <button type="submit"
-                style="padding: 10px 20px; background-color: #5c4033; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Search</button>
-        </form>
+
+    <div class="section">
+        <h2>Welcome to the Vulnerability Playground</h2>
+        <p>This project is designed to help learners explore and understand common web vulnerabilities through fun, interactive challenges.</p>
     </div>
-    <section id="about" class="section">
-        <div class="instagram-post">
-            <div class="instagram-header" style="background-color: #f4c542; color: #fff;">
-                <span class="author">Bee Boss</span>
-            </div>
-            <div class="instagram-content">
-                <p>Bees are fascinating creatures that play a crucial role in pollination and maintaining biodiversity.
-                    They are known for their hard work, teamwork, and the production of honey. Without bees, many plants
-                    and crops would struggle to reproduce, making them essential for our ecosystem.</p>
-                <p>Did you know that there are over 20,000 species of bees worldwide? Each species has unique
-                    characteristics and behaviors, contributing to the diversity of our planet. From the industrious
-                    honeybee to the solitary mason bee, these insects are vital to the health of our environment.</p>
-                <p>Unfortunately, bee populations are declining due to habitat loss, pesticide use, and climate change.
-                    It's crucial to take action to protect these incredible creatures. Planting bee-friendly flowers,
-                    reducing pesticide use, and supporting local beekeepers are just a few ways you can help.</p>
-            </div>
+
+    <div class="instagram-post">
+        <div class="instagram-header">
+            <img src="https://i.pravatar.cc/40?img=5" alt="Profile Picture">
+            <span class="author">admin_h4x0r</span>
         </div>
-    </section>
+        <div class="instagram-content">
+            <p>“Built this vulnerable site so you can break it (legally). Learn XSS, SQLi, IDOR, and more! Have fun capturing those flags 🏴‍☠️”</p>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2023 BeeNation. All rights reserved.</p>
+        <p>&copy; 2025 Vulnerability Playground</p>
     </footer>
 </body>
-
 </html>
