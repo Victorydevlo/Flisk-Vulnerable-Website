@@ -125,9 +125,8 @@
         </div>
     </header>
     <nav>
-        <a href="posts.php">About</a>
-        <a href="#home">Home</a>
-        <a href="#contact">Contact Us</a>
+        <a href="posts.php">Posts</a>
+        <a href="love.php">Home</a>
     </nav>
     <div style="text-align: center; margin-bottom: 20px;">
         <form action="search.php" method="get">

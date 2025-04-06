@@ -134,10 +134,20 @@
     <div class="instagram-post">
         <div class="instagram-header">
             <img src="https://i.pravatar.cc/40?img=5" alt="Profile Picture">
-            <span class="author">admin_h4x0r</span>
+            <span class="author">mary</span>
         </div>
         <div class="instagram-content">
             <p>“Built this vulnerable site so you can break it (legally). Learn XSS, SQLi, IDOR, and more! Have fun capturing those flags 🏴‍☠️”</p>
+        </div>
+    </div>
+
+    <div class="instagram-post">
+        <div class="instagram-header">
+            <img src="https://i.pravatar.cc/40?img=10" alt="Profile Picture">
+            <span class="author">john</span>
+        </div>
+        <div class="instagram-content">
+            <p>“I absolutely love this site! It's such a fun way to learn about web vulnerabilities.”</p>
         </div>
     </div>
 
