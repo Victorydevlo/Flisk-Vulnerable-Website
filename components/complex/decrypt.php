@@ -146,7 +146,7 @@ SELECT 1, username, password FROM users;
                 be asked a series of questions designed to help you identify and exploit weaknesses within the system.
             </p>
             <p>Your goal is to carefully analyze the site and capture the hidden <span class="important">flag</span>,
-                which is worth <span class="important">35 points</span>.</p>
+                which is worth <span class="important">105 points</span>.</p>
             <p class="note">Take your time, stay sharp, and try your best to uncover any vulnerabilities. Good luck!</p>
         </div>
     </div>
