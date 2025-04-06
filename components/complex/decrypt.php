@@ -82,7 +82,7 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <form id="flagForm" action="filechecker/unionsubmission.php" method="POST">
                 <div class="input-container">
-                    <p>What SQL operator is commonly exploited in a Union-based SQL Injection attack?</p>
+                    <p>Submite the flag here</p>
                     <input type="text" id="userInput1" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn1">Submit</button>
