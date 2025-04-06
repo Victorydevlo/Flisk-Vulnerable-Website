@@ -130,7 +130,7 @@
     </nav>
     <div style="text-align: center; margin-bottom: 20px;">
         <form action="search.php" method="get">
-            <input type="text" name="query" placeholder="Search..."
+            <input type="text" name="query" autocomplete= "off" placeholder="Search..."
                 style="padding: 10px; width: 300px; border: 1px solid #ddd; border-radius: 5px;">
             <button type="submit"
                 style="padding: 10px 20px; background-color: #5c4033; color: #fff; border: none; border-radius: 5px; cursor: pointer;">Search</button>
