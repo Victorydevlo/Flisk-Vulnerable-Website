@@ -266,13 +266,10 @@ session_start();
                     style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
                 </div>
                 <div style="position: relative; z-index: 2;">
-                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Hidden Flags</h3>
-                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">Flags can be hidden in many different ways
-                        today
-                        ill ve showing you
-                        how to find this types of flags
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">QR Flags</h3>
+                    <p style="font-size: 0.9rem; color:rgb(163, 163, 163);">
                     </p>
-                    <a href="simple/apkhidden.php"
+                    <a href="simple/qrcode.php"
                         style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                         More</a>
                 </div>
