@@ -56,7 +56,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/flagdecrypt.php" method="POST">
+            <form id="flagForm" action="flagsub/binarysub.php" method="POST">
                 <div class="input-container">
                     <p>Decode this message: "mshn{fvbuvdbuklyzahukaoljvujlwavmjlhzly}"</p>
                     <input type="text" id="userInput" name="flag1" autocomplete="off"
@@ -66,23 +66,6 @@ include '../../userinfo/connection.php';
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
                 </div>
 
-                <div class="input-container">
-                    <p>Decode this message: "ipcu{roprycfhejwet!}"</p>
-                    <input type="text" id="userInput2" name="flag2" autocomplete="off"
-                        placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn2">Submit</button>
-                    <p class="result" id="results"></p>
-                    <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
-                </div>
-
-                <div class="input-container">
-                    <p>Decode this message: "uozt{blfzivurmzoobznzhgvizggsrh}"</p>
-                    <input type="text" id="userInput3" name="flag3" autocomplete="off"
-                        placeholder="Type your answer here..." required>
-                    <button type="button" id="submitBtn3">Submit</button>
-                    <p class="result" id="results2"></p>
-                    <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
-                </div>
 
             </form>
         </div>
@@ -103,7 +86,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/flagdecrypt.php', {
+            fetch('flagsub/binarysub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
@@ -133,17 +116,6 @@ include '../../userinfo/connection.php';
             e.preventDefault();
             submitFlag('userInput', 'result', 'submitBtn', 'loadingMessage', 'flag1');
         });
-
-        document.getElementById('submitBtn2').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput2', 'results', 'submitBtn2', 'loadingMessage2', 'flag2');
-        });
-
-        document.getElementById('submitBtn3').addEventListener('click', function (e) {
-            e.preventDefault();
-            submitFlag('userInput3', 'results2', 'submitBtn3', 'loadingMessage3', 'flag3');
-        });
-
 
     </script>
     <style>
