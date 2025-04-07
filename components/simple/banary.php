@@ -52,36 +52,6 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="task">
-        <div class="task-header" onclick="toggleContent('content2')">
-            <h3>Cipher Encryption and Decryption</h3>
-        </div>
-
-        <div class="task-content" id="content2">
-            <p>Common types of ciphers include:</p>
-
-            <ul>
-                <li>
-                    <strong>Caesar Cipher</strong> – A substitution cipher that shifts each letter in the plaintext by a
-                    fixed number of positions in the alphabet.<br>
-                    <strong>Example:</strong> With a shift of 3, "HELLO" becomes "KHOOR".
-                </li>
-
-                <li>
-                    <strong>Substitution Cipher</strong> – Replaces each letter in the plaintext with another letter,
-                    number, or symbol according to a fixed system.<br>
-                    <strong>Example:</strong> If A → M, B → N, C → O, etc., then "HELLO" might become "URYYB".
-                </li>
-
-                <li>
-                    <strong>Vigenère Cipher</strong> – A more complex substitution cipher that uses a keyword to
-                    determine multiple shifts, making it harder to break.<br>
-                    <strong>Example:</strong> Using the keyword "KEY", "HELLO" is encrypted as "RIJVS".
-                </li>
-            </ul>
-
-        </div>
-    </div>
-    <div class="task">
         <div class="task-header" onclick="toggleContent('content3')">
             <h3>Get Working</h3>
         </div>
