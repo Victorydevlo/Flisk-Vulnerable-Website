@@ -10,8 +10,7 @@ if (!isset($_SESSION['user_id'])) {
 $user_id = $_SESSION['user_id'];
 
 $flags = [
-    'flag' => 'CTFLBU{morse_is_cool}
-'
+    'flag1' => 'CTFLBU{morse_is_cool}'
 ];
 
 $submitted_flag = null;
