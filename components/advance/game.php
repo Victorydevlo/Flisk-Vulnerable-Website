@@ -45,44 +45,10 @@ include '../../userinfo/connection.php';
 
     <div class="task">
         <div class="task-header" onclick="toggleContent('content1')">
-            <h3>Explanation</h3>
+            <h3>Guessing Game</h3>
         </div>
         <div class="task-content" id="content1">
-            <p><strong>Hidden Messages in Images</strong> is a fascinating technique often used in steganography, where
-                data is concealed within an image file. This method can also be exploited to hide malicious payloads or
-                sensitive information that can only be extracted using specialized tools like <code>binwalk</code>.</p>
-
-            <p>Binwalk is a powerful tool used for analyzing and extracting embedded files and data from binary files,
-                such as images. It is commonly used in reverse engineering and security research to uncover hidden
-                content.</p>
-
-            <p>Below are some key aspects of hiding messages in images:</p>
-
-            <ul>
-                <li><strong>Embedding Data</strong> – Data can be embedded into the unused or less noticeable parts of
-                    an image file, such as metadata or unused bits in pixel data.</li>
-                <li><strong>Extraction Tools</strong> – Tools like <code>binwalk</code> can be used to analyze the
-                    structure of an image file and extract hidden content.</li>
-                <li><strong>Obfuscation</strong> – Advanced techniques can be used to further obfuscate the hidden data,
-                    making it harder to detect without the right tools.</li>
-                <li><strong>Security Risks</strong> – This technique can be exploited by attackers to hide malicious
-                    code or sensitive information within seemingly harmless image files.</li>
-            </ul>
-
-            <p>To uncover hidden messages in images, follow these steps:</p>
-
-            <ul>
-                <li><strong>Analyze the Image</strong> – Use <code>binwalk</code> to scan the image file for embedded
-                    data or unusual patterns.</li>
-                <li><strong>Extract Hidden Content</strong> – If <code>binwalk</code> detects hidden data, use its
-                    extraction capabilities to retrieve the embedded content.</li>
-                <li><strong>Inspect the Extracted Data</strong> – Examine the extracted files or data for any meaningful
-                    information or clues.</li>
-            </ul>
-
-            <p>In conclusion, hiding messages in images is a double-edged sword that can be used for both legitimate
-                purposes and malicious activities. Understanding how this technique works and how to detect it is
-                crucial for security professionals and researchers.</p>
+            <p>It's time for some guessing games! Use your skills and intuition to uncover the hidden secrets. Good luck!</p>
         </div>
     </div>
 
