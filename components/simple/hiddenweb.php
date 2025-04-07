@@ -109,7 +109,7 @@
                 <p>Lets test your knowledge now, you can use other sources to get your answer.</p>
                 <p>What tool can a hacker or attacker use to extract information from a website?
                 </p>
-                <input type="text" id="userInput" placeholder="Type your answer here...">
+                <input type="text" id="userInput" autocomplete="off" placeholder="Type your answer here...">
                 <button onclick="checkAnswer()">Submit</button>
                 <p class="result" id="result"></p>
             </div>
@@ -117,7 +117,7 @@
             <div class="input-container">
                 <p>What type of information should a developer make sure that they keep secure to prevent this attack
                     from being a serious one?</p>
-                <input type="text" id="userInputs" placeholder="Type your answer here...">
+                <input type="text" id="userInputs" autocomplete="off" placeholder="Type your answer here...">
                 <button onclick="checkAnswer1()">Submit</button>
                 <p class="result" id="results"></p>
             </div>
@@ -127,7 +127,7 @@
                 <p>Click the button to get the VNC IP and Port</p>
                 <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                 <div id="vncResult" class="result" style="display: none;"></div>
-                <input type="text" id="userInputs2" placeholder="Type your answer here...">
+                <input type="text" id="userInputs2" autocomplete="off" placeholder="Type your answer here...">
                 <button onclick="checkAnswer2()">Submit</button>
                 <p class="result" id="results2"></p>
             </div>

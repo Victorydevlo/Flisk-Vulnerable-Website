@@ -147,7 +147,7 @@ include '../../userinfo/connection.php';
         <div class="task-content" id="content3">
             <div class="input-container">
                 <p>What tool can be used to extract information from a website via IDOR?</p>
-                <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                <input type="text" id="userInput" name="flag1" autocomplete="off" placeholder="Type your answer here..." required>
                 <button type="button" id="submitBtn">Submit</button>
                 <p class="result" id="result"></p>
                 <p id="loadingMessage" style="display:none;">Submitting your flag...</p>

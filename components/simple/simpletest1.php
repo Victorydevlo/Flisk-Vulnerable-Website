@@ -102,7 +102,7 @@ include '../../userinfo/connection.php';
                         you should paste it under here.</p>
                     <p><a href="../../images/hacks/download.php?file=mountain.jpg">Download Image</a></p>
                     <p>What's the Flag?</p>
-                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag" autocomplete="off" placeholder="Type your answer here..." required>
                     <button type="submit" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>

@@ -71,7 +71,7 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="flag_submission.php" method="POST">
                 <div class="input-container">
                     <p>What's the Flag?</p>
-                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag" autocomplete="off" placeholder="Type your answer here..." required>
 
                     <button type="submit" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
