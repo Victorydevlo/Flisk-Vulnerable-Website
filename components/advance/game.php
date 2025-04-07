@@ -70,7 +70,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="filechecker/binwalksub.php" method="POST">
+            <form id="flagForm" action="filechecker/gamesub.php" method="POST">
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
@@ -148,7 +148,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('filechecker/binwalksub.php', {
+            fetch('filechecker/gamesub.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
