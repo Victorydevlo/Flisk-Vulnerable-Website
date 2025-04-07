@@ -50,7 +50,7 @@ include '../../userinfo/connection.php';
                     <button id="vncButton" onclick="window.open('love.php', '_blank')">Click Me</button>
                     <br>
                     <p>Type the black below</p>
-                    <input type="text" id="userInput" name="flag" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag" autocomplete="off" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
