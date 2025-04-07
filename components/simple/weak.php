@@ -105,7 +105,7 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="flagsub/flagweak.php" method="POST">
                 <div class="input-container">
                     <p>When an attacker is able to abuse inputs on a system and exploit it how they want its called?</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag1" autocomplete="off" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
@@ -113,7 +113,7 @@ include '../../userinfo/connection.php';
 
                 <div class="input-container">
                     <p>Because its happening in a bank, the vulnerability is called? </p>
-                    <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput2" name="flag2" autocomplete="off" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn2">Submit</button>
                     <p class="result" id="results"></p>
                     <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
@@ -125,7 +125,7 @@ include '../../userinfo/connection.php';
                         <button id="vncButton" onclick="window.open('websites/index.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput3" name="flag3" placeholder="Type your answer here..." required>
+                        <input type="text" id="userInput3" name="flag3" autocomplete="off" placeholder="Type your answer here..." required>
                         <button type="button" id="submitBtn3">Submit</button>
                         <p class="result" id="results2"></p>
                         <p id="loadingMessage3" style="display:none;">Submitting your flag...</p>
