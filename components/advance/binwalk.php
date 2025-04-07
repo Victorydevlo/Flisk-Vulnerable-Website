@@ -97,6 +97,7 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
+                    <p>Bownload the image bellow and you your knowledge to extract the file.</p>
                     <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                     <div id="vncResult" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
