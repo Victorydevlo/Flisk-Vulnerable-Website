@@ -59,10 +59,8 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="flagsub/binarysub.php" method="POST">
                 <div class="input-container">
                     <p>Decode this flag using what you know what you know about binary:</p>
-                    <p>01000100 01001111 01000110 01001100 01000001 01000111 01111011 00110101
-                        00110110 01011111 01000010 01101001 01101110 01100001 01110010 01111001
-                        01011111 01101111 01110110 01100101 01110010 01011111 01000010 01100001
-                        01101110 01100001 01110010 01111001 01011111 00110110 00110101 01111101
+                    <p>-.-. - ..-. .-.. -... ..- {. -- --- .-. ... . _ .. ... _ -.-. --- --- .-.. }
+
                     </p>
                     <input type="text" id="userInput" name="flag1" autocomplete="off"
                         placeholder="Type your answer here..." required>
