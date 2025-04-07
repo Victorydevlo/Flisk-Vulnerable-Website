@@ -249,7 +249,9 @@ session_start();
                     style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
                 </div>
                 <div style="position: relative; z-index: 2;">
-                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">XSS Cross Site <Script></Script></h3>
+                    <h3 style="margin-bottom: 10px; font-size: 1.2rem;">XSS Cross Site
+                        <Script></Script>
+                    </h3>
                     <p style="font-size: 0.9rem; color: #e0e0e0;"><i>learning about CSS</i>
                     </p>
                     <a href="simple/xss.php"
