@@ -65,7 +65,7 @@ include '../../userinfo/connection.php';
                         <button id="vncButton" onclick="window.open('website/xss/xssweb.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                        <input type="text" id="userInput2" name="flag2" autocomplete="off" placeholder="Type your answer here..." required>
                         <button type="button" id="submitBtn2">Submit</button>
                         <p class="result" id="results"></p>
                         <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>

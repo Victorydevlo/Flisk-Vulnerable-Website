@@ -68,7 +68,7 @@ include '../../userinfo/connection.php';
                     <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                     <div id="vncResult" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
-                    <input type="text" id="userInput" autocomplete="off" name="flag1"
+                    <input type="text" id="userInput" autocomplete="off" autocomplete="off" name="flag1"
                         placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
