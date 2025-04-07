@@ -158,7 +158,7 @@ include '../../userinfo/connection.php';
             <form id="flagForm" action="flagsub/xsssub.php" method="POST">
                 <div class="input-container">
                     <p>What do attacker inject in a web to Cross-Site Script (XSS)?</p>
-                    <input type="text" id="userInput" name="flag1" placeholder="Type your answer here..." required>
+                    <input type="text" id="userInput" name="flag1" autocomplete="off" placeholder="Type your answer here..." required>
                     <button type="button" id="submitBtn">Submit</button>
                     <p class="result" id="result"></p>
                     <p id="loadingMessage" style="display:none;">Submitting your flag...</p>
@@ -170,7 +170,7 @@ include '../../userinfo/connection.php';
                         <button id="vncButton" onclick="window.open('websites/xssweb.php', '_blank')">Click Me</button>
                         <br>
                         <p>Type the black below</p>
-                        <input type="text" id="userInput2" name="flag2" placeholder="Type your answer here..." required>
+                        <input type="text" id="userInput2" name="flag2" autocomplete="off" placeholder="Type your answer here..." required>
                         <button type="button" id="submitBtn2">Submit</button>
                         <p class="result" id="results"></p>
                         <p id="loadingMessage2" style="display:none;">Submitting your flag...</p>
