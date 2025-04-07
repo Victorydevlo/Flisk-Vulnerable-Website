@@ -47,7 +47,7 @@ include '../../userinfo/connection.php';
             <h3>Explanation</h3>
         </div>
         <div class="task-content" id="content1">
-            <p>Your task is to decrypt the given binary data and retrieve the hidden message.</p>
+            <p>Your task is to decrypt the given code data and retrieve the hidden message. same as binary but morse</p>
         </div>
     </div>
 
