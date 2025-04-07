@@ -191,7 +191,7 @@ session_start();
                         style="content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.5); z-index: 1; border-radius: 10px;">
                     </div>
                     <div style="position: relative; z-index: 2;">
-                        <h3 style="margin-bottom: 10px; font-size: 1.2rem;">Simple But Hard!</h3>
+                        <h3 style="margin-bottom: 10px; font-size: 1.2rem;">BeeNation But Hard!</h3>
                         <a href="games/test/love.php"
                             style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                             More</a>
