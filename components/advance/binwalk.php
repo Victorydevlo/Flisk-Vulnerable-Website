@@ -1,5 +1,3 @@
-use parameterized queries or prepared statements to prevent injection attacks.</li>
-
 <?php
 session_start();
 include '../../userinfo/connection.php';
