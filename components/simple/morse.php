@@ -56,7 +56,7 @@ include '../../userinfo/connection.php';
             <h3>Get Working</h3>
         </div>
         <div class="task-content" id="content3">
-            <form id="flagForm" action="flagsub/binarysub.php" method="POST">
+            <form id="flagForm" action="flagsub/morse.php" method="POST">
                 <div class="input-container">
                     <p>Decode this flag using what you know what you know about binary:</p>
                     <p>-.-. - ..-. .-.. -... ..- {. -- --- .-. ... . _ .. ... _ -.-. --- --- .-.. }
@@ -89,7 +89,7 @@ include '../../userinfo/connection.php';
             result.textContent = 'Submitting your flag...';
             loadingMessage.style.display = 'inline';
 
-            fetch('flagsub/binarysub.php', {
+            fetch('flagsub/morse.php', {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
                 body: `${flagName}=${encodeURIComponent(input.value.trim())}`
