@@ -74,8 +74,8 @@ include '../../userinfo/connection.php';
                 <div class="input-container">
 
                     <p>Click the button to get the VNC IP and Port</p>
-                    <p>Download the image bellow and you your knowledge to extract the file.</p>
-                    <p><a href="../../images/hacks/download.php?file=bin_walk.jpg">Download Files</a></p>
+                    <p>Download the image bellow and you your knowledge to extract the file. and upload to the vm</p>
+                    <p><a href="../../images/hacks/download.php?file=gameguess.zip">Download Files</a></p>
                     <button id="vncButton" onclick="showVncInfo()">Get VNC IP & Port</button>
                     <div id="vncResult" class="result" style="display: none;"></div>
                     <p>Type the flag below</p>
