@@ -40,7 +40,7 @@ include '../../userinfo/connection.php';
     </div>
 
     <div class="header">
-        <div class="title">Bin Walk</div>
+        <div class="title">Crack the Answer</div>
     </div>
 
     <div class="task">
