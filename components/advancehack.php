@@ -251,7 +251,7 @@ session_start();
                     <p style="font-size: 0.9rem; color:rgb(163, 163, 163);"> Lets get you started with some SQL UNION
                         Selection
                     </p>
-                    <a href="advance/unionselect.php"
+                    <a href="advance/lfi.php"
                         style="display: inline-block; padding: 5px 10px; margin-top: 10px; color: #fff; text-decoration: none; border: 2px solid transparent; border-image: linear-gradient(90deg, rgb(52, 52, 52), rgb(103, 103, 103), rgb(65, 65, 65)); border-radius: 20px; border-image-slice: 1;">Learn
                         More</a>
                 </div>
