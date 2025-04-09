@@ -1,5 +1,6 @@
 <?php
 session_start();
+include 'userinfo/connection.php';
 ?>
 
 <!DOCTYPE html>
