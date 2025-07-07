@@ -1,3 +1,4 @@
+# Flisk Vulnerable Website
 A deliberately vulnerable web application built for cybersecurity training and CTFs. Includes OWASP Top 10 flaws like SQL injection, XSS, IDOR, and privilege escalation. Features realistic scenarios and Linux-based tasks for hands-on exploitation and learning.
 
 🔐 Vulnerable Web Application for Security Training & CTF Challenges This project is a deliberately vulnerable web application designed for educational purposes, cybersecurity training, and Capture The Flag (CTF) challenges. It simulates a realistic environment with multiple layers of vulnerabilities and integrated Linux-based tasks, offering learners and professionals hands-on experience in discovering, exploiting, and mitigating common web and system security flaws.
